@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
-  <updated>2020-07-13T09:00:17.994Z</updated>
+  <updated>2020-07-13T14:48:21.113Z</updated>
   <id>http://张德邻.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://张德邻.com/2020/07/08/2020-07-08-jian-zhan-bu-yi/"/>
     <id>http://张德邻.com/2020/07/08/2020-07-08-jian-zhan-bu-yi/</id>
     <published>2020-07-07T16:00:00.000Z</published>
-    <updated>2020-07-13T09:00:17.994Z</updated>
+    <updated>2020-07-13T14:48:21.113Z</updated>
     
     <summary type="html">
     
@@ -37,7 +37,7 @@
     </summary>
     
     
-      <category term="life" scheme="http://xn--e1t0my86j.com/categories/life/"/>
+      <category term="daily life" scheme="http://xn--e1t0my86j.com/categories/daily-life/"/>
     
     
   </entry>
@@ -47,7 +47,7 @@
     <link href="http://张德邻.com/2020/07/06/2020-07-06-correlationcoefficient/"/>
     <id>http://张德邻.com/2020/07/06/2020-07-06-correlationcoefficient/</id>
     <published>2020-07-05T16:00:00.000Z</published>
-    <updated>2020-07-13T09:01:47.837Z</updated>
+    <updated>2020-07-13T14:47:57.636Z</updated>
     
     <summary type="html">
     
@@ -62,7 +62,7 @@
     </summary>
     
     
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
+      <category term="math study" scheme="http://xn--e1t0my86j.com/categories/math-study/"/>
     
     
   </entry>
@@ -72,7 +72,7 @@
     <link href="http://张德邻.com/2020/07/05/2020-07-05-curvefitting/"/>
     <id>http://张德邻.com/2020/07/05/2020-07-05-curvefitting/</id>
     <published>2020-07-04T16:00:00.000Z</published>
-    <updated>2020-07-13T09:01:55.392Z</updated>
+    <updated>2020-07-13T14:47:38.171Z</updated>
     
     <summary type="html">
     
@@ -87,7 +87,7 @@
     </summary>
     
     
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
+      <category term="math study" scheme="http://xn--e1t0my86j.com/categories/math-study/"/>
     
     
   </entry>
@@ -97,7 +97,7 @@
     <link href="http://张德邻.com/2020/07/04/2020-07-03-interpolation/"/>
     <id>http://张德邻.com/2020/07/04/2020-07-03-interpolation/</id>
     <published>2020-07-03T16:00:00.000Z</published>
-    <updated>2020-07-13T09:02:42.259Z</updated>
+    <updated>2020-07-13T14:46:51.666Z</updated>
     
     <summary type="html">
     
@@ -112,7 +112,7 @@
     </summary>
     
     
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
+      <category term="math study" scheme="http://xn--e1t0my86j.com/categories/math-study/"/>
     
     
   </entry>
@@ -122,7 +122,7 @@
     <link href="http://张德邻.com/2020/07/03/2020-07-03-topsis/"/>
     <id>http://张德邻.com/2020/07/03/2020-07-03-topsis/</id>
     <published>2020-07-02T16:00:00.000Z</published>
-    <updated>2020-07-13T09:02:36.790Z</updated>
+    <updated>2020-07-13T14:47:12.719Z</updated>
     
     <summary type="html">
     
@@ -138,7 +138,7 @@
     </summary>
     
     
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
+      <category term="math study" scheme="http://xn--e1t0my86j.com/categories/math-study/"/>
     
     
   </entry>

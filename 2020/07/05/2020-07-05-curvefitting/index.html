@@ -316,8 +316,8 @@ daovoice('update');
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/study/" class="post-category">
-                                study
+                            <a href="/categories/math-study/" class="post-category">
+                                math study
                             </a>
                         
                     </div>
@@ -350,7 +350,7 @@ daovoice('update');
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
 
@@ -368,7 +368,7 @@ daovoice('update');
                 <h1 id="拟合算法"><a href="#拟合算法" class="headerlink" title="拟合算法"></a>拟合算法</h1><p>与插值问题不同，在拟合问题中<strong>不需要曲线一定经过给定的点</strong>。拟合问题的目标是寻求一个函数（曲线），使得该曲线在某种准则下<strong>与所有的数据点最为接近</strong>，即曲线拟合的最好（最小化损失函数）。</p>
 <h2 id="插值和拟合的区别"><a href="#插值和拟合的区别" class="headerlink" title="插值和拟合的区别"></a>插值和拟合的区别</h2><p>插值算法中，得到的多项式f(x)要经过所有样本点。但是如果样本点太多，那 么这个多项式次数过高，会造成<strong>龙格现象</strong>。   </p>
 <p>尽管我们可以选择分段的方法避免这种现象，但是更多时候我们更倾向于得到 一个确定的曲线，尽管这条曲线不能经过每一个样本点，但只要保证误差足够小即 可，这就是拟合的思想。(<strong>拟合的结果是得到一个确定的曲线</strong>)<br>一个小例子：<br>找出y和x之间的 拟合曲线（这种给的点特别多的情况下，如果使用插值法，得到的多项式的次数就会特别高，所有点都穿过的话，龙格现象（插值法里面有讲到）就会特别明显）</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216" style="zoom:50%;"><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626"> style=”zoom:50%;” /&gt;<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320" style="zoom: 80%;"></p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216" style="zoom:50%;" /><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626"> style=”zoom:50%;” /&gt;<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320" style="zoom: 80%;" /></p>
 <p>若使用插值法，在多项式的次数特别高时，得到的图像在点与点之间波动特别大：（随手画的，对这么多个点进行插值产生的龙格现象是很明显的）<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955"></p>
 <p>设这些样本点为(xi,yi), i=1,2,.,n  </p>
 <p>我们设置的拟合曲线为y= kx +b  </p>
@@ -400,7 +400,7 @@ daovoice('update');
 <thead>
 <tr>
 <th>CustomEquations</th>
-<th>用户自定义的函数类型<br></th>
+<th>用户自定义的函数类型<br/></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -477,25 +477,7 @@ daovoice('update');
 <p>在这之前，我们所有的误差参数都是基于预测值(y_hat)和原始值(y)之间的误差(<strong>即点对点</strong>)。从下面开始是所有的误差都是相对原始数据平均值(y_ba)而展开的(<strong>即点对全</strong>)!!!  </p>
 <p>四、R-square(确定系数)<br>在讲确定系数之前，我们需要介绍另外两个参数SSR和SST，因为确定系数就是由它们两个决定的<br>(1)SSR：Sum of squares of the regression，即预测数据与原始数据均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps4.jpg" alt="img"><br>(2)SST：Total sum of squares，即原始数据和均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps5.jpg" alt="img"><br>(3)“确定系数”是定义为SSR和SST的比值，故<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps6.jpg" alt="img"></p>
 <p>其实<strong>“确定系数”是通过数据的变化来表征一个拟合的好坏</strong>。由上面的表达式可以知道“确定系数”的正常取值范围为[0 1]，<strong>越接近1，表明方程的变量对y的解释能力越强</strong>，这个模型对数据拟合的也较好</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -751,8 +733,8 @@ daovoice('update');
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/study/" class="post-category">
-                                    study
+                            <a href="/categories/math-study/" class="post-category">
+                                    math study
                                 </a>
                             
                             
@@ -793,8 +775,8 @@ daovoice('update');
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/study/" class="post-category">
-                                    study
+                            <a href="/categories/math-study/" class="post-category">
+                                    math study
                                 </a>
                             
                             
@@ -1004,7 +986,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.6k</span>&nbsp;字
+                class="white-color">16.3k</span>&nbsp;字
             
             
             

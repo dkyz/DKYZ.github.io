@@ -1,0 +1,1143 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="“数学建模-Interpolation-(插值算法)-学习笔记”, 德邻">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>“数学建模-Interpolation-(插值算法)-学习笔记” | 德邻</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="德邻" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+ daovoice('init', {
+  app_id: "8d80e22e"
+});
+daovoice('update');
+
+ </script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">德邻</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">德邻</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">“数学建模-Interpolation-(插值算法)-学习笔记”</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/math-study/">
+                                <span class="chip bg-color">math study</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/study/" class="post-category">
+                                study
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-04
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="插值算法"><a href="#插值算法" class="headerlink" title="插值算法"></a>插值算法</h2><p>数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的<strong>数据是极少的</strong>，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些<strong>新的但又比较靠谱的值</strong>来满 足需求，这就是插值的作用。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><h4 id="一维插值问题"><a href="#一维插值问题" class="headerlink" title="一维插值问题"></a>一维插值问题</h4><p>问题如下:已经有n + 1个节点(xi,yi)(i=0,1,……,n)， 其中xi互不相同<br>不妨假设a=x0&lt;x1&lt;…&lt;xn=b,求任一插值点x’(≠x;)处的插值y’</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703175624737.png" alt="image-20200703175624737"></p>
+<p>思路:构造函数y= f(x),使得f(x )过所有节点，求f(x’)即可得到y’</p>
+<h4 id="插值法定义"><a href="#插值法定义" class="headerlink" title="插值法定义"></a>插值法定义</h4><p>设函数y= f(x)在区间[a,b]上有定义，且已知在点<br>a&lt;x0&lt;x1&lt;…&lt; nx&lt;b<br>上的值分别为:y0,y1,…..,yn<br>若存在一简单函数P (x),使   P(xi)=yi, (i =,1,2.,n)<br>则称<strong>P(x)为f(x)的插值函数</strong>，点x0,..xn, 称为插值<br>节点，包含插值节点的区间|a,b]称为插值区间,求插值函数P(x) 的方法称为插值法。</p>
+<h3 id="插值法的分类"><a href="#插值法的分类" class="headerlink" title="插值法的分类"></a>插值法的分类</h3><h4 id="多项式插值"><a href="#多项式插值" class="headerlink" title="多项式插值"></a>多项式插值</h4><h5 id="一般插值多项式原理"><a href="#一般插值多项式原理" class="headerlink" title="一般插值多项式原理"></a>一般插值多项式原理</h5><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180152881.png" alt=""></p>
+<p>证明：A是范德蒙行列式（）</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180221430.png" alt="image-20200703180221430"></p>
+<p>构造出<img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181345275.png" alt="image-20200703181345275"></p>
+<h5 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h5><h6 id="两个点"><a href="#两个点" class="headerlink" title="两个点"></a>两个点</h6><p>拉格朗日插值法可以找到一个多项式，其恰好在各个观测的点取到观测到的值</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181518392.png" alt="image-20200703181518392"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1</p>
+<h6 id="三个点"><a href="#三个点" class="headerlink" title="三个点"></a>三个点</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181656072.png" alt="image-20200703181656072"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1<br>当X=X2，f(x)=y2  </p>
+<h6 id="四个点"><a href="#四个点" class="headerlink" title="四个点"></a>四个点</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181752106.png" alt="image-20200703181752106"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1<br>当X=X2，f(x)=y2<br>当X=X3，f(x)=y3   </p>
+<h6 id="拉格朗日插值多项式"><a href="#拉格朗日插值多项式" class="headerlink" title="拉格朗日插值多项式"></a>拉格朗日插值多项式</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181915412.png" alt="image-20200703181915412"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182113386.png" alt="image-20200703182113386"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182132809.png" alt="image-20200703182132809"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182028404.png" alt="image-20200703182028404"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182157351.png" alt="image-20200703182157351"></p>
+<h6 id="龙格现象"><a href="#龙格现象" class="headerlink" title="龙格现象"></a>龙格现象</h6><p><strong>插值多项式并不是次数越高，误差越小</strong>！</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182333695.png" alt="image-20200703182333695"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182351708.png" alt="image-20200703182351708"></p>
+<p><strong>高次插值会产生龙格现象，即在两端处波动极大,产生明显的震荡。在不熟悉曲线 运动趋势的前提下，不要轻易使用高次插值</strong></p>
+<h4 id="分段插值"><a href="#分段插值" class="headerlink" title="分段插值"></a>分段插值</h4><p>插值多项式的缺点：<br>1.插值多项式次数高精度未必显著提高<br>2.插值多项式次数越高摄入误差可能显著增大</p>
+<p>————》<strong>采用分段低次插值提高插值精度</strong></p>
+<h5 id="分段二次插值"><a href="#分段二次插值" class="headerlink" title="分段二次插值"></a>分段二次插值</h5><p> 选取跟节点x最近的三个节点xi-1,xi, xi+1进行二次插值。 (n+1项 =》n次 插值)<br>即在每一一个区间[x-1,x+1]上， 取:</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182829212.png" alt="image-20200703182829212"></p>
+<p>这种分段的低次插值称为<strong>分段二次插值</strong>，在几何上就是用分段抛物线代替y=f(x),故分段二次插值又称为<strong>分段抛物插值</strong>。</p>
+<h5 id="牛顿插值法"><a href="#牛顿插值法" class="headerlink" title="牛顿插值法"></a>牛顿插值法</h5><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183153642.png" alt="image-20200703183153642"></p>
+<p>差商：</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183249362.png" alt="image-20200703183249362"></p>
+<h6 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h6><p>与拉格朗日插值法相比，牛顿插值法的计算过程<strong>具有继承性</strong>。<br>(牛顿插值法每次插值<strong>只和前n项**</strong>的值有关**，这样每次只要在原来的函数上添加新的项，就能够产生新的函数)<br>但是牛顿插值也存在龙格现象的问题。</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>拉格朗日和牛顿插值仅仅要求插值多项式在<strong>插值节点处与被插函数有相等的函数值</strong>，而这种插值多项式却<strong>不能全面反映被插值函数的性态</strong>。<br>然而在许多实际问题中，不仅要求插值函数与被插值函数在所有节点处有相同的函数值，它也<strong>需要在一个或全部节点上插值多项式与被插函数有相同的低阶甚至高阶的导数值。</strong><br>对于这些情况，拉格朗日插值和牛顿插值都不能满足。</p>
+<h5 id="埃尔米特插值"><a href="#埃尔米特插值" class="headerlink" title="埃尔米特插值"></a>埃尔米特插值</h5><p>不但要求在节点上的函数值相等，<strong>而且还要求对应的导数值也相等,甚至要求 高阶导数也相等</strong></p>
+<p>设函数f(x)在区间[a, b]上有n+1个互异节点a=x0&lt;x1&lt;x2&lt;..&lt;xn=b,<br>定义在[a,b]上函数f(x) 在节点上满足:</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214417472.png" alt="image-20200703214417472"><br>可唯一确定一个次数不超过2n+1的多项式<br><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214612674.png" alt="image-20200703214612674"></p>
+<p>满足：  </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214700353.png" alt="image-20200703214700353"></p>
+<h5 id="分段三次埃尔米特插值"><a href="#分段三次埃尔米特插值" class="headerlink" title="分段三次埃尔米特插值"></a>分段三次埃尔米特插值</h5><p>直接使用Hermite插值得到的多项式次数较高，也<strong>存在着龙格现象</strong>， 因此在实际应用中，往往使用分段三次Hermite插值多项式(PCHIP)。</p>
+<p>Matlab有内置的函数(实现过程已经帮我们封装好了，会调用就行了)</p>
+<pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span> new_ x<span class="token punctuation">)</span></code></pre>
+<h5 id="三次样条插值"><a href="#三次样条插值" class="headerlink" title="三次样条插值"></a>三次样条插值</h5><p>设y=f(x)在点X0, X1，X2…Xn的值为y0, y1, y2….yn, 若函数S(x)满足下列条件<br>(1) S(x)=f(xi) =yi， i=0,1,2,….,n<br>(2)在每个子区间[xi, xi+1l(i=0,2,……,n-1)上S(x)是<strong>三次多项式</strong><br>(3) S(x)在|a,b]上<strong>二阶连续可微。</strong><br>(4)具有如下形式<br><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215757459.png" alt="image-20200703215757459"><br>(5)满足条件</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215829046.png" alt="image-20200703215829046"></p>
+<p>则称S(x)为函数f(x)的三次样条插值函数</p>
+<p>Matlab有内置的函数：   </p>
+<pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span>  </code></pre>
+<p>x是已知的样本点的横坐标;y是已知的样本点的纵坐标;new_x是要插入处对应的横坐标</p>
+<p>插值结果对比：  </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703220014289.png" alt="image-20200703220014289"></p>
+<p>可以看出，三次样条生成的曲线更加光滑。在实际建模中， 由于我们不知道数据的生成过程，因此这两种插值都可以使用。</p>
+<h5 id="n维数据的插值"><a href="#n维数据的插值" class="headerlink" title="n维数据的插值"></a>n维数据的插值</h5><pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>x2<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">,</span>xn<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x1<span class="token punctuation">,</span>new_x2<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">,</span>new_xn<span class="token punctuation">,</span> method<span class="token punctuation">)</span> </code></pre>
+<p>x1,x2,…,xn是已知的样本点的横坐标 y是已知的样本点的纵坐标坐标<br>new_x1,new_x2,…,new_xn是要插入点的横坐标<br> method是要插值的方法<br> ‘linear’：线性插值（默认算法）； ‘cubic’：三次插值；<br>‘ spline’ ：三次样条插值法； ( 最为精准 )<br>‘nearest’：最邻近插值算法。 </p>
+<pre class=" language-matlab"><code class="language-matlab">x <span class="token operator">=</span> ‐<span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+new_x<span class="token operator">=</span> ‐<span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">%等价于</span>
+p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> ’spline’<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r‐'</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Matlab代码实现"><a href="#Matlab代码实现" class="headerlink" title="Matlab代码实现"></a>Matlab代码实现</h3><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 分段三次埃尔米特插值</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">% 在同一个脚本文件里面，要想画多个图，需要给每个图编号，否则只会显示最后一个图哦~</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% plot函数用法:</span>
+<span class="token comment" spellcheck="true">% plot(x1,y1,x2,y2) </span>
+<span class="token comment" spellcheck="true">% 线方式： - 实线 :点线 -. 虚点线 - - 波折线 </span>
+<span class="token comment" spellcheck="true">% 点方式： . 圆点  +加号  * 星号  x x形  o 小圆</span>
+<span class="token comment" spellcheck="true">% 颜色： y黄； r红； g绿； b蓝； w白； k黑； m紫； c青</span>
+
+
+<span class="token comment" spellcheck="true">% 三次样条插值和分段三次埃尔米特插值的对比</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> 
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p1 <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">%分段三次埃尔米特插值</span>
+p2 <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">%三次样条插值</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">,</span>new_x<span class="token punctuation">,</span>p1<span class="token punctuation">,</span><span class="token string">'r-'</span><span class="token punctuation">,</span>new_x<span class="token punctuation">,</span>p2<span class="token punctuation">,</span><span class="token string">'b-'</span><span class="token punctuation">)</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'样本点'</span><span class="token punctuation">,</span><span class="token string">'三次埃尔米特插值'</span><span class="token punctuation">,</span><span class="token string">'三次样条插值'</span><span class="token punctuation">,</span><span class="token string">'Location'</span><span class="token punctuation">,</span><span class="token string">'SouthEast'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">%标注显示在东南方向</span>
+<span class="token comment" spellcheck="true">% 说明：</span>
+<span class="token comment" spellcheck="true">% LEGEND(string1,string2,string3, …)</span>
+<span class="token comment" spellcheck="true">% 分别将字符串1、字符串2、字符串3……标注到图中，每个字符串对应的图标为画图时的图标。</span>
+<span class="token comment" spellcheck="true">% ‘Location’用来指定标注显示的位置</span>
+
+
+<span class="token comment" spellcheck="true">% n维数据的插值</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> <span class="token string">'spline'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">% 等价于 p = spline(x, y, new_x);</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">)</span>
+</code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Dkyz</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xn--e1t0my86j.com/2020/07/04/2020-07-03-interpolation/">http://xn--e1t0my86j.com/2020/07/04/2020-07-03-interpolation/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Dkyz</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/math-study/">
+                                    <span class="chip bg-color">math study</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/05/2020-07-05-curvefitting/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="“数学建模-CurveFitting-(曲线拟合)-学习笔记”">
+                        
+                        <span class="card-title">“数学建模-CurveFitting-(曲线拟合)-学习笔记”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            拟合算法与插值问题不同，在拟合问题中不需要曲线一定经过给定的点。拟合问题的目标是寻求一个函数（曲线），使得该曲线在某种准则下与所有的数据点最为接近，即曲线拟合的最好（最小化损失函数）。
+插值和拟合的区别插值算法中，得到的多项式f(x)要经过
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/study/" class="post-category">
+                                    study
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/math-study/">
+                        <span class="chip bg-color">math study</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/03/2020-07-03-topsis/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="“数学建模-TOPSIS-(优劣解距离法)-学习笔记”">
+                        
+                        <span class="card-title">“数学建模-TOPSIS-(优劣解距离法)-学习笔记”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Table of Contents
+TOPSIS
+TOPSIS原理
+层次分析法的局限
+问题引出TOPSIS分析法
+问题拓展
+
+
+
+
+TOPSIS步骤
+将原始数据矩阵正向化
+将非极大型指标转换为极大型指标
+极小型指标转化为极大型指标
+中间型指
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/study/" class="post-category">
+                                    study
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/math-study/">
+                        <span class="chip bg-color">math study</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Dkyz</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">16.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:ccnu_dkyz@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=734086272" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 734086272" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

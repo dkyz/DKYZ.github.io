@@ -1,0 +1,1438 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="“数学建模-AHP(层次分析法)-学习笔记”, 德邻">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>“数学建模-AHP(层次分析法)-学习笔记” | 德邻</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="德邻" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+ daovoice('init', {
+  app_id: "8d80e22e"
+});
+daovoice('update');
+
+ </script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">德邻</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">德邻</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">“数学建模-AHP(层次分析法)-学习笔记”</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/study/" class="post-category">
+                                study
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>[TOC]</p>
+<h1 id="层次分析法"><a href="#层次分析法" class="headerlink" title="层次分析法"></a>层次分析法</h1><h2 id="层次分析法的原理"><a href="#层次分析法的原理" class="headerlink" title="层次分析法的原理"></a>层次分析法的原理</h2><h3 id="问题引出（旅游地点的决策）"><a href="#问题引出（旅游地点的决策）" class="headerlink" title="问题引出（旅游地点的决策）"></a>问题引出（旅游地点的决策）</h3><p><strong>小明同学想出去旅游。在查阅了网上的攻略后，他初步选择了苏杭、北戴河和桂林三地之一作为目标景点。</strong><br><strong>请你确定评价指标、形成评价体系来为小明同学选择最佳的方案。</strong></p>
+<p>解决评价类问题，大家首先要想到以下三个问题:   </p>
+<p>①我们评价的目标是什么?<br>答:为小明同学选择最佳的旅游景点。<br>②我们为了达到这个目标有哪几种可选的方案?<br>答:三种，分别是去苏杭、去北戴河和去桂林。<br>③评价的准则或者 说指标是什么? (我们根据什么东西 来评价好坏)<br>答:景色、花费、居住、饮食、交通………  </p>
+<p><strong>对于没有具体数据（评价标准没有相关数据支撑，需要我们自己去收集）的评价类问题，适合用层次分析法</strong></p>
+<p>“在确定影响某因素的诸因子在该因素中所占的比重时，遇到的主要困难是这些<strong>比重常常不易定量化</strong>。此外，当影响某因素的因子较多时，直接考虑各因子对该因素有多大程度的影响时，常常会因<strong>考虑不周全、顾此失彼</strong>而使决策者提出与他实际认为的<strong>重要性程度不相一致的数据，甚至有可能提出一组隐含矛盾的数据</strong>。”<br>–选自司守奎老师的《数学建模算法与应用》  </p>
+<p>（<strong>整体直接评分容易出错，需要两两比较</strong>）</p>
+<h3 id="层次分析法的思想登场"><a href="#层次分析法的思想登场" class="headerlink" title="层次分析法的思想登场"></a>层次分析法的思想登场</h3><p>   层次分析法(The Analytic Hierarchy Process即AHP)是由美国运筹学家、匹兹堡大学教授T . L. Saaty于20世纪70年代创立的一种系统分析与决策的综合评价方法，是在充分研究了人类思维过程的基础上提出来的，它<strong>较合理地解决了定性问题定量化的处理过程。</strong><br>   AHP的主要特点是通过<strong>建立递阶层次结构</strong>，<strong>把人类的判断转化到若干因素两两之间重要度的比较</strong>.上，从而把难于量化的定性判断转化为可操作的重要度的比较上面。在许多情况下，决策者可以直接使用AHP进行决策，极大地提高了决策的有效性、可靠性和可行性，但其本质是一种思维方式，它把复杂问题分解成多个组成因素，又将这些因素按支配关系分别形成递阶层次结构，通过两两比较的方法确定决策方案相对重要度的总排序。整个过程体现了人类决策思维的基本特征，即<strong>分解</strong>、<strong>判断、综合</strong>，克服了其他方法回避决策者主观判断的缺点。</p>
+<h2 id="层次分析法的步骤"><a href="#层次分析法的步骤" class="headerlink" title="层次分析法的步骤"></a>层次分析法的步骤</h2><p>分析系统中各因素的关系，建立系统的<strong>递阶层次结构</strong></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702121049429.png" alt="image-1"></p>
+<p>1.从上到下顺序地存在支配关系,并用直线段表示.除目标层外,每个元素至少受上一层一个元素支配.除最后一层外,每个元素至少支配下一层次一个元素，上下层元素的联系比同一层次强，以避免同一层次中不相邻元素存在支配关系;<br>2.整个结构中,层次数不受限制;<br>3.最高层只有一个元素,每一个元素所支配的元素一般不超过9个,元素过多时可进一步分组;  </p>
+<p>此案列中的层次结构：</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702134230359.png" alt="image-20200702134230359"></p>
+<p>我们最终需要构造的方案评分表</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702135405750.png" alt="image-20200702135405750"></p>
+<h3 id="建立判断矩阵"><a href="#建立判断矩阵" class="headerlink" title="建立判断矩阵"></a>建立判断矩阵</h3><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702121715528.png" alt="image-20200702121715528"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702135153360.png" alt="image-20200702135153360">（为了得到这五个指标在评价方案时的权重）</p>
+<p>总结:.上面这个表是一个5 x 5的方阵，我们记为A，对应的元素为aij   </p>
+<p>这个方阵有如下特点:  </p>
+<p>(1) aij表示的意义是与指标j相比，i的重要程度。  </p>
+<p>(2) 当i= j时，两个指标相同，因此同等重要记为1，这就解释了主对角线元素为1。<br>(3) aij&gt; 0且满足aijXaji=1 (我们称满足这一 条件的矩阵为正互反矩阵)           </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702135622000.png" alt="image-20200702135622000">（为了得到各方案在“景色”这一指标上的定量比较结果）</p>
+<h3 id="对判断矩阵进行一致性检验"><a href="#对判断矩阵进行一致性检验" class="headerlink" title="对判断矩阵进行一致性检验"></a>对判断矩阵进行一致性检验</h3><p>我们在两两比较求权重时，可能会出现以下矛盾:  </p>
+<p>A&gt;B;B&gt;C;C&gt;A;（比如我觉得苏杭的景色比桂林好，桂林的景色比北戴河好，北戴河的景色比苏杭好。这样就会出现矛盾）  </p>
+<p>因此需要对我们建立的判断矩阵进行一致性检验</p>
+<h5 id="一致性矩阵"><a href="#一致性矩阵" class="headerlink" title="一致性矩阵"></a>一致性矩阵</h5><p>若矩阵中每个元素aij&gt; 0且满足aij×aji= 1，则我们称该矩阵为正互反矩阵。   </p>
+<p>在层次分析法中，我们构造的判断矩阵均是正互反矩阵。    </p>
+<p>若<strong>正互反矩阵满足aijXajk = aik，</strong>则我们称其为一致矩阵。  </p>
+<h6 id="数学描述"><a href="#数学描述" class="headerlink" title="数学描述"></a>数学描述</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702130316894.png" alt="image-20200702130316894"></p>
+<p>引理: A为n阶方阵，且r(A)=1， 则A有一个特征值为tr(A)，其余特征值均为0.    </p>
+<p>因为一致矩阵的各行成比例且不是零矩阵，所以一致矩阵的秩一定为1.   </p>
+<p><strong>由引理可知:一致矩阵有一个特征值为n，其余特征值均为0.</strong>  </p>
+<p>引理二: n阶正互反矩阵A为一致矩阵时当且仅当最大特征值等于n.且当正互反矩阵A非一致时，定满足最大特征值 大于n.  </p>
+<p>判断矩阵越不一致时，最大特征值与n相差就越大。</p>
+<h4 id="一致性检验方法"><a href="#一致性检验方法" class="headerlink" title="一致性检验方法"></a>一致性检验方法</h4><p>第一步:计算一致性指标CI</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702131119901.png" alt="image-20200702131119901"></p>
+<p>第二步:查找对应的平均随机一致性指标RI</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702131146556.png" alt="image-20200702131146556"></p>
+<p>第三步:计算一致性比例CR</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702131210952.png" alt="image-20200702131210952"></p>
+<p>如果<strong>CR &lt; 0.1</strong>,则可认为判断矩阵的一致性可以接受;否则需要对判断矩阵进行修正。</p>
+<h4 id="一致性检验未通过"><a href="#一致性检验未通过" class="headerlink" title="一致性检验未通过"></a>一致性检验未通过</h4><p>回去重新填表</p>
+<h3 id="求权重"><a href="#求权重" class="headerlink" title="求权重"></a>求权重</h3><h4 id="一致性矩阵求权重"><a href="#一致性矩阵求权重" class="headerlink" title="一致性矩阵求权重"></a>一致性矩阵求权重</h4><p>因为一致性矩阵各行各列对应成比列，所以仅使用一列数据就可求出权重</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702131658371.png" alt="image-20200702131658371"></p>
+<h4 id="判断矩阵求权重"><a href="#判断矩阵求权重" class="headerlink" title="判断矩阵求权重"></a>判断矩阵求权重</h4><p>因为判断矩阵虽通过了一致性检验，但其却不是一致性矩阵，<strong>判断矩阵不同列计算出的权重不一样</strong>，下面有3个方法求判断矩阵权重</p>
+<h5 id="方法一：算数平均法求权重"><a href="#方法一：算数平均法求权重" class="headerlink" title="方法一：算数平均法求权重"></a>方法一：算数平均法求权重</h5><p>第一步:将判断矩阵按照列归一化(每一个元素除以其所在列的和)<br>第二步:将归一化的各列相加(按行求和)  </p>
+<p>第三步:将相加后得到的向量中每个元素除以n即可得到权重向量  </p>
+<p><strong>数学描述</strong>：</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702132423855.png" alt="image-20200702132423855"></p>
+<h5 id="方法2-几何平均法求权重"><a href="#方法2-几何平均法求权重" class="headerlink" title="方法2:几何平均法求权重"></a>方法2:几何平均法求权重</h5><p>几何平均法求权重也有三步:  </p>
+<p>第一步:  </p>
+<p>将A的元素按照行相乘得到一个新的列向量  </p>
+<p>第二步:  </p>
+<p>将新的向量的每个分量开n次方  </p>
+<p>第三步:<br>对该列向量进行归一化即可得到权重向量  </p>
+<p><strong>数学描述</strong>：</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702132624783.png" alt="image-20200702132624783"></p>
+<h5 id="方法3-特征值法求权重"><a href="#方法3-特征值法求权重" class="headerlink" title="方法3:特征值法求权重"></a>方法3:特征值法求权重</h5><p>一致矩阵有一个特征值为n， 其余特征值均为0.  </p>
+<p>另外，我们很容易得到，特征值为n时，对应的特征向量刚好为</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702132822091.png" alt="image-20200702132822091"></p>
+<p>这一特征向量刚好就是一致矩阵的第一列。  </p>
+<p>假如我们的判断矩阵一致性可 以接受，那么我们可以仿照一致矩阵权重 的求法。  </p>
+<p>第一步:<strong>求出矩阵A的最大特征值以及其对应的特征向量</strong>   </p>
+<p>第二步:对求出的特征向量<strong>进行归一化</strong>即可得到我们的权重  </p>
+<h3 id="将计算结果填入权重表得到权重矩阵"><a href="#将计算结果填入权重表得到权重矩阵" class="headerlink" title="将计算结果填入权重表得到权重矩阵"></a>将计算结果填入权重表得到权重矩阵</h3><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/AHP/image-20200702133501990.png" alt="image-20200702133501990"></p>
+<p>计算各方案得分。。。。</p>
+<h2 id="Matlab代码部分"><a href="#Matlab代码部分" class="headerlink" title="Matlab代码部分"></a>Matlab代码部分</h2><h3 id="层次分析模型matlab代码"><a href="#层次分析模型matlab代码" class="headerlink" title="层次分析模型matlab代码"></a>层次分析模型matlab代码</h3><pre class=" language-matlab"><code class="language-matlab"><span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'请输入判断矩阵A'</span><span class="token punctuation">)</span>A<span class="token operator">=</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'A='</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">[</span>n<span class="token punctuation">,</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span class="token comment" spellcheck="true">% % % % % % % % % % % % %方法1： 算术平均法求权重% % % % % % % % % % % % %</span>
+
+Sum_A <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+SUM_A <span class="token operator">=</span> <span class="token function">repmat</span><span class="token punctuation">(</span>Sum_A<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Stand_A <span class="token operator">=</span> A <span class="token operator">./</span> SUM_A<span class="token punctuation">;</span>
+
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'算术平均法求权重的结果为：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span>Stand_A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">./</span>n<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% % % % % % % % % % % % %方法2： 几何平均法求权重% % % % % % % % % % % % %</span>
+
+Prduct_A <span class="token operator">=</span> <span class="token function">prod</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Prduct_n_A <span class="token operator">=</span> Prduct_A <span class="token operator">.^</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'几何平均法求权重的结果为：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span>Prduct_n_A <span class="token operator">./</span> <span class="token function">sum</span><span class="token punctuation">(</span>Prduct_n_A<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% % % % % % % % % % % % %方法3： 特征值法求权重% % % % % % % % % % % % %</span>
+
+<span class="token punctuation">[</span>V<span class="token punctuation">,</span>D<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Max_eig <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span>D<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span>r<span class="token punctuation">,</span>c<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">find</span><span class="token punctuation">(</span>D <span class="token operator">==</span> Max_eig <span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">%  D == Max_eig   会返回一个与D同类型的值为“0”/“1”的矩阵</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'特征值法求权重的结果为：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span> <span class="token function">V</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span> <span class="token operator">./</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">V</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% % % % % % % % % % % % %下面是计算一致性比例CR的环节% % % % % % % % % % % </span>
+<span class="token comment" spellcheck="true">% %</span>
+CI <span class="token operator">=</span> <span class="token punctuation">(</span>Max_eig <span class="token operator">-</span> n<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+RI<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">0.0001</span> <span class="token number">0.52</span> <span class="token number">0.89</span> <span class="token number">1.12</span> <span class="token number">1.26</span> <span class="token number">1.36</span> <span class="token number">1.41</span> <span class="token number">1.46</span> <span class="token number">1.49</span> <span class="token number">1.52</span> <span class="token number">1.54</span> <span class="token number">1.56</span> <span class="token number">1.58</span> <span class="token number">1.59</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">%注意哦，这里的RI最多支持 n = 15</span>
+
+<span class="token comment" spellcheck="true">% 这里n=2时，一定是一致矩阵，所以CI = 0，我们为了避免分母为0，将这里的第二个元素改为了很接近0的正数</span>
+
+CR<span class="token operator">=</span>CI<span class="token operator">/</span><span class="token function">RI</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'一致性指标CI='</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">disp</span><span class="token punctuation">(</span>CI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'一致性比例CR='</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">disp</span><span class="token punctuation">(</span>CR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> CR<span class="token operator">&lt;</span><span class="token number">0.10</span>
+
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'因为CR&lt;0.10，所以该判断矩阵A的一致性可以接受!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">else</span>
+
+
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'注意：CR >= 0.10，因此该判断矩阵A需要进行修改!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">end</span></code></pre>
+<h3 id="所需的matlab基础知识"><a href="#所需的matlab基础知识" class="headerlink" title="所需的matlab基础知识"></a>所需的matlab基础知识</h3><h4 id="Matlab基本的小常识"><a href="#Matlab基本的小常识" class="headerlink" title="Matlab基本的小常识"></a>Matlab基本的小常识</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% (1)在每一行的语句后面加上分号(一定要是英文的哦;中文的长这个样子；)表示不显示运行结果</span>
+a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token number">5</span>
+
+<span class="token comment" spellcheck="true">% (2)多行注释:选中要注释的若干语句,快捷键Ctrl+R</span>
+<span class="token comment" spellcheck="true">% a = 3;</span>
+<span class="token comment" spellcheck="true">% a = 5</span>
+
+<span class="token comment" spellcheck="true">% (3)取消注释:选中要取消注释的语句,快捷键Ctrl+T</span></code></pre>
+<h4 id="clear可以清楚工作区的所有变量"><a href="#clear可以清楚工作区的所有变量" class="headerlink" title="clear可以清楚工作区的所有变量"></a>clear可以清楚工作区的所有变量</h4><pre class=" language-matlab"><code class="language-matlab">clear</code></pre>
+<h4 id="clc可以清除命令行窗口中的所有文本-让屏幕变得干净"><a href="#clc可以清除命令行窗口中的所有文本-让屏幕变得干净" class="headerlink" title="clc可以清除命令行窗口中的所有文本,让屏幕变得干净"></a>clc可以清除命令行窗口中的所有文本,让屏幕变得干净</h4><pre class=" language-matlab"><code class="language-matlab">clc
+
+<span class="token comment" spellcheck="true">% 所以大家在很多代码开头，都会见到:</span>
+
+clear<span class="token punctuation">;</span>clc   <span class="token comment" spellcheck="true">% 分号也用于区分行。</span>
+
+<span class="token comment" spellcheck="true">% 这两条一起使用，起到“初始化”的作用，防止之前的结果对新脚本文件（后缀名是 .m）产生干扰。</span></code></pre>
+<h4 id="输出和输入函数-disp-和-input"><a href="#输出和输入函数-disp-和-input" class="headerlink" title="输出和输入函数(disp 和 input)"></a>输出和输入函数(disp 和 input)</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% disp函数</span>
+
+<span class="token comment" spellcheck="true">% matlab中disp()就是屏幕输出函数，类似于c语言中的printf（）函数</span></code></pre>
+<h4 id="matlab中两个字符串的合并有两种方法"><a href="#matlab中两个字符串的合并有两种方法" class="headerlink" title="matlab中两个字符串的合并有两种方法"></a>matlab中两个字符串的合并有两种方法</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% （1）strcat(str1,str2……,strn) </span>
+
+ <span class="token function">strcat</span><span class="token punctuation">(</span><span class="token string">'字符串1'</span><span class="token punctuation">,</span><span class="token string">'字符串2'</span><span class="token punctuation">)</span> 
+
+<span class="token comment" spellcheck="true">% （2）[str 1,str 2，……, str n]或[str1  str2  ……  strn]</span>
+
+<span class="token punctuation">[</span><span class="token string">'字符串1'</span>  <span class="token string">'字符串2'</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token string">'字符串1'</span><span class="token punctuation">,</span><span class="token string">'字符串2'</span><span class="token punctuation">]</span></code></pre>
+<h4 id="num2str-将数字转换为字符串"><a href="#num2str-将数字转换为字符串" class="headerlink" title="num2str  将数字转换为字符串"></a>num2str  将数字转换为字符串</h4><pre class=" language-matlab"><code class="language-matlab">c <span class="token operator">=</span> <span class="token number">100</span>
+
+<span class="token function">num2str</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'c的取值为'</span> <span class="token function">num2str</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token function">strcat</span><span class="token punctuation">(</span><span class="token string">'c的取值为'</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="input函数"><a href="#input函数" class="headerlink" title="input函数"></a>input函数</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 一般我们会将输入的数、向量、矩阵、字符串等赋给一个变量，这里我们赋给A</span>
+
+A <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'请输入A：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+B <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'请输入B：'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% 注意观察工作区，并体会input后面加分号和不加分号的区别</span></code></pre>
+<h4 id="sum函数"><a href="#sum函数" class="headerlink" title="sum函数"></a>sum函数</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% （1）如果是向量（无论是行向量还是列向量），都是直接求和</span>
+
+E <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span>
+
+E <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% （2）如果是矩阵，则需要根据行和列的方向作区分</span>
+
+clc
+
+E <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">;</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">% a=sum(x); %按列求和(得到一个行向量）</span>
+
+a <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% a=sum(x,2); %按行求和(得到一个列向量）</span>
+
+a <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% a=sum(x(:));%对整个矩阵求和</span>
+
+a <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span>E<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+a <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">E</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="基础：matlab中如何提取矩阵中指定位置的元素？"><a href="#基础：matlab中如何提取矩阵中指定位置的元素？" class="headerlink" title="基础：matlab中如何提取矩阵中指定位置的元素？"></a>基础：matlab中如何提取矩阵中指定位置的元素？</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% （1）取指定行和列的一个元素（输出的是一个值）</span>
+
+clc<span class="token punctuation">;</span>A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">4</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">4</span> <span class="token number">1</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span> <span class="token number">3</span> <span class="token number">3</span> <span class="token number">1</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">2</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">3</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+A
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% （2）取指定的某一行的全部元素（输出的是一个行向量）</span>
+
+clc<span class="token punctuation">;</span>A
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% （3）取指定的某一列的全部元素（输出的是一个列向量）</span>
+
+clc<span class="token punctuation">;</span>A
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% （4）取指定的某些行的全部元素（输出的是一个矩阵）</span>
+
+clc<span class="token punctuation">;</span>A
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">% 只取第二行和第五行（一共2行）</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">% 取第二行到第五行（一共4行）</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">% 取第二行和第四行 （从2开始，每次递增2个单位，到5结束）</span>
+
+<span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">10</span>
+
+<span class="token number">10</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">1</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">% 取第二行到最后一行</span>
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token number">-1</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 取第二行到倒数第二行</span>
+
+<span class="token comment" spellcheck="true">% （5）取全部元素(按列拼接的，最终输出的是一个列向量)</span>
+
+clc<span class="token punctuation">;</span>A
+
+<span class="token function">A</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">)</span></code></pre>
+<h4 id="size函数"><a href="#size函数" class="headerlink" title="size函数"></a>size函数</h4><pre class=" language-matlab"><code class="language-matlab">clc<span class="token punctuation">;</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+<span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+<span class="token function">size</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% size(A)函数是用来求矩阵A的大小的,它返回一个行向量，第一个元素是矩阵的行数，第二个元素是矩阵的列数</span>
+
+<span class="token punctuation">[</span>r<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% 将矩阵A的行数返回到第一个变量r，将矩阵的列数返回到第二个变量c</span>
+
+r <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">%返回行数</span>
+
+c <span class="token operator">=</span> <span class="token function">size</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%返回列数</span></code></pre>
+<h4 id="repmat函数"><a href="#repmat函数" class="headerlink" title="repmat函数"></a>repmat函数</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% B = repmat(A,m,n):将矩阵A复制m×n块，即把A作为B的元素，B由m×n个A平铺而成。</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+B <span class="token operator">=</span> <span class="token function">repmat</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+B <span class="token operator">=</span> <span class="token function">repmat</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+<h4 id="Matlab中矩阵的运算"><a href="#Matlab中矩阵的运算" class="headerlink" title="Matlab中矩阵的运算"></a>Matlab中矩阵的运算</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% MATLAB在矩阵的运算中，“*”号和“/”号代表矩阵之间的乘法与除法(A/B = A*inv(B))</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+
+B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+A <span class="token operator">*</span> B
+
+<span class="token function">inv</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">% 求B的逆矩阵</span>
+
+B <span class="token operator">*</span> <span class="token function">inv</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+
+A <span class="token operator">*</span> <span class="token function">inv</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+
+A <span class="token operator">/</span> B
+
+
+<span class="token comment" spellcheck="true">% 两个形状相同的矩阵对应元素之间的乘除法需要使用“.*”和“./”</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+
+B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+A <span class="token operator">.*</span> B
+
+A <span class="token operator">./</span> B
+
+
+<span class="token comment" spellcheck="true">% 每个元素同时和常数相乘或相除操作都可以使用</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+
+A <span class="token operator">*</span> <span class="token number">2</span>
+
+A <span class="token operator">.*</span> <span class="token number">2</span>
+
+A <span class="token operator">/</span> <span class="token number">2</span> 
+
+A <span class="token operator">./</span> <span class="token number">2</span>
+
+
+<span class="token comment" spellcheck="true">% 每个元素同时乘方时只能用 .^</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+
+A <span class="token operator">.^</span> <span class="token number">2</span>
+
+A <span class="token operator">^</span> <span class="token number">2</span> 
+
+A <span class="token operator">*</span> A</code></pre>
+<h4 id="Matlab中求特征值和特征向量"><a href="#Matlab中求特征值和特征向量" class="headerlink" title="Matlab中求特征值和特征向量"></a>Matlab中求特征值和特征向量</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 在Matlab中，计算矩阵A的特征值和特征向量的函数是eig(A),其中最常用的两个用法：</span>
+
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token punctuation">;</span><span class="token number">2</span> <span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token number">2</span> <span class="token number">0</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">% （1）E=eig(A)：求矩阵A的全部特征值，构成向量E。</span>
+
+E<span class="token operator">=</span><span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% （2）[V,D]=eig(A)：求矩阵A的全部特征值，构成对角阵D，并求A的特征向量构成V的列向量。（V的每一列都是D中与之相同列的特征值的特征向量）</span>
+
+<span class="token punctuation">[</span>V<span class="token punctuation">,</span>D<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span></code></pre>
+<h4 id="find函数的基本用法"><a href="#find函数的基本用法" class="headerlink" title="find函数的基本用法"></a>find函数的基本用法</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 下面例子来自博客：https://www.cnblogs.com/anzhiwu815/p/5907033.html 博客内有更加深入的探究</span>
+
+<span class="token comment" spellcheck="true">% find函数，它可以用来返回向量或者矩阵中不为0的元素的位置索引。</span>
+
+clc<span class="token punctuation">;</span>X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">0</span> <span class="token number">4</span> <span class="token operator">-</span><span class="token number">3</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">8</span> <span class="token number">6</span><span class="token punctuation">]</span>
+
+ind <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% 其有多种用法，比如返回前2个不为0的元素的位置：</span>
+
+ind <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">%上面针对的是向量（一维），若X是一个矩阵（二维，有行和列），索引该如何返回呢？</span>
+
+clc<span class="token punctuation">;</span>X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">3</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">0</span> <span class="token number">6</span><span class="token punctuation">]</span>
+
+ind <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% 这是因为在Matlab在存储矩阵时，是一列一列存储的，我们可以做一下验证：</span>
+
+<span class="token function">X</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% 假如你需要按照行列的信息输出该怎么办呢？</span>
+
+<span class="token punctuation">[</span>r<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>r<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">%只找第一个非0元素</span></code></pre>
+<h4 id="矩阵与常数的大小判断运算"><a href="#矩阵与常数的大小判断运算" class="headerlink" title="矩阵与常数的大小判断运算"></a>矩阵与常数的大小判断运算</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 共有三种运算符：大于> ;小于&lt; ;等于 ==  （一个等号表示赋值；两个等号表示判断）</span>
+
+clc
+
+X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">3</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">8</span><span class="token punctuation">;</span><span class="token number">4</span> <span class="token number">0</span> <span class="token number">6</span><span class="token punctuation">]</span>
+
+X <span class="token operator">></span> <span class="token number">0</span>
+
+X <span class="token operator">==</span> <span class="token number">4</span></code></pre>
+<h4 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h4><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% Matlab的判断语句，if所在的行不需要冒号，语句的最后一定要以end结尾 ；中间的语句要注意缩进。</span>
+
+a <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'请输入考试分数:'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> a <span class="token operator">>=</span> <span class="token number">85</span>  
+
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'成绩优秀'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">elseif</span> a <span class="token operator">>=</span> <span class="token number">60</span> 
+
+   <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'成绩合格'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">else</span>
+    <span class="token function">disp</span><span class="token punctuation">(</span><span class="token string">'成绩挂科'</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Dkyz</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xn--e1t0my86j.com/2020/07/02/2020-07-02-ahp/">http://xn--e1t0my86j.com/2020/07/02/2020-07-02-ahp/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Dkyz</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/03/2020-07-03-topsis/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="“数学建模-TOPSIS-(优劣解距离法)-学习笔记”">
+                        
+                        <span class="card-title">“数学建模-TOPSIS-(优劣解距离法)-学习笔记”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Table of Contents
+TOPSIS
+TOPSIS原理
+层次分析法的局限
+问题引出TOPSIS分析法
+问题拓展
+
+
+
+
+TOPSIS步骤
+将原始数据矩阵正向化
+将非极大型指标转换为极大型指标
+极小型指标转化为极大型指标
+中间型指
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/study/" class="post-category">
+                                    study
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/math-study/">
+                        <span class="chip bg-color">math study</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/02/2020-07-02-ahp/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="“数学建模-AHP(层次分析法)-学习笔记”">
+                        
+                        <span class="card-title">“数学建模-AHP(层次分析法)-学习笔记”</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            [TOC]
+层次分析法层次分析法的原理问题引出（旅游地点的决策）小明同学想出去旅游。在查阅了网上的攻略后，他初步选择了苏杭、北戴河和桂林三地之一作为目标景点。请你确定评价指标、形成评价体系来为小明同学选择最佳的方案。
+解决评价类问题，大家首
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/study/" class="post-category">
+                                    study
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Dkyz</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">16.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:ccnu_dkyz@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=734086272" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 734086272" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

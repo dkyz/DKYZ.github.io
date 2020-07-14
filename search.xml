@@ -29,6 +29,56 @@
     
     
     <entry>
+      <title>“HTML学习笔记”</title>
+      <link href="/2020/07/14/2020-07-14-html-xue-xi-bi-ji/"/>
+      <url>/2020/07/14/2020-07-14-html-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<ul><li>HTML 指的是超文本标记语言 (<strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage)</li><li>HTML 不是一种编程语言，而是一种<em>标记语言</em> (markup language)</li><li>标记语言是一套<em>标记标签</em> (markup tag)</li><li>HTML 使用<em>标记标签</em>来描述网页</li></ul><h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><p>HTML 标签是由<em>尖括号</em>包围的关键词，比如</p><pre><code> &lt;html&gt;</code></pre><p>HTML 标签通常是<em>成对出现</em>的，比如 </p><pre><code>&lt;b&gt;和 &lt;/b&gt;</code></pre><p>标签对中的第一个标签是<em>开始标签<em>，第二个标签是</em>结束标签</em></p><p>HTML 文档<em>包含 HTML 标签<em>和纯文本<br>HTML 文档也被称为</em>网页</em><br>Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容</p><h2 id="基本的HTML标签"><a href="#基本的HTML标签" class="headerlink" title="基本的HTML标签"></a>基本的HTML标签</h2><p>HTML 标题（Heading）是通过 <h1> - <h6> 等标签进行定义的<br>HTML 段落是通过 <p> 标签进行定义的。  </p><pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre><p>HTML 链接是通过 <a> 标签进行定义的。</p><pre><code>&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;</code></pre><p>HTML 图像是通过 <img> 标签进行定义的。</p><pre><code>&lt;img src=&quot;w3school.jpg&quot; width=&quot;104&quot; height=&quot;142&quot; /&gt;</code></pre><p>HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p><table><thead><tr><th>开始标签</th><th>元素内容</th><th>结束标签</th></tr></thead><tbody><tr><td><p></td><td>This is a paragraph</td><td></p></td></tr><tr><td><a href="default.htm" ></td><td>This is a link</td><td></a></td></tr><tr><td><br /></td><td></td><td></td></tr></tbody></table><ul><li><p>某些 HTML 元素具有<em>空内容（empty content）</em></p></li><li><p>空元素<em>在开始标签中进行关闭</em>（以开始标签的结束而结束）</p></li><li><p>大多数 HTML 元素可拥有<em>属性</em></p></li><li><p>大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。</p></li><li><p>HTML 文档由嵌套的 HTML 元素构成。</p></li></ul><pre><code>&lt;html&gt;&lt;body&gt;&lt;p&gt;This is my first paragraph.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;上面的例子包含三个 HTML 元素。</code></pre><h3 id="元素："><a href="#元素：" class="headerlink" title=" 元素："></a><p> 元素：</h3><pre><code>&lt;p&gt;This is my first paragraph.&lt;/p&gt;</code></pre><p>这个 <p> 元素定义了 HTML 文档中的一个段落。</p><h3 id="元素：-1"><a href="#元素：-1" class="headerlink" title=" 元素："></a><body> 元素：</h3><pre><code>&lt;body&gt;&lt;p&gt;This is my first paragraph.&lt;/p&gt;&lt;/body&gt;</code></pre><body> 元素定义了 HTML 文档的主体。<p>元素内容是另一个 HTML 元素（p 元素）。</p><h3 id="元素：-2"><a href="#元素：-2" class="headerlink" title=" 元素："></a><html> 元素：</h3><pre><code>&lt;html&gt;&lt;body&gt;&lt;p&gt;This is my first paragraph.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><html> 元素定义了整个 HTML 文档。<p>元素内容是另一个 HTML 元素（body 元素）。</p><h3 id="空的-HTML-元素"><a href="#空的-HTML-元素" class="headerlink" title="空的 HTML 元素"></a>空的 HTML 元素</h3><p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</p><pre><code>&lt;br&gt; 就是没有关闭标签的空元素（&lt;br&gt; 标签定义换行）。</code></pre><h2 id="HTML属性"><a href="#HTML属性" class="headerlink" title="HTML属性"></a>HTML属性</h2><p>HTML 标签可以拥有<em>属性</em>。属性提供了有关 HTML 元素的<em>更多的信息</em>。</p><p>属性总是以名称/值对的形式出现，比如：<em>name=”value”</em>。</p><p>属性总是在 HTML 元素的<em>开始标签</em>中规定。</p><h3 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h3><p>HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：</p><pre><code>&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;</code></pre><pre><code>&lt;h1&gt; 定义标题的开始。&lt;h1 align=&quot;center&quot;&gt; 拥有关于对齐方式的附加信息。&lt;body&gt; 定义 HTML 文档的主体。&lt;body bgcolor=&quot;yellow&quot;&gt; 拥有关于背景颜色的附加信息。&lt;table&gt; 定义 HTML 表格。（您将在稍后的章节学习到更多有关 HTML 表格的内容）&lt;table border=&quot;1&quot;&gt; 拥有关于表格边框的附加信息。</code></pre><p>属性和属性值对大小写<em>不敏感</em>。</p><p><strong>始终为属性值加引号</strong></p><h3 id="HTML-属性参考手册"><a href="#HTML-属性参考手册" class="headerlink" title="HTML 属性参考手册"></a>HTML 属性参考手册</h3><table><thead><tr><th>属性</th><th>值</th><th>描述</th></tr></thead><tbody><tr><td>class</td><td><em>classname</em></td><td>规定元素的类名（classname）</td></tr><tr><td>id</td><td><em>id</em></td><td>规定元素的唯一 id</td></tr><tr><td>style</td><td><em>style_definition</em></td><td>规定元素的行内样式（inline style）</td></tr><tr><td>title</td><td><em>text</em></td><td>规定元素的额外信息（可在工具提示中显示）</td></tr></tbody></table><h3 id="HTML-水平线"><a href="#HTML-水平线" class="headerlink" title="HTML 水平线"></a>HTML 水平线</h3><pre><code>&lt;hr /&gt; 标签在 HTML 页面中创建水平线。</code></pre><h3 id="HTML-注释"><a href="#HTML-注释" class="headerlink" title="HTML 注释"></a>HTML 注释</h3><pre><code>&lt;!-- This is a comment --&gt;</code></pre><h3 id="HTML-输出"><a href="#HTML-输出" class="headerlink" title="HTML 输出"></a>HTML 输出</h3><p>当显示页面时，浏览器会移除<em>源代码中</em>多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。</p><h3 id="HTML-样式"><a href="#HTML-样式" class="headerlink" title="HTML 样式"></a>HTML 样式</h3><p>style 属性用于改变 HTML 元素的样式。</p><p><strong>应该避免使用下面这些标签和属性：</strong></p><table><thead><tr><th>标签</th><th>描述</th></tr></thead><tbody><tr><td><center></td><td>定义居中的内容。</td></tr><tr><td><font> 和 <basefont></td><td>定义 HTML 字体。</td></tr><tr><td><s> 和 <strike></td><td>定义删除线文本</td></tr><tr><td><u></td><td>定义下划线文本</td></tr><tr><td>属性</td><td>描述</td></tr><tr><td>align</td><td>定义文本的对齐方式</td></tr><tr><td>bgcolor</td><td>定义背景颜色</td></tr><tr><td>color</td><td>定义文本颜色</td></tr></tbody></table><h3 id="HTML-样式实例-背景颜色"><a href="#HTML-样式实例-背景颜色" class="headerlink" title="HTML 样式实例 - 背景颜色"></a>HTML 样式实例 - 背景颜色</h3><p>background-color 属性为元素定义了背景颜色：</p><pre><code>&lt;html&gt;&lt;body style=&quot;background-color:yellow&quot;&gt;&lt;h2 style=&quot;background-color:red&quot;&gt;This is a heading&lt;/h2&gt;&lt;p style=&quot;background-color:green&quot;&gt;This is a paragraph.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h3 id="HTML-样式实例-字体、颜色和尺寸"><a href="#HTML-样式实例-字体、颜色和尺寸" class="headerlink" title="HTML 样式实例 - 字体、颜色和尺寸"></a>HTML 样式实例 - 字体、颜色和尺寸</h3><p>font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸：</p><pre><code>&lt;html&gt;&lt;body&gt;&lt;h1 style=&quot;font-family:verdana&quot;&gt;A heading&lt;/h1&gt;&lt;p style=&quot;font-family:arial;color:red;font-size:20px;&quot;&gt;A paragraph.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h3 id="HTML-样式实例-文本对齐"><a href="#HTML-样式实例-文本对齐" class="headerlink" title="HTML 样式实例 - 文本对齐"></a>HTML 样式实例 - 文本对齐</h3><p>text-align 属性规定了元素中文本的水平对齐方式：</p><pre><code>&lt;html&gt;&lt;body&gt;&lt;h1 style=&quot;text-align:center&quot;&gt;This is a heading&lt;/h1&gt;&lt;p&gt;The heading above is aligned to the center of this page.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h3 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h3><table><thead><tr><th>标签</th><th>描述</th></tr></thead><tbody><tr><td><b></td><td>定义粗体文本。</td></tr><tr><td><big></td><td>定义大号字。</td></tr><tr><td><em></td><td>定义着重文字。</td></tr><tr><td><i></td><td>定义斜体字。</td></tr><tr><td><small></td><td>定义小号字。</td></tr><tr><td><strong></td><td>定义加重语气。</td></tr><tr><td><sub></td><td>定义下标字。</td></tr><tr><td><sup></td><td>定义上标字。</td></tr><tr><td>### “计算机输出”标签</td><td></td></tr></tbody></table><table><thead><tr><th>标签</th><th>描述</th></tr></thead><tbody><tr><td><code></td><td>定义计算机代码。</td></tr><tr><td><kbd></td><td>定义键盘码。</td></tr><tr><td><samp></td><td>定义计算机代码样本。</td></tr><tr><td><tt></td><td>定义打字机代码。</td></tr><tr><td><var></td><td>定义变量。</td></tr><tr><td><pre></td><td>定义预格式文本。</td></tr></tbody></table><h3 id="引用、引用和术语定义"><a href="#引用、引用和术语定义" class="headerlink" title="引用、引用和术语定义"></a>引用、引用和术语定义</h3><table><thead><tr><th>标签</th><th>描述</th></tr></thead><tbody><tr><td><abbr></td><td>定义缩写。</td></tr><tr><td><acronym></td><td>定义首字母缩写。</td></tr><tr><td><address></td><td>定义地址。</td></tr><tr><td><bdo></td><td>定义文字方向。</td></tr><tr><td><blockquote></td><td>定义长的引用。</td></tr><tr><td><q></td><td>定义短的引用语。</td></tr><tr><td><cite></td><td>定义引用、引证。</td></tr><tr><td><dfn></td><td>定义一个定义项目。</td></tr></tbody></table><h2 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML CSS"></a>HTML CSS</h2><p><strong>通过使用 HTML4.0，所有的格式化代码均可移出 HTML 文档，然后移入一个独立的样式表</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web study </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“力学万有引力复习课总结”</title>
+      <link href="/2020/07/14/2020-07-14-wan-you-yin-li/"/>
+      <url>/2020/07/14/2020-07-14-wan-you-yin-li/</url>
+      
+        <content type="html"><![CDATA[<p> 求解质量连续分布的物体在某一点激发的引力场<br>思路：分割求和取极限  </p><p>分割：三定<br>定位置： 建立坐标系，确立原点的位置，这样就可以把每个微元的空间位置表示出来  </p><p>定距离: 类比于电磁学，把万有引力看成有质量的物体（场源）激发出的场产生的力  </p><p>定质量的表达式:  质量是线分布、面分布、还是体分布。用其它物理量表示出来<br>球坐标系下面分布，体分布表达式：<br>例题：</p><p>1：求质量均匀连续分布的半圆环对空间中O点产生的引力<img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/image-20200714183517319.png" alt=""></p><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/93C73A2FC81A6CE0AAFC7EFE790FBD62.jpg" alt=""></p><p>2：求质量均匀连续分布的细棒对延长线处某一点的引力<img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/image-20200714183531853.png" alt=""></p><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/D0CC0C369D916DE89A8CC151E3803751.jpg" alt=""></p><p>设地球位于近日点的速率为v1日地距离为r1；远日点的速率为v2，日地距离为r2。试求v1与v2</p><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/0DD08279C09AB8487EE23E47784850C4.jpg" alt=""></p><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B/F4C7A86AB9F289D32E06C944087F49EA.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> physics study </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>“建站不易~~~~~~~~”</title>
       <link href="/2020/07/08/2020-07-08-jian-zhan-bu-yi/"/>
       <url>/2020/07/08/2020-07-08-jian-zhan-bu-yi/</url>

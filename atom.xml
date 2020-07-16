@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
-  <updated>2020-07-15T06:22:45.555Z</updated>
+  <updated>2020-07-16T08:11:18.484Z</updated>
   <id>http://张德邻.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>“力学振动与波复习（预习）笔记（一）”</title>
+    <link href="http://张德邻.com/2020/07/16/2020-07-16-zhen-dong-yi/"/>
+    <id>http://张德邻.com/2020/07/16/2020-07-16-zhen-dong-yi/</id>
+    <published>2020-07-15T16:00:00.000Z</published>
+    <updated>2020-07-16T08:11:18.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;振动与波&quot;&gt;&lt;a href=&quot;#振动与波&quot; class=&quot;headerlink&quot; title=&quot;振动与波&quot;&gt;&lt;/a&gt;振动与波&lt;/h1&gt;&lt;p&gt;一个物理系统，如果处于某个平衡位置，稍受扰动后就围绕着平衡位置来回振动。振动在介质中的传播就形成波&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
+    
+    
+      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
+    
+  </entry>
+  
+  <entry>
     <title>“力学刚体力学复习课总结”</title>
     <link href="http://张德邻.com/2020/07/15/2020-07-15-gang-ti-li-xue/"/>
     <id>http://张德邻.com/2020/07/15/2020-07-15-gang-ti-li-xue/</id>
     <published>2020-07-14T16:00:00.000Z</published>
-    <updated>2020-07-15T06:22:45.555Z</updated>
+    <updated>2020-07-15T15:01:26.402Z</updated>
     
     <summary type="html">
     

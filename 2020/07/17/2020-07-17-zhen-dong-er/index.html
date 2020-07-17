@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“数学建模-CurveFitting-(曲线拟合)-学习笔记”, 德邻">
+    <meta name="keywords" content="“力学振动与波复习（预习）笔记（二）”, 德邻">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“数学建模-CurveFitting-(曲线拟合)-学习笔记” | 德邻</title>
+    <title>“力学振动与波复习（预习）笔记（二）” | 德邻</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -186,12 +186,12 @@ daovoice('update');
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“数学建模-CurveFitting-(曲线拟合)-学习笔记”</h1>
+                    <h1 class="description center-align post-title">“力学振动与波复习（预习）笔记（二）”</h1>
                 </div>
             </div>
         </div>
@@ -308,8 +308,8 @@ daovoice('update');
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/math-study/">
-                                <span class="chip bg-color">math study</span>
+                            <a href="/tags/physics-study/">
+                                <span class="chip bg-color">physics study</span>
                             </a>
                         
                     </div>
@@ -333,28 +333,28 @@ daovoice('update');
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-05
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    5 分
                 </div>
                 
 
@@ -369,119 +369,77 @@ daovoice('update');
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="拟合算法"><a href="#拟合算法" class="headerlink" title="拟合算法"></a>拟合算法</h1><p>与插值问题不同，在拟合问题中<strong>不需要曲线一定经过给定的点</strong>。拟合问题的目标是寻求一个函数（曲线），使得该曲线在某种准则下<strong>与所有的数据点最为接近</strong>，即曲线拟合的最好（最小化损失函数）。</p>
-<h2 id="插值和拟合的区别"><a href="#插值和拟合的区别" class="headerlink" title="插值和拟合的区别"></a>插值和拟合的区别</h2><p>插值算法中，得到的多项式f(x)要经过所有样本点。但是如果样本点太多，那 么这个多项式次数过高，会造成<strong>龙格现象</strong>。   </p>
-<p>尽管我们可以选择分段的方法避免这种现象，但是更多时候我们更倾向于得到 一个确定的曲线，尽管这条曲线不能经过每一个样本点，但只要保证误差足够小即 可，这就是拟合的思想。(<strong>拟合的结果是得到一个确定的曲线</strong>)<br>一个小例子：<br>找出y和x之间的 拟合曲线（这种给的点特别多的情况下，如果使用插值法，得到的多项式的次数就会特别高，所有点都穿过的话，龙格现象（插值法里面有讲到）就会特别明显）</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216" style="zoom:50%;" /><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626"> style=”zoom:50%;” /&gt;<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320" style="zoom: 80%;" /></p>
-<p>若使用插值法，在多项式的次数特别高时，得到的图像在点与点之间波动特别大：（随手画的，对这么多个点进行插值产生的龙格现象是很明显的）<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955"></p>
-<p>设这些样本点为(xi,yi), i=1,2,.,n  </p>
-<p>我们设置的拟合曲线为y= kx +b  </p>
-<p>问题: k和b取何值时，样本点和拟合曲线最接近。</p>
-<h2 id="最小二乘法的几何解释"><a href="#最小二乘法的几何解释" class="headerlink" title="最小二乘法的几何解释"></a>最小二乘法的几何解释</h2><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153309990.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153309990"></p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153327013.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153327013"></p>
-<p>第一种定义有绝对值，不容易求导，因此计算比较复杂。所以我们往往使用第二种定义，这也正是最小二乘的思想<br>(为什么不用三次方，四次方呢？)<br>三次方：正负会相互抵消一部分<br>四次方：若有一个点误差较大，那么此极端数据对拟合曲线的影响比二次方时大得多</p>
-<h3 id="求解最小二乘法"><a href="#求解最小二乘法" class="headerlink" title="求解最小二乘法"></a>求解最小二乘法</h3><p>设这些样本点为(xi,yi), i=1,2,…..,n,我们设置的拟合曲线为y= kx + b<br>下图的argmin(…..)表示确定参数k,b的值，使括号里的值最小</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153835844.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153835844"></p>
-<p>(L在机器学习中被称为损失函数，在回归中也常被称为残差平方和)<br>L分别对k,b求一阶偏导数，当一阶偏导数同时为零时，L取得最小值<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154115363.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154115363"> </p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154131084.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154131084"><br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154212548.png" alt=""></p>
-<h3 id="评价拟合的好坏"><a href="#评价拟合的好坏" class="headerlink" title="评价拟合的好坏"></a>评价拟合的好坏</h3><p>拟合优度：R^2<br>总体平方和SST：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154342646.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154342646"><br>误差平方和SSE：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154412762.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154412762"><br>回归平方和SSR：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154442479.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154442479"><br>可以证明: SST=SSE十SSR(需要用到前面求导得到的那两个等式)<br>拟合优度<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154650315.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154650315"></p>
-<p>R^2越接近1，说明误差平方和越接近0，误差越小说明拟合的越好。 </p>
-<p>(注意: R2 只能用于拟合函数是线性函数时，拟合结果的评价)  </p>
-<p>线性函数和其他函数(例如复杂的指数函数)比较拟合的好坏，直接看SSE即可<br><strong>这里的线性函数不只是对于自变量是线性的函数，还有对于系数是线性的函数</strong></p>
-<h4 id="线性函数"><a href="#线性函数" class="headerlink" title="线性函数"></a>线性函数</h4><p>对变量为线性  </p>
-<p>  对线性的第一种并且也许是更“自然”的一种解释是，Y的条件期望值是Xi的<br>线性函数  </p>
-<p>对参数为线性  </p>
-<p>  对线性的第二种解释是，Y的条件期望E(Y | Xi)是参数β的一个线性函数;它可<br>以是或不是变量X的线性函数。  </p>
-<p>思考: y= a + bx^2是线性函数吗?</p>
-<h5 id="怎样判断线性于参数的函数"><a href="#怎样判断线性于参数的函数" class="headerlink" title="怎样判断线性于参数的函数"></a>怎样判断线性于参数的函数</h5><p>在函数中，参数仅以一次方出现，且不能乘以或除以其他任何的参数，并不能出现参数的复合函数形式。</p>
-<p> y= a + bx^2是线性函数<br>y=a+b^3x、y=a +bx + bcx^2、y=a(x-b) ^2、 y= asin(b + cx )都不是线性函数，不能用R^2(拟合优度)来评价要用SSE（误差平方和）来评价拟合的好坏.</p>
-<h2 id="Matlab拟合工具箱"><a href="#Matlab拟合工具箱" class="headerlink" title="Matlab拟合工具箱"></a>Matlab拟合工具箱</h2><p>在命令行中输入     ，打开拟合工具箱。</p>
-<pre><code>cftool</code></pre><p>界面如下：</p>
-<p>一号区域选择要进行拟合的数据（要提前加载进matlab的工作区）<br>二号区域选择要进行拟合的方式<br>三号区域是得到的拟合函数的相应参数</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200705163246985.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200705163246985"></p>
-<p>Matlab工具箱提供的拟合类型（2号区域）</p>
-<table>
-<thead>
-<tr>
-<th>CustomEquations</th>
-<th>用户自定义的函数类型<br/></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Exponential</td>
-<td>指数逼近，有2种类型， a<em>exp(b</em>x) 、 a<em>exp(b</em>x) + c<em>exp(d</em>x)</td>
-</tr>
-<tr>
-<td>Fourier</td>
-<td>傅立叶逼近，有7种类型，基础型是 a0 + a1<em>cos(x</em>w) + b1<em>sin(x</em>w)</td>
-</tr>
-<tr>
-<td>Gaussian</td>
-<td>高斯逼近，有8种类型，基础型是 a1*exp(-((x-b1)/c1)^2)</td>
-</tr>
-<tr>
-<td>Interpolant</td>
-<td>插值逼近，有4种类型，linear、nearest neighbor、cubic spline、shape-preserving</td>
-</tr>
-<tr>
-<td>Polynomial</td>
-<td>多形式逼近，有9种类型，linear ~、quadratic ~、cubic ~、4-9th degree ~</td>
-</tr>
-<tr>
-<td>Power</td>
-<td>幂逼近，有2种类型，a<em>x^b 、a</em>x^b + c</td>
-</tr>
-<tr>
-<td>Rational</td>
-<td>有理数逼近，分子、分母共有的类型是linear ~、quadratic ~、cubic ~、4-5th degree ~；此外，分子还包括constant型</td>
-</tr>
-<tr>
-<td>Smoothing Spline</td>
-<td>平滑逼近（翻译的不大恰当，不好意思）</td>
-</tr>
-<tr>
-<td>Sum of Sin Functions</td>
-<td>正弦曲线逼近，有8种类型，基础型是 a1<em>sin(b1</em>x + c1)</td>
-</tr>
-<tr>
-<td>Weibull</td>
-<td>只有一种，a<em>b</em>x^(b-1)<em>exp(-a</em>x^b)</td>
-</tr>
-</tbody></table>
-<p>拟合函数相应的参数（3号区域）</p>
-<table>
-<thead>
-<tr>
-<th>SSE</th>
-<th>和方差、误差平方和：The sum of squares due to error</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>MSE</td>
-<td>均方差、方差：Mean squared error</td>
-</tr>
-<tr>
-<td>RMSE</td>
-<td>均方根、标准差：Root mean squared error</td>
-</tr>
-<tr>
-<td>R-square</td>
-<td>确定系数/拟合优度：Coefficient of determination</td>
-</tr>
-<tr>
-<td>Adjusted R-square</td>
-<td>Degree-of-freedom adjusted coefficient of determination</td>
-</tr>
-</tbody></table>
-<p>一、SSE(和方差)<br>该统计参数计算的是拟合数据和原始数据对应点的误差的平方和，计算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps1.jpg" alt="img">)(#blogid=588364b70100m9z3&amp;url=<a href="http://s10.sinaimg.cn/orignal/628033fa48bb1eb1a0879" target="_blank" rel="noopener">http://s10.sinaimg.cn/orignal/628033fa48bb1eb1a0879</a>)<br>（这个权重没有特殊说明全部取1）  </p>
-<p>SSE越接近于0，说明模型选择和拟合更好，数据预测也越成功。</p>
-<p>二、MSE(均方差)<br>该统计参数是预测数据和原始数据对应点误差的平方和的均值，也就是SSE/n，和SSE没有太大的区别，计算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps2.jpg" alt="img"></p>
-<p>MSE和RMSE因为和SSE是同出一宗,所以越接近于0，说明模型选择和拟合更好</p>
-<p>三、RMSE(均方根)<br>该统计参数，也叫回归系统的拟合标准差，是MSE的平方根，就算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps3.jpg" alt="img"></p>
-<p>在这之前，我们所有的误差参数都是基于预测值(y_hat)和原始值(y)之间的误差(<strong>即点对点</strong>)。从下面开始是所有的误差都是相对原始数据平均值(y_ba)而展开的(<strong>即点对全</strong>)!!!  </p>
-<p>四、R-square(确定系数)<br>在讲确定系数之前，我们需要介绍另外两个参数SSR和SST，因为确定系数就是由它们两个决定的<br>(1)SSR：Sum of squares of the regression，即预测数据与原始数据均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps4.jpg" alt="img"><br>(2)SST：Total sum of squares，即原始数据和均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps5.jpg" alt="img"><br>(3)“确定系数”是定义为SSR和SST的比值，故<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps6.jpg" alt="img"></p>
-<p>其实<strong>“确定系数”是通过数据的变化来表征一个拟合的好坏</strong>。由上面的表达式可以知道“确定系数”的正常取值范围为[0 1]，<strong>越接近1，表明方程的变量对y的解释能力越强</strong>，这个模型对数据拟合的也较好</p>
-
+                <h1 id="谐振动的合成"><a href="#谐振动的合成" class="headerlink" title="谐振动的合成"></a>谐振动的合成</h1><h2 id="方向相同，频率相同"><a href="#方向相同，频率相同" class="headerlink" title="方向相同，频率相同"></a>方向相同，频率相同</h2><p>物体同时参与x方向的两个频率的谐振动x1与x2，我们把x1和x2的初相分别记作φ0、φ0+δ</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A6DD89090C01783FC05A6A794B4B0FA4.jpg" alt=""></p>
+<p>δ是x1和x2的初始相差，在频率相同的条件下，这两个谐振动在任一时刻下的相差都是δ。</p>
+<p>δ=0时，xi与x2相始终相同，这叫x1与x2的同步，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A2B7F4C0443FA4860677E8FDAB97286E.jpg" alt=""></p>
+<p>合成振动也跟x1\x2同步</p>
+<p>δ=π时，其一达到最大正向偏离时另一达到最大负向偏离，这叫做反相，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/7EFA49ACF1E94EB8112E98095B6E569F.jpg" alt=""></p>
+<p>合成振动跟振幅较大的那个振动同步</p>
+<p>δ未必是0或π的一般情况，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/83180E5E02ED3A9F438324C2FFD2C3D4.jpg" alt=""></p>
+<p>上式并没有揭示合成振动的特征，把cosωt和sinωt展开，合并同类项</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A057CA8A06F51893DD9EBA8C6967518F.jpg" alt=""></p>
+<p>右边的两个同频率谐振动可以合并为一项，要做到这一步，需要把右边的方括号看成是某个矢量的x分量y分量，矢量的大小是A，与x轴的夹角是ф0</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4A2E395BD6DDD1950DD1028BB0AC37E7.jpg" alt=""></p>
+<p>这就表明了合成振动是同一频率的谐振动，上面是用三角运算求得合成振动的，还可以用振动的矢量表示法求得</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/13198734A07D5CDF60050371F0A72576.jpg" alt=""></p>
+<p>谐振动x1用矢量A1在x轴上的投影表示，x2用A2在x轴上的投影表示，合成振动x等于A1，A2的合成矢量在x轴上的投影，问题转化成了求A1,A2的和矢量<br>A1,A2以同样的角速度转动（x1x2同频率）他们之间的夹角就保持不变，所以A 的大小保持不变，A的转动角速度也是ω</p>
+<p>采用直角坐标系，对矢量分量进行计算</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/94DE3F114B0C3267E0A0DE37FAC2938C.jpg" alt=""></p>
+<h2 id="方向相同，频率不同"><a href="#方向相同，频率不同" class="headerlink" title="方向相同，频率不同"></a>方向相同，频率不同</h2><p>两个方向相同，频率不同谐振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A254006763ED708441E29F246CB49B6B.jpg" alt=""></p>
+<p>这里仍然可以运用矢量法，但这里A1A2的转速不同，夹角δ也在不断改变，当δ=0或2π的整倍数，合成振幅最大，当δ=π的奇倍数，合成振幅最小。频率不同的两个谐振动合成的振幅时强时弱，这种强弱变化是否有节奏？<br>取A1（角速度ω1）与A2（ω2）重叠的时刻作为初始时刻，经过时间π/（ω2-ω1），δ增大到π，此时振幅最小；经过时间2π/（ω2-ω1），δ增大到2π，此时振幅最大。然后就重复以上过程。</p>
+<p>振动强度有节奏的时强时弱，这种现象叫做拍，一次强弱变化叫做一拍，每秒钟的拍数叫拍频（两个谐振动的频率差）</p>
+<p>这里的合成振动也可由三角法求得，为简单起见，这里假设A1=A2。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/EC1266FAAF973B199573FFF49FA4CFA5.jpg" alt=""></p>
+<p>上式右边有两个余弦因子，第一个的圆频率1/2（ω2-ω1）远小于第二个的圆频率1/2（ω2+ω1）。所以x随时间的变化主要是因为第二个余弦因子。x可看成主要是1/2（ω2+ω1）圆频率，2Acos[1/2（ω2-ω1）]振幅（取绝对值）的“谐”振动振幅从最大2A变为0所需时间π/2/[1/2（ω2-ω1）],这是半拍，一拍的时间为2π/（ω2-ω1）</p>
+<p>校准乐器，拿已校准好的琴与未校准的琴同时演奏相同的音，细听有无拍的现象，若有说明还需校准。使拍频越来越小直到完全消失为止</p>
+<h2 id="方向垂直，频率相同"><a href="#方向垂直，频率相同" class="headerlink" title="方向垂直，频率相同"></a>方向垂直，频率相同</h2><p>物体同时参加互相垂直的两个方向上的同频率振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/2F06A15B6EF366F86403C707372A4668.jpg" alt=""></p>
+<p>试求合成振动</p>
+<p>合成x和y的振动，不能作简单的代数相加。物体既有x方向上的偏离，又有y方向上的偏离，合成运动是在xy平面上进行的。<br>其实可以把x，y的两个方程式看作轨迹的参数方程式，消去参数t就可得轨迹</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4BE401B263FAD5AF0A9A1B332DB816EC.jpg" alt=""></p>
+<p>δ=0，方程轨迹为直线</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/3EB4988CE9D3B702B49AF9D3E49C0920.jpg" alt=""></p>
+<p>δ=Π/2，方程轨迹为椭圆</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419.jpg" alt=""></p>
+<p>δ=Π，方程轨迹为直线</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/CEDE6F2C6CC2A8EBCEBF28C63D79E8DA.jpg" alt=""></p>
+<p>δ=3Π/2，方程轨迹为椭圆</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419-1594978586150.jpg" alt=""></p>
+<p>采用参考圆的方法研究合成振动更直观，这里研究δ=90^.^，φ0=0的情形</p>
+<p>谐振动x可用参考圆C1上的匀速运动描写，谐振动C2可用参考圆C2上的匀速运动描写。既然xy的频率相同，那么可以将C1,C2分成相同的等份，分别给这些点编上号（1，2，3，4，5…….）令起始点编号相同，所以就有当C1上的质点运动到编号为n的点时，C2上的质点也运动到该点。</p>
+<p>把C1上的点1向x轴投影，C2上的点1向y轴投影，两根投影线的交点就是合成振动对应点的位置。就这样依次得到所有合成振动的点。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/0E59111AC6950DA5F5ADA256B44F82FE.jpg" alt=""></p>
+<p>相差δ为其它数值完全可以按照上面方法求得合成振动。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D40B1DDD6A9C74D88C7A2CF21A7DEFFC.jpg" alt=""></p>
+<p>单相感应电动机里，把单相“劈”为两相，从而有互相垂直的两个同相差为90度、频率、同振幅的谐变磁场，则合成磁场作圆振动，这个旋转磁场就带着转子跟着它转<br>光是一种电磁波，如果光波里的电场作椭圆振动，就叫做椭圆偏振光，可以分解为x,y方向的两个谐振动。这两个成分叫做平面偏振光</p>
+<h2 id="方向垂直，频率不同"><a href="#方向垂直，频率不同" class="headerlink" title="方向垂直，频率不同"></a>方向垂直，频率不同</h2><p>运动合成仍然可以使用参考圆的方法</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D984060DD1718345C0044903C2D6C22E.jpg" alt=""></p>
+<p>在水平横杆的A和B两点各系一轻线，两线在C点合并，下挂一球。小球的x向摆动是以L<del>1</del>为摆长，y向摆动是以L<del>2</del>为摆长，小球在x向的频率只有y向的一半。因此在等分参考圆编号时，y参考圆的等份数应是x参考圆的两倍。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/1003BA49BE49C582DFB240AB009A6FDE.jpg" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -506,7 +464,7 @@ daovoice('update');
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xn--e1t0my86j.com/2020/07/05/2020-07-05-curvefitting/">http://xn--e1t0my86j.com/2020/07/05/2020-07-05-curvefitting/</a>
+                    <a href="http://xn--e1t0my86j.com/2020/07/17/2020-07-17-zhen-dong-er/">http://xn--e1t0my86j.com/2020/07/17/2020-07-17-zhen-dong-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,8 +502,8 @@ daovoice('update');
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/math-study/">
-                                    <span class="chip bg-color">math study</span>
+                                <a href="/tags/physics-study/">
+                                    <span class="chip bg-color">physics study</span>
                                 </a>
                             
                         </div>
@@ -713,30 +671,33 @@ daovoice('update');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/06/2020-07-06-correlationcoefficient/">
+                <a href="/2020/07/17/2020-07-17-zhen-dong-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="“力学振动与波复习（预习）笔记（二）”">
                         
-                        <span class="card-title">“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”</span>
+                        <span class="card-title">“力学振动与波复习（预习）笔记（二）”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            相关系数两种最为常用的相关系数：皮尔逊pearson相关系数和斯皮尔曼spearman等级相关系数。它们可用来衡量两个变量之间的相关性的大小，根据数据满足的不同条件，我们要选择不同的相关系数进行计算和分析（建模论文中最容易用错的方法）。
-皮
+                            谐振动的合成方向相同，频率相同物体同时参与x方向的两个频率的谐振动x1与x2，我们把x1和x2的初相分别记作φ0、φ0+δ
+
+δ是x1和x2的初始相差，在频率相同的条件下，这两个谐振动在任一时刻下的相差都是δ。
+δ=0时，xi与x2相始终相
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -749,11 +710,12 @@ daovoice('update');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/math-study/">
-                        <span class="chip bg-color">math study</span>
+                    <a href="/tags/physics-study/">
+                        <span class="chip bg-color">physics study</span>
                     </a>
                     
                 </div>
@@ -767,25 +729,25 @@ daovoice('update');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/2020-07-03-interpolation/">
+                <a href="/2020/07/16/2020-07-16-zhen-dong-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="“数学建模-Interpolation-(插值算法)-学习笔记”">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="“力学振动与波复习（预习）笔记（一）”">
                         
-                        <span class="card-title">“数学建模-Interpolation-(插值算法)-学习笔记”</span>
+                        <span class="card-title">“力学振动与波复习（预习）笔记（一）”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            插值算法数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的数据是极少的，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些新的但又比较靠谱的值来满 足需求，这就是插值的作用。
-定义一维插值问
+                            振动与波一个物理系统，如果处于某个平衡位置，稍受扰动后就围绕着平衡位置来回振动。振动在介质中的传播就形成波
+一个自由度的振动谐振动弹簧振子有一个平衡位置O，在那个位置弹簧没有作用力，物体得以平衡。如果稍加扰动，拉长或收缩的弹簧会驱使物体回到
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
                             </span>
                         <span class="publish-author">
                             
@@ -802,8 +764,8 @@ daovoice('update');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/math-study/">
-                        <span class="chip bg-color">math study</span>
+                    <a href="/tags/physics-study/">
+                        <span class="chip bg-color">physics study</span>
                     </a>
                     
                 </div>

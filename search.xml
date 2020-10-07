@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>光学课程数字资源</title>
+      <link href="/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/"/>
+      <url>/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="仿真实验软件gitee代码仓库"><a href="#仿真实验软件gitee代码仓库" class="headerlink" title="仿真实验软件gitee代码仓库"></a>仿真实验软件<a href="https://gitee.com/dkyz/ccnu_zdl/tree/master/OOTC" target="_blank" rel="noopener">gitee代码仓库</a></h1><h2 id="菲涅尔公式"><a href="#菲涅尔公式" class="headerlink" title="菲涅尔公式"></a>菲涅尔公式</h2><p><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/Fresnel5display.m" target="_blank" rel="noopener">菲涅公式演示软件（m文件）</a><br><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/Fresnel5display.fig" target="_blank" rel="noopener">菲涅公式演示软件（fig文件）</a></p><h2 id="干涉"><a href="#干涉" class="headerlink" title="干涉"></a>干涉</h2><h3 id="杨氏双缝干涉"><a href="#杨氏双缝干涉" class="headerlink" title="杨氏双缝干涉"></a>杨氏双缝干涉</h3><p><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/YangShiShuangFeng.m" target="_blank" rel="noopener">杨氏双缝干涉仿真实验软件（m文件）</a><br><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/YangShiShuangFeng.fig" target="_blank" rel="noopener">杨氏双缝干涉仿真实验软件（fig文件）</a></p><h3 id="等倾干涉"><a href="#等倾干涉" class="headerlink" title="等倾干涉"></a>等倾干涉</h3><p><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/dengqing6.m" target="_blank" rel="noopener">等倾干涉仿真实验软件（m文件）</a><br><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/dengqing6.fig" target="_blank" rel="noopener">等倾干涉仿真实验软件（fig文件）</a> </p><h3 id="等厚干涉"><a href="#等厚干涉" class="headerlink" title="等厚干涉"></a>等厚干涉</h3><p><a href="https://dkyz.gitee.io/ccnu_zdl/OOTC/DengHouGanShe.mlapp" target="_blank" rel="noopener">等厚干涉仿真实验软件（mlapp文件）</a> </p><h1 id="动画模拟演示"><a href="#动画模拟演示" class="headerlink" title="动画模拟演示"></a>动画模拟演示</h1><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Resources </tag>
+            
+            <tag> Research </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>“数学建模课程资源”</title>
       <link href="/2020/08/15/2020-08-15-shu-mo-zi-yuan/"/>
       <url>/2020/08/15/2020-08-15-shu-mo-zi-yuan/</url>

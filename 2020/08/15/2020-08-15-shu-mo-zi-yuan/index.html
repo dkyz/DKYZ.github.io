@@ -205,6 +205,19 @@ daovoice('update');
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本资源的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -573,52 +586,50 @@ daovoice('update');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/15/2020-08-15-shu-mo-zi-yuan/">
+                <a href="/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="“数学建模课程资源”">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="光学课程数字资源">
                         
-                        <span class="card-title">“数学建模课程资源”</span>
+                        <span class="card-title">光学课程数字资源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数学建模课程资源1、姜启源等编《数学模型》第四版 电子书+习题参考解答+课件
-链接：http://pan.baidu.com/s/1UW1Sb8HCHSaNq39LxLQuKg
-提取码：khdu
--————–
-2、知乎文章——数学建模竞赛的
+                            到目前为止，本科光学课程的配套教学资源（仿真实验软件等）非常缺乏，且光学课程中的概念繁多、物理规律较为抽象，理论教学对实验的依赖性较强，特别是其中一些光学现象缺乏一些细致的数学推导，再加上授课老师一直沿袭传统的口授笔演的教学方式，给学生学习该门课程带来的诸多困难。本项目将MATLAB用于光学仿真中并创新地将其部署在网站上，同学们通过光学问题的仿真计算和图形化的仿真结果来更好的理解光学问题的本质。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/sources/" class="post-category">
-                                    sources
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/math/">
-                        <span class="chip bg-color">math</span>
+                    <a href="/tags/Resources/">
+                        <span class="chip bg-color">Resources</span>
+                    </a>
+                    
+                    <a href="/tags/Research/">
+                        <span class="chip bg-color">Research</span>
                     </a>
                     
                 </div>
@@ -876,7 +887,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">25.8k</span>&nbsp;字
+                class="white-color">26k</span>&nbsp;字
             
             
             

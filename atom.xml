@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
-  <updated>2020-08-15T11:54:06.156Z</updated>
+  <updated>2020-10-07T04:31:35.405Z</updated>
   <id>http://张德邻.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>光学课程数字资源</title>
+    <link href="http://张德邻.com/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/"/>
+    <id>http://张德邻.com/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/</id>
+    <published>2020-10-07T03:25:00.000Z</published>
+    <updated>2020-10-07T04:31:35.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;仿真实验软件gitee代码仓库&quot;&gt;&lt;a href=&quot;#仿真实验软件gitee代码仓库&quot; class=&quot;headerlink&quot; title=&quot;仿真实验软件gitee代码仓库&quot;&gt;&lt;/a&gt;仿真实验软件&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="http://xn--e1t0my86j.com/categories/Markdown/"/>
+    
+    
+      <category term="Resources" scheme="http://xn--e1t0my86j.com/tags/Resources/"/>
+    
+      <category term="Research" scheme="http://xn--e1t0my86j.com/tags/Research/"/>
+    
+  </entry>
   
   <entry>
     <title>“数学建模课程资源”</title>

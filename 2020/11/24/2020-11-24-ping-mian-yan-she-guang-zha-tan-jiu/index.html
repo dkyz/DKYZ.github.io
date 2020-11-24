@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“数学建模-CurveFitting-(曲线拟合)-学习笔记”, 德邻">
+    <meta name="keywords" content="“平面衍射光栅探究实验”, 德邻">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“数学建模-CurveFitting-(曲线拟合)-学习笔记” | 德邻</title>
+    <title>“平面衍射光栅探究实验” | 德邻</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -221,12 +221,12 @@ daovoice('update');
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“数学建模-CurveFitting-(曲线拟合)-学习笔记”</h1>
+                    <h1 class="description center-align post-title">“平面衍射光栅探究实验”</h1>
                 </div>
             </div>
         </div>
@@ -343,8 +343,8 @@ daovoice('update');
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/math-study/">
-                                <span class="chip bg-color">math study</span>
+                            <a href="/tags/optics/">
+                                <span class="chip bg-color">optics</span>
                             </a>
                         
                     </div>
@@ -355,8 +355,8 @@ daovoice('update');
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/study/" class="post-category">
-                                study
+                            <a href="/categories/sources/" class="post-category">
+                                sources
                             </a>
                         
                     </div>
@@ -368,28 +368,28 @@ daovoice('update');
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-05
+                    2020-11-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    12 分
                 </div>
                 
 
@@ -404,119 +404,174 @@ daovoice('update');
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="拟合算法"><a href="#拟合算法" class="headerlink" title="拟合算法"></a>拟合算法</h1><p>与插值问题不同，在拟合问题中<strong>不需要曲线一定经过给定的点</strong>。拟合问题的目标是寻求一个函数（曲线），使得该曲线在某种准则下<strong>与所有的数据点最为接近</strong>，即曲线拟合的最好（最小化损失函数）。</p>
-<h2 id="插值和拟合的区别"><a href="#插值和拟合的区别" class="headerlink" title="插值和拟合的区别"></a>插值和拟合的区别</h2><p>插值算法中，得到的多项式f(x)要经过所有样本点。但是如果样本点太多，那 么这个多项式次数过高，会造成<strong>龙格现象</strong>。   </p>
-<p>尽管我们可以选择分段的方法避免这种现象，但是更多时候我们更倾向于得到 一个确定的曲线，尽管这条曲线不能经过每一个样本点，但只要保证误差足够小即 可，这就是拟合的思想。(<strong>拟合的结果是得到一个确定的曲线</strong>)<br>一个小例子：<br>找出y和x之间的 拟合曲线（这种给的点特别多的情况下，如果使用插值法，得到的多项式的次数就会特别高，所有点都穿过的话，龙格现象（插值法里面有讲到）就会特别明显）</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152131216" style="zoom:50%;" /><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704152216626"> style=”zoom:50%;” /&gt;<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704175112320" style="zoom: 80%;" /></p>
-<p>若使用插值法，在多项式的次数特别高时，得到的图像在点与点之间波动特别大：（随手画的，对这么多个点进行插值产生的龙格现象是很明显的）<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704180020955"></p>
-<p>设这些样本点为(xi,yi), i=1,2,.,n  </p>
-<p>我们设置的拟合曲线为y= kx +b  </p>
-<p>问题: k和b取何值时，样本点和拟合曲线最接近。</p>
-<h2 id="最小二乘法的几何解释"><a href="#最小二乘法的几何解释" class="headerlink" title="最小二乘法的几何解释"></a>最小二乘法的几何解释</h2><p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153309990.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153309990"></p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153327013.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153327013"></p>
-<p>第一种定义有绝对值，不容易求导，因此计算比较复杂。所以我们往往使用第二种定义，这也正是最小二乘的思想<br>(为什么不用三次方，四次方呢？)<br>三次方：正负会相互抵消一部分<br>四次方：若有一个点误差较大，那么此极端数据对拟合曲线的影响比二次方时大得多</p>
-<h3 id="求解最小二乘法"><a href="#求解最小二乘法" class="headerlink" title="求解最小二乘法"></a>求解最小二乘法</h3><p>设这些样本点为(xi,yi), i=1,2,…..,n,我们设置的拟合曲线为y= kx + b<br>下图的argmin(…..)表示确定参数k,b的值，使括号里的值最小</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153835844.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704153835844"></p>
-<p>(L在机器学习中被称为损失函数，在回归中也常被称为残差平方和)<br>L分别对k,b求一阶偏导数，当一阶偏导数同时为零时，L取得最小值<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154115363.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154115363"> </p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154131084.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154131084"><br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154212548.png" alt=""></p>
-<h3 id="评价拟合的好坏"><a href="#评价拟合的好坏" class="headerlink" title="评价拟合的好坏"></a>评价拟合的好坏</h3><p>拟合优度：R^2<br>总体平方和SST：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154342646.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154342646"><br>误差平方和SSE：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154412762.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154412762"><br>回归平方和SSR：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154442479.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154442479"><br>可以证明: SST=SSE十SSR(需要用到前面求导得到的那两个等式)<br>拟合优度<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154650315.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200704154650315"></p>
-<p>R^2越接近1，说明误差平方和越接近0，误差越小说明拟合的越好。 </p>
-<p>(注意: R2 只能用于拟合函数是线性函数时，拟合结果的评价)  </p>
-<p>线性函数和其他函数(例如复杂的指数函数)比较拟合的好坏，直接看SSE即可<br><strong>这里的线性函数不只是对于自变量是线性的函数，还有对于系数是线性的函数</strong></p>
-<h4 id="线性函数"><a href="#线性函数" class="headerlink" title="线性函数"></a>线性函数</h4><p>对变量为线性  </p>
-<p>  对线性的第一种并且也许是更“自然”的一种解释是，Y的条件期望值是Xi的<br>线性函数  </p>
-<p>对参数为线性  </p>
-<p>  对线性的第二种解释是，Y的条件期望E(Y | Xi)是参数β的一个线性函数;它可<br>以是或不是变量X的线性函数。  </p>
-<p>思考: y= a + bx^2是线性函数吗?</p>
-<h5 id="怎样判断线性于参数的函数"><a href="#怎样判断线性于参数的函数" class="headerlink" title="怎样判断线性于参数的函数"></a>怎样判断线性于参数的函数</h5><p>在函数中，参数仅以一次方出现，且不能乘以或除以其他任何的参数，并不能出现参数的复合函数形式。</p>
-<p> y= a + bx^2是线性函数<br>y=a+b^3x、y=a +bx + bcx^2、y=a(x-b) ^2、 y= asin(b + cx )都不是线性函数，不能用R^2(拟合优度)来评价要用SSE（误差平方和）来评价拟合的好坏.</p>
-<h2 id="Matlab拟合工具箱"><a href="#Matlab拟合工具箱" class="headerlink" title="Matlab拟合工具箱"></a>Matlab拟合工具箱</h2><p>在命令行中输入     ，打开拟合工具箱。</p>
-<pre><code>cftool</code></pre><p>界面如下：</p>
-<p>一号区域选择要进行拟合的数据（要提前加载进matlab的工作区）<br>二号区域选择要进行拟合的方式<br>三号区域是得到的拟合函数的相应参数</p>
-<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200705163246985.png" alt="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/image-20200705163246985"></p>
-<p>Matlab工具箱提供的拟合类型（2号区域）</p>
+                <p>光学“小”测后，吴老师找到我，我问吴老师：“发生甚么事了？”。吴老师说：“怎么回事，群里有两张照片，我一看！嗷！原来是昨天，有两个光学现象的图片，用手机拍的，一个是光栅衍射，另一个也是光栅衍射。<br>我一说的啪就站起来了，很快嗷！然后上来就是一个光学小测试题，我全部都讲过的啊，这是会考的，讲出去以后自然是传统功夫以点到为止。<br>你们年轻人不讲考德，想都没想就说不会做，欺负我一个39岁的老同志，这合适吗？这不合适。这个探究实验，你耗子尾汁”</p>
+<hr>
+<p>调皮一下，这是分割线</p>
+<hr>
+<p>当手机正面完全被屏幕占领，又该如何区分彼此?<br>手机背面就顺势成了各大厂商的施展平台。目前已发布手机的背板材料比以前更加丰富，比如光栅、玻璃、陶瓷、AG玻璃、素皮、碳纤维等。里面最妖艳的，还当属光栅系列。</p>
+<p>接下来，我就来带大家一起探究我们日常生活中早以“见怪不怪”的光栅</p>
+<h1 id="实验现象"><a href="#实验现象" class="headerlink" title="实验现象"></a>实验现象</h1><p>手持手机，手机上方有一长日光灯管。手机后背上出现一条与手机长边相平行且长度小于长边的彩色光谱；由远及近光谱的波长逐渐减少（青—&gt;紫）。 </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124125037017.png" alt=""></p>
+<p>保持光源、眼睛的位置不动，按如图所示方式小角度转动手机。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124170531982.png" alt=""></p>
+<p>转动过程中的实验现象：同一位置光谱的颜色会随手机的转动而改变（同一位置光谱线的波长增加），手机后背上的光谱长度逐渐增加（当然，增加到与长边相等就不再增加）；但每种颜色的长度却在减少； 彩色光谱由远及近波长逐渐减少（依次为红、橙、黄、绿、青）。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124123954975.png" alt=""></p>
+<p>继续转动，当手机与水平面成较大夹角时，可见光波段内的所有光谱就可以完全显示在手机背面上而且还能观察到额外的重复；光谱长度比长边少很多但依旧平行于长边；整体图像相比之前就像被压缩了一样。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124130326563.png" alt=""></p>
+<h1 id="“见怪应怪”"><a href="#“见怪应怪”" class="headerlink" title="“见怪应怪”"></a>“见怪应怪”</h1><p>在上边的实验之前，你肯定早以见过无数次这样的现象，但是你有想问为什么吗？</p>
+<p>我们早以习惯于把身边发生的事认为是理所当然</p>
+<p>今天，就让我们用幼时般的好奇去问这个世界，“为什么？”</p>
+<p>为什么会出现一般物体没有的“红橙黄绿青蓝紫”？</p>
+<p>为什么在转动的过程中颜色会有规律的变化？</p>
+<p>为什么转动的角度越大图像被压缩得越厉害？</p>
+<p>为什么谱线是平行于长边？</p>
+<p>为什么图案只是一小竖条而不是全部平面？</p>
+<p>………………………………………..</p>
+<p>当我们问这个世界“为什么？”时，科学的大门就已经向我们敞开</p>
+<h1 id="查询资料"><a href="#查询资料" class="headerlink" title="查询资料"></a>查询资料</h1><p>小米9的背后是一块全息光栅</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124160709508.png" alt=""></p>
+<p>光栅是什么？<br>光栅由大量等宽等间距的平行狭缝构成的光学器件称为光栅（grating）。一般常用的光栅是在玻璃片上刻出大量平行刻痕制成，刻痕为不透光部分，两刻痕之间的光滑部分可以透光，相当于一狭缝。精制的光栅，在1cm宽度内刻有几千条乃至上万条刻痕。这种利用透射光<a href="https://baike.baidu.com/item/衍射/1084873" target="_blank" rel="noopener">衍射</a>的光栅称为透射光栅，还有利用两刻痕间的反射光衍射的光栅，如在镀有金属层的表面上刻出许多平行刻痕，两刻痕间的光滑金属面可以反射光，这种光栅称为反射光栅。我们这里探究的手机背面是反射光栅。  </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124201828911.png" alt=""></p>
+<p>光栅是怎样制得的</p>
+<p>衍射光栅由下列两种方法制成：一种是用带钻石刀头的刻划机刻出沟槽的经典方法，另一种是用两束激光形成干涉条纹的全息方法。</p>
+<p>全息光栅制作方法：在光学稳定的平玻璃坯件上涂上一层给定型厚度的<a href="https://baike.baidu.com/item/光致抗蚀剂" target="_blank" rel="noopener">光致抗蚀剂</a>或其他光敏材料的<a href="https://baike.baidu.com/item/涂层" target="_blank" rel="noopener">涂层</a>。由<a href="https://baike.baidu.com/item/激光器" target="_blank" rel="noopener">激光器</a>发生两束相干光束，使其在涂层上产生一系列均匀的<a href="https://baike.baidu.com/item/干涉条纹" target="_blank" rel="noopener">干涉条纹</a>，则<a href="https://baike.baidu.com/item/光敏物质" target="_blank" rel="noopener">光敏物质</a>被<a href="https://baike.baidu.com/item/感光" target="_blank" rel="noopener">感光</a>。然后用特种溶剂<a href="https://baike.baidu.com/item/溶蚀/4968369" target="_blank" rel="noopener">溶蚀</a>掉被感光部分，即在蚀层上获得干涉条纹的全息像。所制得为透射式衍射光栅；如在玻璃坯背面镀一层<a href="https://baike.baidu.com/item/铝" target="_blank" rel="noopener">铝</a><a href="https://baike.baidu.com/item/反射膜/3901043" target="_blank" rel="noopener">反射膜</a>后，可制成反射式衍射光栅。</p>
+<h1 id="建立物理模型"><a href="#建立物理模型" class="headerlink" title="建立物理模型"></a>建立物理模型</h1><h2 id="从现实世界到物理世界"><a href="#从现实世界到物理世界" class="headerlink" title="从现实世界到物理世界"></a>从现实世界到物理世界</h2><p>现实世界：</p>
+<ol>
+<li>长条形日光灯光源</li>
+<li>小米手机背面</li>
+<li>观察者眼睛</li>
+</ol>
+<p>抽象为物理模型：</p>
+<ol>
+<li>线形光源</li>
+<li>反射型衍射光栅</li>
+<li>透镜</li>
+</ol>
+<p>光源发出的光经过光栅平面反射，再经透镜汇聚并且发生相干作用。我们要掌握各光束之间是如何发生相干作用就得掌握各光束之间的相位差，相位差可分为两个部分考察：第一部分是相干光束从光源到光栅平面的过程产生的，第二部分是相干光束从光栅平面到透镜的过程产生的。</p>
+<h2 id="第一部分产生的相位差"><a href="#第一部分产生的相位差" class="headerlink" title="第一部分产生的相位差"></a>第一部分产生的相位差</h2><p>用复振幅表示点光源：<br>$$</p>
+<p>$$<br>以光栅所在面为O-xy面，光栅狭缝方向平行于y轴方向，建立空间直角坐标系</p>
+<p>波矢向量K的方向余弦：<br>$$<br>cos\alpha=\frac{k_x}{k},cos\beta=\frac{k_y}{k},cos\gamma=\frac{k_z}{k}<br>$$<br>在光栅平面上，等相位的点满足：<br>$$</p>
+<p>$$<br>即<br>$$<br>k_xx+k_yy+k_zz=C\qquad(C为任意常数)<br>$$<br>因为在光栅平面上有：<br>$$<br>z=0<br>$$<br>所以，等相位的点满足：<br>$$<br>k_xx+k_yy=C\qquad(C为任意常数)<br>$$<br>由此我们可以得到：等相位的点在光栅上成一条直线。</p>
+<h3 id="几种特殊的平行光束入射情况"><a href="#几种特殊的平行光束入射情况" class="headerlink" title="几种特殊的平行光束入射情况"></a>几种特殊的平行光束入射情况</h3><h4 id="波矢向量K与Z轴同向"><a href="#波矢向量K与Z轴同向" class="headerlink" title="波矢向量K与Z轴同向"></a>波矢向量K与Z轴同向</h4><p>有：<br>$$<br>\alpha=\beta=\frac{\pi}{2}<br>$$</p>
+<p>$$<br>cos\alpha=cos\beta=0<br>$$</p>
+<p>$$<br>k_x=k_y=0<br>$$</p>
+<p>所以整个光栅平面都满足<br>$$<br>k_xx+k_yy=0<br>$$<br>此情况下，整个面是等相位面</p>
+<h4 id="波矢向量K平行于面O-xz"><a href="#波矢向量K平行于面O-xz" class="headerlink" title="波矢向量K平行于面O-xz"></a>波矢向量K平行于面O-xz</h4><p>有<br>$$<br>\beta=\frac{\pi}{2}<br>$$</p>
+<p>$$<br>cos\beta=0<br>$$</p>
+<p>$$<br>k_y=0<br>$$</p>
+<p>等相位的点满足：<br>$$<br>xk_x+yk_y=C\qquad(C为任意常数)<br>$$</p>
+<p>$$<br>xk_x=C\qquad(C为任意常数)<br>$$</p>
+<p>此时，等相位线与光栅狭缝方向相平行（平行于y轴）</p>
+<h4 id="波矢向量K平行于面O-yz"><a href="#波矢向量K平行于面O-yz" class="headerlink" title="波矢向量K平行于面O-yz"></a>波矢向量K平行于面O-yz</h4><p>有<br>$$<br>\alpha=\frac{\pi}{2}<br>$$</p>
+<p>$$<br>cos\alpha=0<br>$$</p>
+<p>$$<br>k_x=0<br>$$</p>
+<p>等相位的点满足：<br>$$<br>xk_x+yk_y=C\qquad(C为任意常数)<br>$$</p>
+<p>$$<br>yk_y=C\qquad(C为任意常数)<br>$$</p>
+<p>此时，等相位线与光栅狭缝方向相垂直（平行于x轴）</p>
+<h3 id="一般情况下的入射"><a href="#一般情况下的入射" class="headerlink" title="一般情况下的入射"></a>一般情况下的入射</h3><p>在光栅平面有<br>$$<br>z=0<br>$$</p>
+<p>$$<br>k_xx+k_yy=C\qquad(C为任意常数)<br>$$</p>
+<p>所以在光栅平面有一系列与x轴夹角为Φ的等相位线<br>$$<br>\frac{y}{x}=-\frac{k_x}{k_y}<br>$$</p>
+<p>$$<br>tan\phi=-\frac{k_x}{k_y}=-\frac{cos\alpha}{cos\beta}<br>$$</p>
+<p>考察相干光束到达相邻两狭缝时的相位差，即考察过A、B两点的两条等相位线之间的相位差</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124175434324.png" alt=""></p>
 <table>
 <thead>
 <tr>
-<th>CustomEquations</th>
-<th>用户自定义的函数类型<br/></th>
+<th>Φ</th>
+<th>等相位线与x轴之间的夹角</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Exponential</td>
-<td>指数逼近，有2种类型， a<em>exp(b</em>x) 、 a<em>exp(b</em>x) + c<em>exp(d</em>x)</td>
+<td>θ0</td>
+<td>入射光线与光栅平面法线的夹角</td>
 </tr>
 <tr>
-<td>Fourier</td>
-<td>傅立叶逼近，有7种类型，基础型是 a0 + a1<em>cos(x</em>w) + b1<em>sin(x</em>w)</td>
+<td>d‘</td>
+<td>过A、B两点的两条等相位线之间的距离</td>
 </tr>
 <tr>
-<td>Gaussian</td>
-<td>高斯逼近，有8种类型，基础型是 a1*exp(-((x-b1)/c1)^2)</td>
-</tr>
-<tr>
-<td>Interpolant</td>
-<td>插值逼近，有4种类型，linear、nearest neighbor、cubic spline、shape-preserving</td>
-</tr>
-<tr>
-<td>Polynomial</td>
-<td>多形式逼近，有9种类型，linear ~、quadratic ~、cubic ~、4-9th degree ~</td>
-</tr>
-<tr>
-<td>Power</td>
-<td>幂逼近，有2种类型，a<em>x^b 、a</em>x^b + c</td>
-</tr>
-<tr>
-<td>Rational</td>
-<td>有理数逼近，分子、分母共有的类型是linear ~、quadratic ~、cubic ~、4-5th degree ~；此外，分子还包括constant型</td>
-</tr>
-<tr>
-<td>Smoothing Spline</td>
-<td>平滑逼近（翻译的不大恰当，不好意思）</td>
-</tr>
-<tr>
-<td>Sum of Sin Functions</td>
-<td>正弦曲线逼近，有8种类型，基础型是 a1<em>sin(b1</em>x + c1)</td>
-</tr>
-<tr>
-<td>Weibull</td>
-<td>只有一种，a<em>b</em>x^(b-1)<em>exp(-a</em>x^b)</td>
+<td>d</td>
+<td>A、B两点的距离（光栅常量）</td>
 </tr>
 </tbody></table>
-<p>拟合函数相应的参数（3号区域）</p>
+<p>相干光束从光源到光栅平面的过程产生的相位差为：<br>$$<br>\Delta\delta=d’sin\theta_0=dsin\phi sin\theta_0<br>$$</p>
+<h2 id="第二部分过程产生的相位差"><a href="#第二部分过程产生的相位差" class="headerlink" title="第二部分过程产生的相位差"></a>第二部分过程产生的相位差</h2><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124181001531.png" alt=""></p>
+<p>由图可得，由相邻两狭缝出射的相干光束到达透镜的过程中产生的相位差为<br>$$<br>\Delta\delta=dsin\theta\qquad (d为光栅常量、\theta为衍射角)<br>$$</p>
+<h2 id="全部过程产生的相位差"><a href="#全部过程产生的相位差" class="headerlink" title="全部过程产生的相位差"></a>全部过程产生的相位差</h2><p>因为此光栅为反射光栅，所以不会出现入射、出射光线在平面法线同侧的情况<br>所以总的光程差为：<br>$$<br>d(sin\theta-sin\phi sin\theta)<br>$$<br>光栅明纹处的方程为：<br>$$<br>d(sin\theta-sin\phi sin\theta)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124181906301.png" alt=""></p>
+<h3 id="线光源模型"><a href="#线光源模型" class="headerlink" title="线光源模型"></a>线光源模型</h3><p>以上讨论的是点光源的情况，而光源是线光源（无穷多个不相干的点光源叠加在一起）。但这无穷多个点光源是互不相干的，因此衍射图样可看作是每一个点光源所产生的衍射图样非相干叠加的结果,当改变线光源的方向或者说是改变光栅狭缝的方向时,上述点光源所对应的夹角Φ、θ、θ0都会随着变化。因此衍射图样会发生相应的变化，但是无论如何明纹处的Φ、θ、θ0都满足<br>$$<br>d(sin\theta-sin\phi sin\theta)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>如图所示，组成线光源的许多点光源在向四面八方发射光线，光线布满整个空间，但被我们观察到的光栅位置对应的光线却只是其中的一个特定方向。各点光源不相干，所以衍射图样还是点光源图样的非相干叠加（单纯亮度增强）</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124210357735.png" alt=""></p>
+<h3 id="不同入射情况"><a href="#不同入射情况" class="headerlink" title="不同入射情况"></a>不同入射情况</h3><h4 id="当线光源和y轴平行时"><a href="#当线光源和y轴平行时" class="headerlink" title="当线光源和y轴平行时"></a>当线光源和y轴平行时</h4><p>每一个点光源所对应的在光栅平面内的等相位线与x轴的夹角=0,不论Φ取任何值,此时光栅方程都为<br>$$<br>dsin\theta=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>这就是光学教材上介绍过的光栅方程,但这些教材中重点讨论的是光波垂直入射时的特殊情形(Φ=0，θ0=0)，此时光栅平面为一等相位面。<br>若θ0≠0,Φ=0，在光栅平面内等相位线为一平行于x轴的直线。根据相邻狭缝间的位相分布的特殊性,不难得到相邻缝间距离为d的光波到达衍射亮纹位置时的相位差仍是dsinθ。<br>因此当缝光源和y轴平行时，不管是垂直入射的光波还是特殊斜人射的光波,衍射亮纹的位置都此公式决定<br>$$<br>dsin\theta=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>衍射图样是平行于y轴的直线型条纹。</p>
+<h4 id="当线光源与y轴垂直时"><a href="#当线光源与y轴垂直时" class="headerlink" title="当线光源与y轴垂直时"></a>当线光源与y轴垂直时</h4><p>每一个点光源所对应的等相位线与x轴间的夹角Φ=90°，因此光栅方程变为<br>$$<br>d(sin\theta\pm sin\theta0)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>这是常见的特殊斜人射条件下的光栅方程,当k=0时,θ=θ0,零级衍射亮斑在О’点的两侧,并且在点光源的几何像点的位置。</p>
+<h4 id="当线光源与y轴的夹角为任意角度Φ’时"><a href="#当线光源与y轴的夹角为任意角度Φ’时" class="headerlink" title="当线光源与y轴的夹角为任意角度Φ’时"></a>当线光源与y轴的夹角为任意角度Φ’时</h4><p>每一个点光源所对应的等相位线与x轴间的夹角Φ=Φ’。Φ,θ0。随着线光源的位置的变化而变化，满足<br>$$<br>d(sin\theta-sin\phi sin\theta_0)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>线光源以z为轴旋转一周,则各级谱线在xoy平面内也旋转一周,各谱线的位置仍由上式决定。反过来若保持线光源的位置不变，将光栅以z为轴旋转一周,谱线方向不变,因为狭缝光源的方向没有变化,但是各级谱线的位置在x方向发生变化,当Φ变到90°时,所有谱线都重叠在一起,此时满足特殊斜人射条件<br>$$<br>d(sin\theta\pm sin\theta0)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>物理模型大致就建立到这里了，接下来我们就用这一个模型去解释各种光栅衍射现象</p>
+<h1 id="现象解释"><a href="#现象解释" class="headerlink" title="现象解释"></a>现象解释</h1><p>如图所示，手持手机有多种转动方式</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124211433589.png" alt=""></p>
+<p>我们选择其中的一种来仔细考察（实验时的转动方式）</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/DiffractionInquiryExperiment/image-20201124211728238.png" alt=""></p>
 <table>
 <thead>
 <tr>
-<th>SSE</th>
-<th>和方差、误差平方和：The sum of squares due to error</th>
+<th>x</th>
+<th>考察点距转动固定点B的距离</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>MSE</td>
-<td>均方差、方差：Mean squared error</td>
+<td>α1</td>
+<td>∠ABC</td>
 </tr>
 <tr>
-<td>RMSE</td>
-<td>均方根、标准差：Root mean squared error</td>
+<td>θ1</td>
+<td>∠BAC</td>
 </tr>
 <tr>
-<td>R-square</td>
-<td>确定系数/拟合优度：Coefficient of determination</td>
+<td>β1</td>
+<td>∠ACB</td>
 </tr>
 <tr>
-<td>Adjusted R-square</td>
-<td>Degree-of-freedom adjusted coefficient of determination</td>
+<td>α2</td>
+<td>∠DBC</td>
+</tr>
+<tr>
+<td>θ2</td>
+<td>∠BDC</td>
+</tr>
+<tr>
+<td>β2</td>
+<td>∠DCB</td>
+</tr>
+<tr>
+<td>Φ</td>
+<td>转动角度</td>
 </tr>
 </tbody></table>
-<p>一、SSE(和方差)<br>该统计参数计算的是拟合数据和原始数据对应点的误差的平方和，计算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps1.jpg" alt="img">)(#blogid=588364b70100m9z3&amp;url=<a href="http://s10.sinaimg.cn/orignal/628033fa48bb1eb1a0879" target="_blank" rel="noopener">http://s10.sinaimg.cn/orignal/628033fa48bb1eb1a0879</a>)<br>（这个权重没有特殊说明全部取1）  </p>
-<p>SSE越接近于0，说明模型选择和拟合更好，数据预测也越成功。</p>
-<p>二、MSE(均方差)<br>该统计参数是预测数据和原始数据对应点误差的平方和的均值，也就是SSE/n，和SSE没有太大的区别，计算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps2.jpg" alt="img"></p>
-<p>MSE和RMSE因为和SSE是同出一宗,所以越接近于0，说明模型选择和拟合更好</p>
-<p>三、RMSE(均方根)<br>该统计参数，也叫回归系统的拟合标准差，是MSE的平方根，就算公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps3.jpg" alt="img"></p>
-<p>在这之前，我们所有的误差参数都是基于预测值(y_hat)和原始值(y)之间的误差(<strong>即点对点</strong>)。从下面开始是所有的误差都是相对原始数据平均值(y_ba)而展开的(<strong>即点对全</strong>)!!!  </p>
-<p>四、R-square(确定系数)<br>在讲确定系数之前，我们需要介绍另外两个参数SSR和SST，因为确定系数就是由它们两个决定的<br>(1)SSR：Sum of squares of the regression，即预测数据与原始数据均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps4.jpg" alt="img"><br>(2)SST：Total sum of squares，即原始数据和均值之差的平方和，公式如下<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps5.jpg" alt="img"><br>(3)“确定系数”是定义为SSR和SST的比值，故<br><img src="https://dkyz.gitee.io/ccnu_zdl/img/CurveFitting/wps6.jpg" alt="img"></p>
-<p>其实<strong>“确定系数”是通过数据的变化来表征一个拟合的好坏</strong>。由上面的表达式可以知道“确定系数”的正常取值范围为[0 1]，<strong>越接近1，表明方程的变量对y的解释能力越强</strong>，这个模型对数据拟合的也较好</p>
-
+<p>对三角形ABC<br>$$<br>\frac{sin\theta_1}{BC}=\frac{sin\beta_1}{x}<br>$$<br>对三角形DBC<br>$$<br>\frac{sin\theta_2}{BC}=\frac{sin\beta_2}{x}<br>$$<br>所以<br>$$<br>sin\theta_2=sin\theta_1\frac{sin\beta_2}{sin\beta_1}<br>$$</p>
+<p>$$<br>\frac{sin\beta_2}{sin\beta_1}恒大于1且随着Φ的增大而增大\qquad(0&lt;Φ&lt;\frac{\pi}{2})<br>$$</p>
+<p>$$<br>因此，sin\theta会随着转动角度的增大而增大<br>$$</p>
+<p>但这个过程中θ0也会增大（Φ不会变化），因此不能由此确定x处的点λ的变化<br>$$<br>d(sin\theta-sin\phi sin\theta_0)=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>让我们先考虑一个简单的特殊入射情况（等我搞清楚了再为大家解释一般情况…………..）</p>
+<p>当线光源和y轴平行时,有<br>$$<br>dsin\theta=k\lambda\qquad (k=0,\pm1,\pm2,……)<br>$$<br>在同一级谱线中，随着θ的增大，x处点的λ的值也会增大，这就解释了在某一范围的转动过程中同一点的颜色按照“紫蓝青绿黄橙红”的规律变化</p>
+<p>在转动过程中所有点的sinθ会增大，考察左右两个端点的sinθ，就能得到手机背面能看到的光谱范围。<br>当转动角度较小时，整个手机后背只能显示同一级光谱范围内的一部分；随着转动角度增大，能显示的范围慢慢变大，直到能将同一级光谱中的所有光都显示出来；再增大，开始出现暗线部分；再再增大可以看到相邻级的一部分…….</p>
+<p>这就可以解释文章开始两幅图中出现的现象了</p>
+<hr>
+<p>好累哟，写不动了，有时间再写，欢迎大家提意见补充</p>
+<hr>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -541,7 +596,7 @@ daovoice('update');
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xn--e1t0my86j.com/2020/07/05/2020-07-05-curvefitting/">http://xn--e1t0my86j.com/2020/07/05/2020-07-05-curvefitting/</a>
+                    <a href="http://xn--e1t0my86j.com/2020/11/24/2020-11-24-ping-mian-yan-she-guang-zha-tan-jiu/">http://xn--e1t0my86j.com/2020/11/24/2020-11-24-ping-mian-yan-she-guang-zha-tan-jiu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +634,8 @@ daovoice('update');
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/math-study/">
-                                    <span class="chip bg-color">math study</span>
+                                <a href="/tags/optics/">
+                                    <span class="chip bg-color">optics</span>
                                 </a>
                             
                         </div>
@@ -622,47 +677,48 @@ daovoice('update');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/06/2020-07-06-correlationcoefficient/">
+                <a href="/2020/11/24/2020-11-24-ping-mian-yan-she-guang-zha-tan-jiu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="“平面衍射光栅探究实验”">
                         
-                        <span class="card-title">“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”</span>
+                        <span class="card-title">“平面衍射光栅探究实验”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            相关系数两种最为常用的相关系数：皮尔逊pearson相关系数和斯皮尔曼spearman等级相关系数。它们可用来衡量两个变量之间的相关性的大小，根据数据满足的不同条件，我们要选择不同的相关系数进行计算和分析（建模论文中最容易用错的方法）。
-皮
+                            光学“小”测后，吴老师找到我，我问吴老师：“发生甚么事了？”。吴老师说：“怎么回事，群里有两张照片，我一看！嗷！原来是昨天，有两个光学现象的图片，用手机拍的，一个是光栅衍射，另一个也是光栅衍射。我一说的啪就站起来了，很快嗷！然后上来就是一个
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/study/" class="post-category">
-                                    study
+                            <a href="/categories/sources/" class="post-category">
+                                    sources
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/math-study/">
-                        <span class="chip bg-color">math study</span>
+                    <a href="/tags/optics/">
+                        <span class="chip bg-color">optics</span>
                     </a>
                     
                 </div>
@@ -676,32 +732,31 @@ daovoice('update');
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/04/2020-07-03-interpolation/">
+                <a href="/2020/10/07/2020-10-07-guang-xue-ke-cheng-shu-zi-zi-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="“数学建模-Interpolation-(插值算法)-学习笔记”">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="光学课程数字资源">
                         
-                        <span class="card-title">“数学建模-Interpolation-(插值算法)-学习笔记”</span>
+                        <span class="card-title">光学课程数字资源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            插值算法数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的数据是极少的，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些新的但又比较靠谱的值来满 足需求，这就是插值的作用。
-定义一维插值问
+                            到目前为止，本科光学课程的配套教学资源（仿真实验软件等）非常缺乏，且光学课程中的概念繁多、物理规律较为抽象，理论教学对实验的依赖性较强，特别是其中一些光学现象缺乏一些细致的数学推导，再加上授课老师一直沿袭传统的口授笔演的教学方式，给学生学习该门课程带来的诸多困难。本项目将MATLAB用于光学仿真中并创新地将其部署在网站上，同学们通过光学问题的仿真计算和图形化的仿真结果来更好的理解光学问题的本质。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/study/" class="post-category">
-                                    study
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
@@ -711,8 +766,12 @@ daovoice('update');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/math-study/">
-                        <span class="chip bg-color">math study</span>
+                    <a href="/tags/Resources/">
+                        <span class="chip bg-color">Resources</span>
+                    </a>
+                    
+                    <a href="/tags/Research/">
+                        <span class="chip bg-color">Research</span>
                     </a>
                     
                 </div>

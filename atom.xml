@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>德邻</title>
+  <title>光学在线教学资源平台</title>
   
-  <subtitle>Welcome to my blog</subtitle>
+  <subtitle>Optics online teaching resources</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
@@ -10,7 +10,7 @@
   <id>http://张德邻.com/</id>
   
   <author>
-    <name>Dkyz</name>
+    <name>华中师范大学光学在线教学资源团队</name>
     
   </author>
   

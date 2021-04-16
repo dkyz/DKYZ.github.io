@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
-  <updated>2020-11-24T22:41:50.292Z</updated>
+  <updated>2021-04-16T23:51:36.600Z</updated>
   <id>http://张德邻.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2021-4-17-杨氏双缝的Matlab仿真实验</title>
+    <link href="http://张德邻.com/2021/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan/"/>
+    <id>http://张德邻.com/2021/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan/</id>
+    <published>2021-04-16T23:46:02.765Z</published>
+    <updated>2021-04-16T23:51:36.600Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;杨氏双缝的Matlab仿真实验&quot;&gt;&lt;a href=&quot;#杨氏双缝的Matlab仿真实验&quot; class=&quot;headerlink&quot; title=&quot;杨氏双缝的Matlab仿真实验&quot;&gt;&lt;/a&gt;杨氏双缝的Matlab仿真实验&lt;/h1&gt;&lt;h2 id=&quot;一-实验目的&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2021-4-17-等倾干涉的Matlab仿真实验</title>
+    <link href="http://张德邻.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/"/>
+    <id>http://张德邻.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/</id>
+    <published>2021-04-16T23:40:10.377Z</published>
+    <updated>2021-04-16T23:40:10.377Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;等倾干涉的Matlab仿真实验&quot;&gt;&lt;a href=&quot;#等倾干涉的Matlab仿真实验&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>“平面衍射光栅探究实验”</title>
@@ -73,11 +119,11 @@
   </entry>
   
   <entry>
-    <title>“数学建模课程资源”</title>
-    <link href="http://张德邻.com/2020/08/15/2020-08-15-shu-mo-zi-yuan/"/>
-    <id>http://张德邻.com/2020/08/15/2020-08-15-shu-mo-zi-yuan/</id>
-    <published>2020-08-14T16:00:00.000Z</published>
-    <updated>2020-08-15T11:54:06.156Z</updated>
+    <title>“平面衍射光栅探究实验”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan/"/>
+    <id>http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2021-04-16T23:27:48.787Z</updated>
     
     <summary type="html">
     
@@ -85,8 +131,7 @@
       
         
         
-          &lt;h1 id=&quot;数学建模课程资源&quot;&gt;&lt;a href=&quot;#数学建模课程资源&quot; class=&quot;headerlink&quot; title=&quot;数学建模课程资源&quot;&gt;&lt;/a&gt;数学建模课程资源&lt;/h1&gt;&lt;p&gt;1、姜启源等编《数学模型》第四版 电子书+习题参考解答+课件&lt;/p&gt;
-&lt;p&gt;链接：&lt;a
+          &lt;h1 id=&quot;单缝衍射Matlab仿真实验&quot;&gt;&lt;a href=&quot;#单缝衍射Matlab仿真实验&quot; class=&quot;headerlink&quot; title=&quot;单缝衍射Matlab仿真实验&quot;&gt;&lt;/a&gt;单缝衍射Matlab仿真实验&lt;/h1&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a
         
       
     
@@ -96,336 +141,7 @@
       <category term="sources" scheme="http://xn--e1t0my86j.com/categories/sources/"/>
     
     
-      <category term="math" scheme="http://xn--e1t0my86j.com/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“力学振动与波复习课要点”</title>
-    <link href="http://张德邻.com/2020/07/18/2020-07-18-zhen-dong-yu-bo-ke-tang-ti-wen/"/>
-    <id>http://张德邻.com/2020/07/18/2020-07-18-zhen-dong-yu-bo-ke-tang-ti-wen/</id>
-    <published>2020-07-17T16:00:00.000Z</published>
-    <updated>2020-07-18T13:47:35.681Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;吴老师的课堂提问&quot;&gt;&lt;a href=&quot;#吴老师的课堂提问&quot; class=&quot;headerlink&quot; title=&quot;吴老师的课堂提问&quot;&gt;&lt;/a&gt;吴老师的课堂提问&lt;/h2&gt;&lt;p&gt;1什么是简谐振动，什么是复杂振动，复杂振动拆分后的振动有什么要求？ 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“力学振动与波复习（预习）笔记（二）”</title>
-    <link href="http://张德邻.com/2020/07/17/2020-07-17-zhen-dong-er/"/>
-    <id>http://张德邻.com/2020/07/17/2020-07-17-zhen-dong-er/</id>
-    <published>2020-07-16T16:00:00.000Z</published>
-    <updated>2020-07-17T09:52:01.741Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;谐振动的合成&quot;&gt;&lt;a href=&quot;#谐振动的合成&quot; class=&quot;headerlink&quot; title=&quot;谐振动的合成&quot;&gt;&lt;/a&gt;谐振动的合成&lt;/h1&gt;&lt;h2 id=&quot;方向相同，频率相同&quot;&gt;&lt;a href=&quot;#方向相同，频率相同&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“力学振动与波复习（预习）笔记（一）”</title>
-    <link href="http://张德邻.com/2020/07/16/2020-07-16-zhen-dong-yi/"/>
-    <id>http://张德邻.com/2020/07/16/2020-07-16-zhen-dong-yi/</id>
-    <published>2020-07-15T16:00:00.000Z</published>
-    <updated>2020-07-16T08:11:18.484Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;振动与波&quot;&gt;&lt;a href=&quot;#振动与波&quot; class=&quot;headerlink&quot; title=&quot;振动与波&quot;&gt;&lt;/a&gt;振动与波&lt;/h1&gt;&lt;p&gt;一个物理系统，如果处于某个平衡位置，稍受扰动后就围绕着平衡位置来回振动。振动在介质中的传播就形成波&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“力学刚体力学复习课总结”</title>
-    <link href="http://张德邻.com/2020/07/15/2020-07-15-gang-ti-li-xue/"/>
-    <id>http://张德邻.com/2020/07/15/2020-07-15-gang-ti-li-xue/</id>
-    <published>2020-07-14T16:00:00.000Z</published>
-    <updated>2020-07-15T15:01:26.402Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;刚体力学&quot;&gt;&lt;a href=&quot;#刚体力学&quot; class=&quot;headerlink&quot; title=&quot;刚体力学&quot;&gt;&lt;/a&gt;刚体力学&lt;/h1&gt;&lt;p&gt;主要的物理模型&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“HTML学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/14/2020-07-14-html-xue-xi-bi-ji/"/>
-    <id>http://张德邻.com/2020/07/14/2020-07-14-html-xue-xi-bi-ji/</id>
-    <published>2020-07-13T16:00:00.000Z</published>
-    <updated>2020-07-14T15:11:15.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;HTML 指的是超文本标记语言 (&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;M&lt;/strong&gt;arkup &lt;strong&gt;L&lt;/strong&gt;anguage)&lt;/li&gt;
-&lt;li&gt;HTML
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="web study" scheme="http://xn--e1t0my86j.com/tags/web-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“力学万有引力复习课总结”</title>
-    <link href="http://张德邻.com/2020/07/14/2020-07-14-wan-you-yin-li/"/>
-    <id>http://张德邻.com/2020/07/14/2020-07-14-wan-you-yin-li/</id>
-    <published>2020-07-13T16:00:00.000Z</published>
-    <updated>2020-07-14T15:12:01.864Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt; 求解质量连续分布的物体在某一点激发的引力场&lt;br&gt;思路：分割求和取极限  &lt;/p&gt;
-&lt;p&gt;分割：三定&lt;br&gt;定位置： 建立坐标系，确立原点的位置，这样就可以把每个微元的空间位置表示出来  &lt;/p&gt;
-&lt;p&gt;定距离:
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="physics study" scheme="http://xn--e1t0my86j.com/tags/physics-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“建站不易~~~~~~~~”</title>
-    <link href="http://张德邻.com/2020/07/08/2020-07-08-jian-zhan-bu-yi/"/>
-    <id>http://张德邻.com/2020/07/08/2020-07-08-jian-zhan-bu-yi/</id>
-    <published>2020-07-07T16:00:00.000Z</published>
-    <updated>2020-07-13T14:48:21.113Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;如果让你提前知道你将面对的BUG，你还会有勇气前行吗？&lt;/p&gt;
-&lt;p&gt;  说实话，有一个以自己名字命名的网站，是我想都不敢想的。&lt;br&gt; 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="daily life" scheme="http://xn--e1t0my86j.com/categories/daily-life/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/06/2020-07-06-correlationcoefficient/"/>
-    <id>http://张德邻.com/2020/07/06/2020-07-06-correlationcoefficient/</id>
-    <published>2020-07-05T16:00:00.000Z</published>
-    <updated>2020-07-13T15:03:51.343Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;相关系数&quot;&gt;&lt;a href=&quot;#相关系数&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="math study" scheme="http://xn--e1t0my86j.com/tags/math-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“数学建模-CurveFitting-(曲线拟合)-学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/05/2020-07-05-curvefitting/"/>
-    <id>http://张德邻.com/2020/07/05/2020-07-05-curvefitting/</id>
-    <published>2020-07-04T16:00:00.000Z</published>
-    <updated>2020-07-13T15:03:44.131Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;拟合算法&quot;&gt;&lt;a href=&quot;#拟合算法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="math study" scheme="http://xn--e1t0my86j.com/tags/math-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“数学建模-Interpolation-(插值算法)-学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/04/2020-07-03-interpolation/"/>
-    <id>http://张德邻.com/2020/07/04/2020-07-03-interpolation/</id>
-    <published>2020-07-03T16:00:00.000Z</published>
-    <updated>2020-07-13T15:03:25.982Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;插值算法&quot;&gt;&lt;a href=&quot;#插值算法&quot; class=&quot;headerlink&quot; title=&quot;插值算法&quot;&gt;&lt;/a&gt;插值算法&lt;/h2&gt;&lt;p&gt;数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="math study" scheme="http://xn--e1t0my86j.com/tags/math-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“数学建模-TOPSIS-(优劣解距离法)-学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/03/2020-07-03-topsis/"/>
-    <id>http://张德邻.com/2020/07/03/2020-07-03-topsis/</id>
-    <published>2020-07-02T16:00:00.000Z</published>
-    <updated>2020-07-14T04:32:33.390Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Table-of-Contents&quot;&gt;&lt;a href=&quot;#Table-of-Contents&quot; class=&quot;headerlink&quot; title=&quot;Table of Contents&quot;&gt;&lt;/a&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
-    
-      <category term="math study" scheme="http://xn--e1t0my86j.com/tags/math-study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>“数学建模-AHP(层次分析法)-学习笔记”</title>
-    <link href="http://张德邻.com/2020/07/02/2020-07-02-ahp/"/>
-    <id>http://张德邻.com/2020/07/02/2020-07-02-ahp/</id>
-    <published>2020-07-01T16:00:00.000Z</published>
-    <updated>2020-07-13T09:02:55.604Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h1 id=&quot;层次分析法&quot;&gt;&lt;a href=&quot;#层次分析法&quot; class=&quot;headerlink&quot; title=&quot;层次分析法&quot;&gt;&lt;/a&gt;层次分析法&lt;/h1&gt;&lt;h2 id=&quot;层次分析法的原理&quot;&gt;&lt;a href=&quot;#层次分析法的原理&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="http://xn--e1t0my86j.com/categories/study/"/>
-    
+      <category term="optics" scheme="http://xn--e1t0my86j.com/tags/optics/"/>
     
   </entry>
   

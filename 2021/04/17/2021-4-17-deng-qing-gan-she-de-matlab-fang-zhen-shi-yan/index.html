@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="光学在线教学资源平台" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="\等倾干涉的Matlab仿真实验**\一.实验目的** 本实验的主要目的在于利用Matlab软件对等倾干涉现象进行仿真，帮助学生们在学习时更加直观的观察等倾干涉的现象，直观的感受光的波长、厚度、倾角对干涉现象的影响。更好的理解等倾干涉的性质、特点。 \二.实验原理** 等倾干涉是薄膜干涉的一种。薄膜此时是均匀的，光线以倾角i入射，上下两条反射光线经过透镜作用汇聚一起，形成干涉。由于入射角相同的光经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021-4-17-等倾干涉的Matlab仿真实验">
+<meta property="og:url" content="http://张德邻.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/index.html">
+<meta property="og:site_name" content="光学在线教学资源平台">
+<meta property="og:description" content="\等倾干涉的Matlab仿真实验**\一.实验目的** 本实验的主要目的在于利用Matlab软件对等倾干涉现象进行仿真，帮助学生们在学习时更加直观的观察等倾干涉的现象，直观的感受光的波长、厚度、倾角对干涉现象的影响。更好的理解等倾干涉的性质、特点。 \二.实验原理** 等倾干涉是薄膜干涉的一种。薄膜此时是均匀的，光线以倾角i入射，上下两条反射光线经过透镜作用汇聚一起，形成干涉。由于入射角相同的光经">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps26.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps27.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps28.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps29.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps30.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps31.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps32.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps33.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps34.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps35.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps36.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps37.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps38.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps39.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps40.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps41.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps42.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps43.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps44.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps45.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps46.jpg">
+<meta property="article:published_time" content="2021-04-16T23:40:10.377Z">
+<meta property="article:modified_time" content="2021-04-16T23:40:10.377Z">
+<meta property="article:author" content="华中师范大学光学在线教学资源团队">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps26.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xn--e1t0my86j.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/"/>
+
+
+
+
+
+  <title>2021-4-17-等倾干涉的Matlab仿真实验 | 光学在线教学资源平台</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">光学在线教学资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Optics online teaching resources</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xn--e1t0my86j.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="华中师范大学光学在线教学资源团队">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光学在线教学资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2021-4-17-等倾干涉的Matlab仿真实验</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-04-17T07:40:10+08:00">
+                2021-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="等倾干涉的Matlab仿真实验"><a href="#等倾干涉的Matlab仿真实验" class="headerlink" title="\等倾干涉的Matlab仿真实验**"></a><strong><em>\</em>等倾干涉的Matlab仿真实验**</strong></h1><p><strong><em>\</em>一.实验目的**</strong></p>
+<p>本实验的主要目的在于利用Matlab软件对等倾干涉现象进行仿真，帮助学生们在学习时更加直观的观察等倾干涉的现象，直观的感受光的波长、厚度、倾角对干涉现象的影响。更好的理解等倾干涉的性质、特点。</p>
+<p><strong><em>\</em>二.实验原理**</strong></p>
+<p>等倾干涉是薄膜干涉的一种。薄膜此时是均匀的，光线以倾角i入射，上下两条反射光线经过透镜作用汇聚一起，形成干涉。由于入射角相同的光经薄膜两表面反射形成的反射光在相遇点有相同的光程差，也就是说，凡入射角相同的就形成同一条纹，故这些倾斜度不同的光束经薄膜反射所形成的干涉花样是一些明暗相间的同心圆环．这种干涉称为等倾干涉。倾角i相同时，干涉情况一样；故称为等倾干涉。</p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (1).png) </p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps26.png" alt="img">)<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps27.png" alt="img">)<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps28.png" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps29.png" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps30.png" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps31.png" alt="img">    </p>
+<p><strong><em>\</em>三.设计仿真思路**</strong></p>
+<p>相干光波在叠加时所产生的光强不等于各光源单独造成的光强的简单相加,光强在极大与极小之间逐点变化，极大值超过各光波光强之和，极小值可能为零,这就是光波的干涉现象<br>     δ=<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps32.jpg" alt="img">)-<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps33.jpg" alt="img">)=(2π/λ)(<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps34.jpg" alt="img">)-<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps35.jpg" alt="img">))+ (<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps36.jpg" alt="img">))<br>当<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps37.jpg" alt="img">= 2mπ,m=0,士1,士2…时，光强<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps38.jpg" alt="img">)达到极大值<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps39.jpg" alt="img">)称干涉极大。当<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps40.jpg" alt="img">=(2m +1)π，m=0,士1,土2…时,<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps41.jpg" alt="img">)达到极小值<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps42.jpg" alt="img">，称干涉极小，整数m称为干涉级次。<br><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps43.jpg" alt="img">)，而是相差一个与空间位置有关的交叉项<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps44.jpg" alt="img">)，这一项也称干涉项。因为<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps45.jpg" alt="img">)只随空间位置(<img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml19884%5Cwps46.jpg" alt="img">))而变化,所以在干涉场中产生的是不随时间而变化的在空间强弱交替的光强分布，这种叠加称为相干叠加。通常考察干涉场中一个面上的干涉现象，在这个观察面上的光强分布或颜色分布称为干涉图像或干涉条纹。<br>要获得稳定的干涉条纹必须满足三个条件:①两束光的频率应当相同;②两束光波在相遇处的振动方向应当相同;③两束光波在相遇处应有固定不变的相位差。这三个条件就是两束光波发生干涉的必要条件,</p>
+<p>四.仿真制作过程</p>
+<p>1.设计界面</p>
+<p>GUI界面设计主要包括以下几个步骤:<br>第一步构恩草图，编排控件的布局。打开MATLAB程序，在FILE菜单中选择NEW GUI,,打开guide设计界面模板，界面模板左边的各个控件可以直接用鼠标拖到编辑框。<br>第二步设置各控件的属性。如设置各个控件的标识(Tag), 字体等。<br>第三步各个控件代码的设计。关键是openingFen(初始 界面函数)和控件的CallBack (回调函数)代码的设计。初始界面函数即设定各参数的初始值，可根据实际情况设定。回调函数是核心，是对界面控件触发时的事件响应函数。<br>根据需要，等倾干涉条纹的动态模拟图形用户界面使用了2个按钮(PushButton)，标识为绘图和退出，用鼠标点击任一项目， 则会执行相应的功能; 4个静态文本框(Static Text)用于输入波长，厚度及各自的单位; 2个滑动条(Slider),用鼠标拖动相应的滑动条就可以改变波长和厚度的大小; 1个坐标轴对象(Axes) 用于显示仿真结果。</p>
+<p>演示控件的功能是通过其回调程序来实现的，用户界面设计完成之后，选中控件用鼠标双击，在弹出的菜单中选择Viewbacks,在其子菜单中选择<br>CallBack,就可以进入回调程序编辑器中，在编辑器中编写控件代码，使图形界面完成约定的功能。<br>演示控件的回调函数代码为:</p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (23).png) </p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (24).png) </p>
+<p><strong><em>\</em>五.操作方法**</strong></p>
+<p>1.用Matlab打开等倾干涉的文件</p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (25).png) </p>
+<p>2.两个滑动条分别是入射波的倾角以及薄膜厚度，用户通过调节平台的滑动条，分别改变入射光倾角以及厚度两个参数，可得到不同的干涉图样。</p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (26).png) </p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (27).png) </p>
+<p>![img](<a href="http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉" target="_blank" rel="noopener">http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/等倾干涉/等倾干涉</a> (28).png) </p>
+<p><strong><em>\</em>六.总结**</strong></p>
+<p>本实验通过对干涉的本质为波在空间上的周期性叠加，通过函数的叠加转化为抽象的数学形式；再利用GUI函数以及回调函数进行动态调控，加强了对于干涉本质的理解；增强Matlab的运用能力，同时制作出来的仿真软件也便于在授课时让学生更好的理解本节知识。<strong><em>\</em><br>**</strong></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/24/2020-11-24-ping-mian-yan-she-guang-zha-tan-jiu/" rel="next" title="“平面衍射光栅探究实验”">
+                <i class="fa fa-chevron-left"></i> “平面衍射光栅探究实验”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan/" rel="prev" title="2021-4-17-杨氏双缝的Matlab仿真实验">
+                2021-4-17-杨氏双缝的Matlab仿真实验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">华中师范大学光学在线教学资源团队</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#等倾干涉的Matlab仿真实验"><span class="nav-number">1.</span> <span class="nav-text">\等倾干涉的Matlab仿真实验**</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">华中师范大学光学在线教学资源团队</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

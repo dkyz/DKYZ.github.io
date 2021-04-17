@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://张德邻.com/"/>
-  <updated>2021-04-17T01:36:45.249Z</updated>
+  <updated>2020-11-24T22:41:50.292Z</updated>
   <id>http://张德邻.com/</id>
   
   <author>
@@ -15,52 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>2021-4-17-杨氏双缝的Matlab仿真实验</title>
-    <link href="http://张德邻.com/2021/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan/"/>
-    <id>http://张德邻.com/2021/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan/</id>
-    <published>2021-04-16T23:46:02.765Z</published>
-    <updated>2021-04-17T01:36:45.249Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;杨氏双缝的Matlab仿真实验&quot;&gt;&lt;a href=&quot;#杨氏双缝的Matlab仿真实验&quot; class=&quot;headerlink&quot; title=&quot;杨氏双缝的Matlab仿真实验&quot;&gt;&lt;/a&gt;杨氏双缝的Matlab仿真实验&lt;/h1&gt;&lt;h2 id=&quot;一-实验目的&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2021-4-17-等倾干涉的Matlab仿真实验</title>
-    <link href="http://张德邻.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/"/>
-    <id>http://张德邻.com/2021/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan/</id>
-    <published>2021-04-16T23:40:10.377Z</published>
-    <updated>2021-04-16T23:40:10.377Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;等倾干涉的Matlab仿真实验&quot;&gt;&lt;a href=&quot;#等倾干涉的Matlab仿真实验&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>“平面衍射光栅探究实验”</title>
@@ -119,11 +73,11 @@
   </entry>
   
   <entry>
-    <title>“平面衍射光栅探究实验”</title>
-    <link href="http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan/"/>
-    <id>http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan/</id>
+    <title>“汽车车窗玻璃贴膜上出现超长亮线机理的探究”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-2-24-qi-che-che-chuang-bo-li-tie-mo-shang-chu-xian-chao-chang-liang-xian-ji-li-de-tan-jiu/"/>
+    <id>http://张德邻.com/2020/04/17/2021-2-24-qi-che-che-chuang-bo-li-tie-mo-shang-chu-xian-chao-chang-liang-xian-ji-li-de-tan-jiu/</id>
     <published>2020-04-16T16:00:00.000Z</published>
-    <updated>2021-04-16T23:27:48.787Z</updated>
+    <updated>2021-04-17T15:45:26.757Z</updated>
     
     <summary type="html">
     
@@ -131,7 +85,115 @@
       
         
         
-          &lt;h1 id=&quot;单缝衍射Matlab仿真实验&quot;&gt;&lt;a href=&quot;#单缝衍射Matlab仿真实验&quot; class=&quot;headerlink&quot; title=&quot;单缝衍射Matlab仿真实验&quot;&gt;&lt;/a&gt;单缝衍射Matlab仿真实验&lt;/h1&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a
+          &lt;h2 id=&quot;汽车车窗玻璃贴膜上出现超长亮线机理的探究&quot;&gt;&lt;a href=&quot;#汽车车窗玻璃贴膜上出现超长亮线机理的探究&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sources" scheme="http://xn--e1t0my86j.com/categories/sources/"/>
+    
+    
+      <category term="optics" scheme="http://xn--e1t0my86j.com/tags/optics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“单缝衍射Matlab仿真实验教程”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/"/>
+    <id>http://张德邻.com/2020/04/17/2021-4-17-dan-feng-yan-she-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2021-04-17T02:49:56.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;单缝衍射Matlab仿真实验教程&quot;&gt;&lt;a href=&quot;#单缝衍射Matlab仿真实验教程&quot; class=&quot;headerlink&quot; title=&quot;单缝衍射Matlab仿真实验教程&quot;&gt;&lt;/a&gt;单缝衍射Matlab仿真实验教程&lt;/h1&gt;&lt;h2 id=&quot;实验目的&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sources" scheme="http://xn--e1t0my86j.com/categories/sources/"/>
+    
+    
+      <category term="optics" scheme="http://xn--e1t0my86j.com/tags/optics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“双缝衍射的Matlab仿真实验教程”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-4-17-shuang-feng-yan-she-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/"/>
+    <id>http://张德邻.com/2020/04/17/2021-4-17-shuang-feng-yan-she-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2021-04-17T15:39:03.723Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;![img](&lt;a href=&quot;http://dkyz.gitee.io/ccnu_zdl/img/光学资源平台/双缝衍射/双缝衍射&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sources" scheme="http://xn--e1t0my86j.com/categories/sources/"/>
+    
+    
+      <category term="optics" scheme="http://xn--e1t0my86j.com/tags/optics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“杨氏双缝的Matlab仿真实验教程”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/"/>
+    <id>http://张德邻.com/2020/04/17/2021-4-17-yang-shi-shuang-feng-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2021-04-17T02:50:54.193Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;杨氏双缝的Matlab仿真实验教程&quot;&gt;&lt;a href=&quot;#杨氏双缝的Matlab仿真实验教程&quot; class=&quot;headerlink&quot; title=&quot;杨氏双缝的Matlab仿真实验教程&quot;&gt;&lt;/a&gt;杨氏双缝的Matlab仿真实验教程&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="sources" scheme="http://xn--e1t0my86j.com/categories/sources/"/>
+    
+    
+      <category term="optics" scheme="http://xn--e1t0my86j.com/tags/optics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“等倾干涉的Matlab仿真实验教程”</title>
+    <link href="http://张德邻.com/2020/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/"/>
+    <id>http://张德邻.com/2020/04/17/2021-4-17-deng-qing-gan-she-de-matlab-fang-zhen-shi-yan-she-ji-jiao-cheng/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2021-04-17T02:51:22.527Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;等倾干涉的Matlab仿真实验教程&quot;&gt;&lt;a href=&quot;#等倾干涉的Matlab仿真实验教程&quot; class=&quot;headerlink&quot;
         
       
     

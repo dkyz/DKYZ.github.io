@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="physics study," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="光学在线教学资源平台" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="谐振动的合成方向相同，频率相同物体同时参与x方向的两个频率的谐振动x1与x2，我们把x1和x2的初相分别记作φ0、φ0+δ  δ是x1和x2的初始相差，在频率相同的条件下，这两个谐振动在任一时刻下的相差都是δ。 δ&#x3D;0时，xi与x2相始终相同，这叫x1与x2的同步，合成振动  合成振动也跟x1\x2同步 δ&#x3D;π时，其一达到最大正向偏离时另一达到最大负向偏离，这叫做反相，合成振动  合成振动跟振幅较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“力学振动与波复习（预习）笔记（二）”">
+<meta property="og:url" content="http://张德邻.com/2020/07/17/2020-07-17-zhen-dong-er/index.html">
+<meta property="og:site_name" content="光学在线教学资源平台">
+<meta property="og:description" content="谐振动的合成方向相同，频率相同物体同时参与x方向的两个频率的谐振动x1与x2，我们把x1和x2的初相分别记作φ0、φ0+δ  δ是x1和x2的初始相差，在频率相同的条件下，这两个谐振动在任一时刻下的相差都是δ。 δ&#x3D;0时，xi与x2相始终相同，这叫x1与x2的同步，合成振动  合成振动也跟x1\x2同步 δ&#x3D;π时，其一达到最大正向偏离时另一达到最大负向偏离，这叫做反相，合成振动  合成振动跟振幅较">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A6DD89090C01783FC05A6A794B4B0FA4.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A2B7F4C0443FA4860677E8FDAB97286E.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/7EFA49ACF1E94EB8112E98095B6E569F.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/83180E5E02ED3A9F438324C2FFD2C3D4.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A057CA8A06F51893DD9EBA8C6967518F.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4A2E395BD6DDD1950DD1028BB0AC37E7.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/13198734A07D5CDF60050371F0A72576.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/94DE3F114B0C3267E0A0DE37FAC2938C.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A254006763ED708441E29F246CB49B6B.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/EC1266FAAF973B199573FFF49FA4CFA5.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/2F06A15B6EF366F86403C707372A4668.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4BE401B263FAD5AF0A9A1B332DB816EC.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/3EB4988CE9D3B702B49AF9D3E49C0920.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/CEDE6F2C6CC2A8EBCEBF28C63D79E8DA.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419-1594978586150.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/0E59111AC6950DA5F5ADA256B44F82FE.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D40B1DDD6A9C74D88C7A2CF21A7DEFFC.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D984060DD1718345C0044903C2D6C22E.jpg">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/1003BA49BE49C582DFB240AB009A6FDE.jpg">
+<meta property="article:published_time" content="2020-07-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-17T09:52:01.741Z">
+<meta property="article:author" content="华中师范大学光学在线教学资源团队">
+<meta property="article:tag" content="physics study">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A6DD89090C01783FC05A6A794B4B0FA4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xn--e1t0my86j.com/2020/07/17/2020-07-17-zhen-dong-er/"/>
+
+
+
+
+
+  <title>“力学振动与波复习（预习）笔记（二）” | 光学在线教学资源平台</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">光学在线教学资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Optics online teaching resources</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xn--e1t0my86j.com/2020/07/17/2020-07-17-zhen-dong-er/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="华中师范大学光学在线教学资源团队">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光学在线教学资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">“力学振动与波复习（预习）笔记（二）”</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-17T00:00:00+08:00">
+                2020-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="谐振动的合成"><a href="#谐振动的合成" class="headerlink" title="谐振动的合成"></a>谐振动的合成</h1><h2 id="方向相同，频率相同"><a href="#方向相同，频率相同" class="headerlink" title="方向相同，频率相同"></a>方向相同，频率相同</h2><p>物体同时参与x方向的两个频率的谐振动x1与x2，我们把x1和x2的初相分别记作φ0、φ0+δ</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A6DD89090C01783FC05A6A794B4B0FA4.jpg" alt=""></p>
+<p>δ是x1和x2的初始相差，在频率相同的条件下，这两个谐振动在任一时刻下的相差都是δ。</p>
+<p>δ=0时，xi与x2相始终相同，这叫x1与x2的同步，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A2B7F4C0443FA4860677E8FDAB97286E.jpg" alt=""></p>
+<p>合成振动也跟x1\x2同步</p>
+<p>δ=π时，其一达到最大正向偏离时另一达到最大负向偏离，这叫做反相，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/7EFA49ACF1E94EB8112E98095B6E569F.jpg" alt=""></p>
+<p>合成振动跟振幅较大的那个振动同步</p>
+<p>δ未必是0或π的一般情况，合成振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/83180E5E02ED3A9F438324C2FFD2C3D4.jpg" alt=""></p>
+<p>上式并没有揭示合成振动的特征，把cosωt和sinωt展开，合并同类项</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A057CA8A06F51893DD9EBA8C6967518F.jpg" alt=""></p>
+<p>右边的两个同频率谐振动可以合并为一项，要做到这一步，需要把右边的方括号看成是某个矢量的x分量y分量，矢量的大小是A，与x轴的夹角是ф0</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4A2E395BD6DDD1950DD1028BB0AC37E7.jpg" alt=""></p>
+<p>这就表明了合成振动是同一频率的谐振动，上面是用三角运算求得合成振动的，还可以用振动的矢量表示法求得</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/13198734A07D5CDF60050371F0A72576.jpg" alt=""></p>
+<p>谐振动x1用矢量A1在x轴上的投影表示，x2用A2在x轴上的投影表示，合成振动x等于A1，A2的合成矢量在x轴上的投影，问题转化成了求A1,A2的和矢量<br>A1,A2以同样的角速度转动（x1x2同频率）他们之间的夹角就保持不变，所以A 的大小保持不变，A的转动角速度也是ω</p>
+<p>采用直角坐标系，对矢量分量进行计算</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/94DE3F114B0C3267E0A0DE37FAC2938C.jpg" alt=""></p>
+<h2 id="方向相同，频率不同"><a href="#方向相同，频率不同" class="headerlink" title="方向相同，频率不同"></a>方向相同，频率不同</h2><p>两个方向相同，频率不同谐振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/A254006763ED708441E29F246CB49B6B.jpg" alt=""></p>
+<p>这里仍然可以运用矢量法，但这里A1A2的转速不同，夹角δ也在不断改变，当δ=0或2π的整倍数，合成振幅最大，当δ=π的奇倍数，合成振幅最小。频率不同的两个谐振动合成的振幅时强时弱，这种强弱变化是否有节奏？<br>取A1（角速度ω1）与A2（ω2）重叠的时刻作为初始时刻，经过时间π/（ω2-ω1），δ增大到π，此时振幅最小；经过时间2π/（ω2-ω1），δ增大到2π，此时振幅最大。然后就重复以上过程。</p>
+<p>振动强度有节奏的时强时弱，这种现象叫做拍，一次强弱变化叫做一拍，每秒钟的拍数叫拍频（两个谐振动的频率差）</p>
+<p>这里的合成振动也可由三角法求得，为简单起见，这里假设A1=A2。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/EC1266FAAF973B199573FFF49FA4CFA5.jpg" alt=""></p>
+<p>上式右边有两个余弦因子，第一个的圆频率1/2（ω2-ω1）远小于第二个的圆频率1/2（ω2+ω1）。所以x随时间的变化主要是因为第二个余弦因子。x可看成主要是1/2（ω2+ω1）圆频率，2Acos[1/2（ω2-ω1）]振幅（取绝对值）的“谐”振动振幅从最大2A变为0所需时间π/2/[1/2（ω2-ω1）],这是半拍，一拍的时间为2π/（ω2-ω1）</p>
+<p>校准乐器，拿已校准好的琴与未校准的琴同时演奏相同的音，细听有无拍的现象，若有说明还需校准。使拍频越来越小直到完全消失为止</p>
+<h2 id="方向垂直，频率相同"><a href="#方向垂直，频率相同" class="headerlink" title="方向垂直，频率相同"></a>方向垂直，频率相同</h2><p>物体同时参加互相垂直的两个方向上的同频率振动</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/2F06A15B6EF366F86403C707372A4668.jpg" alt=""></p>
+<p>试求合成振动</p>
+<p>合成x和y的振动，不能作简单的代数相加。物体既有x方向上的偏离，又有y方向上的偏离，合成运动是在xy平面上进行的。<br>其实可以把x，y的两个方程式看作轨迹的参数方程式，消去参数t就可得轨迹</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/4BE401B263FAD5AF0A9A1B332DB816EC.jpg" alt=""></p>
+<p>δ=0，方程轨迹为直线</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/3EB4988CE9D3B702B49AF9D3E49C0920.jpg" alt=""></p>
+<p>δ=Π/2，方程轨迹为椭圆</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419.jpg" alt=""></p>
+<p>δ=Π，方程轨迹为直线</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/CEDE6F2C6CC2A8EBCEBF28C63D79E8DA.jpg" alt=""></p>
+<p>δ=3Π/2，方程轨迹为椭圆</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/212670C068F897B727B04CA47B899419-1594978586150.jpg" alt=""></p>
+<p>采用参考圆的方法研究合成振动更直观，这里研究δ=90^.^，φ0=0的情形</p>
+<p>谐振动x可用参考圆C1上的匀速运动描写，谐振动C2可用参考圆C2上的匀速运动描写。既然xy的频率相同，那么可以将C1,C2分成相同的等份，分别给这些点编上号（1，2，3，4，5…….）令起始点编号相同，所以就有当C1上的质点运动到编号为n的点时，C2上的质点也运动到该点。</p>
+<p>把C1上的点1向x轴投影，C2上的点1向y轴投影，两根投影线的交点就是合成振动对应点的位置。就这样依次得到所有合成振动的点。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/0E59111AC6950DA5F5ADA256B44F82FE.jpg" alt=""></p>
+<p>相差δ为其它数值完全可以按照上面方法求得合成振动。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D40B1DDD6A9C74D88C7A2CF21A7DEFFC.jpg" alt=""></p>
+<p>单相感应电动机里，把单相“劈”为两相，从而有互相垂直的两个同相差为90度、频率、同振幅的谐变磁场，则合成磁场作圆振动，这个旋转磁场就带着转子跟着它转<br>光是一种电磁波，如果光波里的电场作椭圆振动，就叫做椭圆偏振光，可以分解为x,y方向的两个谐振动。这两个成分叫做平面偏振光</p>
+<h2 id="方向垂直，频率不同"><a href="#方向垂直，频率不同" class="headerlink" title="方向垂直，频率不同"></a>方向垂直，频率不同</h2><p>运动合成仍然可以使用参考圆的方法</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/D984060DD1718345C0044903C2D6C22E.jpg" alt=""></p>
+<p>在水平横杆的A和B两点各系一轻线，两线在C点合并，下挂一球。小球的x向摆动是以L<del>1</del>为摆长，y向摆动是以L<del>2</del>为摆长，小球在x向的频率只有y向的一半。因此在等分参考圆编号时，y参考圆的等份数应是x参考圆的两倍。</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/%E6%8C%AF%E5%8A%A8%E4%B8%8E%E6%B3%A2/%E4%BA%8C/1003BA49BE49C582DFB240AB009A6FDE.jpg" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/physics-study/" rel="tag"># physics study</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/16/2020-07-16-zhen-dong-yi/" rel="next" title="“力学振动与波复习（预习）笔记（一）”">
+                <i class="fa fa-chevron-left"></i> “力学振动与波复习（预习）笔记（一）”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/18/2020-07-18-zhen-dong-yu-bo-ke-tang-ti-wen/" rel="prev" title="“力学振动与波复习课要点”">
+                “力学振动与波复习课要点” <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">华中师范大学光学在线教学资源团队</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谐振动的合成"><span class="nav-number">1.</span> <span class="nav-text">谐振动的合成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方向相同，频率相同"><span class="nav-number">1.1.</span> <span class="nav-text">方向相同，频率相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向相同，频率不同"><span class="nav-number">1.2.</span> <span class="nav-text">方向相同，频率不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向垂直，频率相同"><span class="nav-number">1.3.</span> <span class="nav-text">方向垂直，频率相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向垂直，频率不同"><span class="nav-number">1.4.</span> <span class="nav-text">方向垂直，频率不同</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">华中师范大学光学在线教学资源团队</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

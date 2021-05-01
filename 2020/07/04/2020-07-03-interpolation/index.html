@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="math study," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="光学在线教学资源平台" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="插值算法数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的数据是极少的，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些新的但又比较靠谱的值来满 足需求，这就是插值的作用。 定义一维插值问题问题如下:已经有n + 1个节点(xi,yi)(i&#x3D;0,1,……,n)， 其中xi互不相同不妨假设a&#x3D;x0&lt;x1&lt;…&lt;xn&#x3D;b,求任一插值点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“数学建模-Interpolation-(插值算法)-学习笔记”">
+<meta property="og:url" content="http://张德邻.com/2020/07/04/2020-07-03-interpolation/index.html">
+<meta property="og:site_name" content="光学在线教学资源平台">
+<meta property="og:description" content="插值算法数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的数据是极少的，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些新的但又比较靠谱的值来满 足需求，这就是插值的作用。 定义一维插值问题问题如下:已经有n + 1个节点(xi,yi)(i&#x3D;0,1,……,n)， 其中xi互不相同不妨假设a&#x3D;x0&lt;x1&lt;…&lt;xn&#x3D;b,求任一插值点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703175624737.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180152881.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180221430.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181345275.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181518392.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181656072.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181752106.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181915412.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182113386.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182132809.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182028404.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182157351.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182333695.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182351708.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182829212.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183153642.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183249362.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214417472.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214612674.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214700353.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215757459.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215829046.png">
+<meta property="og:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703220014289.png">
+<meta property="article:published_time" content="2020-07-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-13T15:03:25.982Z">
+<meta property="article:author" content="华中师范大学光学在线教学资源团队">
+<meta property="article:tag" content="math study">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703175624737.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xn--e1t0my86j.com/2020/07/04/2020-07-03-interpolation/"/>
+
+
+
+
+
+  <title>“数学建模-Interpolation-(插值算法)-学习笔记” | 光学在线教学资源平台</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">光学在线教学资源平台</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Optics online teaching resources</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xn--e1t0my86j.com/2020/07/04/2020-07-03-interpolation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="华中师范大学光学在线教学资源团队">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="光学在线教学资源平台">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">“数学建模-Interpolation-(插值算法)-学习笔记”</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-04T00:00:00+08:00">
+                2020-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="插值算法"><a href="#插值算法" class="headerlink" title="插值算法"></a>插值算法</h2><p>数模比赛中，常常需要根据已知的函数点进行数据、模型的处理和 分析，而有时候现有的<strong>数据是极少的</strong>，不足以支撑分析的进行，这时就 需要使用一些数学的方法，“模拟产生”一些<strong>新的但又比较靠谱的值</strong>来满 足需求，这就是插值的作用。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><h4 id="一维插值问题"><a href="#一维插值问题" class="headerlink" title="一维插值问题"></a>一维插值问题</h4><p>问题如下:已经有n + 1个节点(xi,yi)(i=0,1,……,n)， 其中xi互不相同<br>不妨假设a=x0&lt;x1&lt;…&lt;xn=b,求任一插值点x’(≠x;)处的插值y’</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703175624737.png" alt="image-20200703175624737"></p>
+<p>思路:构造函数y= f(x),使得f(x )过所有节点，求f(x’)即可得到y’</p>
+<h4 id="插值法定义"><a href="#插值法定义" class="headerlink" title="插值法定义"></a>插值法定义</h4><p>设函数y= f(x)在区间[a,b]上有定义，且已知在点<br>a&lt;x0&lt;x1&lt;…&lt; nx&lt;b<br>上的值分别为:y0,y1,…..,yn<br>若存在一简单函数P (x),使   P(xi)=yi, (i =,1,2.,n)<br>则称<strong>P(x)为f(x)的插值函数</strong>，点x0,..xn, 称为插值<br>节点，包含插值节点的区间|a,b]称为插值区间,求插值函数P(x) 的方法称为插值法。</p>
+<h3 id="插值法的分类"><a href="#插值法的分类" class="headerlink" title="插值法的分类"></a>插值法的分类</h3><h4 id="多项式插值"><a href="#多项式插值" class="headerlink" title="多项式插值"></a>多项式插值</h4><h5 id="一般插值多项式原理"><a href="#一般插值多项式原理" class="headerlink" title="一般插值多项式原理"></a>一般插值多项式原理</h5><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180152881.png" alt=""></p>
+<p>证明：A是范德蒙行列式（）</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703180221430.png" alt="image-20200703180221430"></p>
+<p>构造出<img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181345275.png" alt="image-20200703181345275"></p>
+<h5 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h5><h6 id="两个点"><a href="#两个点" class="headerlink" title="两个点"></a>两个点</h6><p>拉格朗日插值法可以找到一个多项式，其恰好在各个观测的点取到观测到的值</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181518392.png" alt="image-20200703181518392"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1</p>
+<h6 id="三个点"><a href="#三个点" class="headerlink" title="三个点"></a>三个点</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181656072.png" alt="image-20200703181656072"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1<br>当X=X2，f(x)=y2  </p>
+<h6 id="四个点"><a href="#四个点" class="headerlink" title="四个点"></a>四个点</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181752106.png" alt="image-20200703181752106"></p>
+<p>当X=X0，f(x)=y0<br>当X=X1，f(x)=y1<br>当X=X2，f(x)=y2<br>当X=X3，f(x)=y3   </p>
+<h6 id="拉格朗日插值多项式"><a href="#拉格朗日插值多项式" class="headerlink" title="拉格朗日插值多项式"></a>拉格朗日插值多项式</h6><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703181915412.png" alt="image-20200703181915412"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182113386.png" alt="image-20200703182113386"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182132809.png" alt="image-20200703182132809"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182028404.png" alt="image-20200703182028404"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182157351.png" alt="image-20200703182157351"></p>
+<h6 id="龙格现象"><a href="#龙格现象" class="headerlink" title="龙格现象"></a>龙格现象</h6><p><strong>插值多项式并不是次数越高，误差越小</strong>！</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182333695.png" alt="image-20200703182333695"></p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182351708.png" alt="image-20200703182351708"></p>
+<p><strong>高次插值会产生龙格现象，即在两端处波动极大,产生明显的震荡。在不熟悉曲线 运动趋势的前提下，不要轻易使用高次插值</strong></p>
+<h4 id="分段插值"><a href="#分段插值" class="headerlink" title="分段插值"></a>分段插值</h4><p>插值多项式的缺点：<br>1.插值多项式次数高精度未必显著提高<br>2.插值多项式次数越高摄入误差可能显著增大</p>
+<p>————》<strong>采用分段低次插值提高插值精度</strong></p>
+<h5 id="分段二次插值"><a href="#分段二次插值" class="headerlink" title="分段二次插值"></a>分段二次插值</h5><p> 选取跟节点x最近的三个节点xi-1,xi, xi+1进行二次插值。 (n+1项 =》n次 插值)<br>即在每一一个区间[x-1,x+1]上， 取:</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703182829212.png" alt="image-20200703182829212"></p>
+<p>这种分段的低次插值称为<strong>分段二次插值</strong>，在几何上就是用分段抛物线代替y=f(x),故分段二次插值又称为<strong>分段抛物插值</strong>。</p>
+<h5 id="牛顿插值法"><a href="#牛顿插值法" class="headerlink" title="牛顿插值法"></a>牛顿插值法</h5><p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183153642.png" alt="image-20200703183153642"></p>
+<p>差商：</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703183249362.png" alt="image-20200703183249362"></p>
+<h6 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h6><p>与拉格朗日插值法相比，牛顿插值法的计算过程<strong>具有继承性</strong>。<br>(牛顿插值法每次插值<strong>只和前n项**</strong>的值有关**，这样每次只要在原来的函数上添加新的项，就能够产生新的函数)<br>但是牛顿插值也存在龙格现象的问题。</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>拉格朗日和牛顿插值仅仅要求插值多项式在<strong>插值节点处与被插函数有相等的函数值</strong>，而这种插值多项式却<strong>不能全面反映被插值函数的性态</strong>。<br>然而在许多实际问题中，不仅要求插值函数与被插值函数在所有节点处有相同的函数值，它也<strong>需要在一个或全部节点上插值多项式与被插函数有相同的低阶甚至高阶的导数值。</strong><br>对于这些情况，拉格朗日插值和牛顿插值都不能满足。</p>
+<h5 id="埃尔米特插值"><a href="#埃尔米特插值" class="headerlink" title="埃尔米特插值"></a>埃尔米特插值</h5><p>不但要求在节点上的函数值相等，<strong>而且还要求对应的导数值也相等,甚至要求 高阶导数也相等</strong></p>
+<p>设函数f(x)在区间[a, b]上有n+1个互异节点a=x0&lt;x1&lt;x2&lt;..&lt;xn=b,<br>定义在[a,b]上函数f(x) 在节点上满足:</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214417472.png" alt="image-20200703214417472"><br>可唯一确定一个次数不超过2n+1的多项式<br><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214612674.png" alt="image-20200703214612674"></p>
+<p>满足：  </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703214700353.png" alt="image-20200703214700353"></p>
+<h5 id="分段三次埃尔米特插值"><a href="#分段三次埃尔米特插值" class="headerlink" title="分段三次埃尔米特插值"></a>分段三次埃尔米特插值</h5><p>直接使用Hermite插值得到的多项式次数较高，也<strong>存在着龙格现象</strong>， 因此在实际应用中，往往使用分段三次Hermite插值多项式(PCHIP)。</p>
+<p>Matlab有内置的函数(实现过程已经帮我们封装好了，会调用就行了)</p>
+<pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span> new_ x<span class="token punctuation">)</span></code></pre>
+<h5 id="三次样条插值"><a href="#三次样条插值" class="headerlink" title="三次样条插值"></a>三次样条插值</h5><p>设y=f(x)在点X0, X1，X2…Xn的值为y0, y1, y2….yn, 若函数S(x)满足下列条件<br>(1) S(x)=f(xi) =yi， i=0,1,2,….,n<br>(2)在每个子区间[xi, xi+1l(i=0,2,……,n-1)上S(x)是<strong>三次多项式</strong><br>(3) S(x)在|a,b]上<strong>二阶连续可微。</strong><br>(4)具有如下形式<br><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215757459.png" alt="image-20200703215757459"><br>(5)满足条件</p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703215829046.png" alt="image-20200703215829046"></p>
+<p>则称S(x)为函数f(x)的三次样条插值函数</p>
+<p>Matlab有内置的函数：   </p>
+<pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span>  </code></pre>
+<p>x是已知的样本点的横坐标;y是已知的样本点的纵坐标;new_x是要插入处对应的横坐标</p>
+<p>插值结果对比：  </p>
+<p><img src="http://dkyz.gitee.io/ccnu_zdl/img/inter/image-20200703220014289.png" alt="image-20200703220014289"></p>
+<p>可以看出，三次样条生成的曲线更加光滑。在实际建模中， 由于我们不知道数据的生成过程，因此这两种插值都可以使用。</p>
+<h5 id="n维数据的插值"><a href="#n维数据的插值" class="headerlink" title="n维数据的插值"></a>n维数据的插值</h5><pre class=" language-matlab"><code class="language-matlab">p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span>x2<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">,</span>xn<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x1<span class="token punctuation">,</span>new_x2<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">,</span>new_xn<span class="token punctuation">,</span> method<span class="token punctuation">)</span> </code></pre>
+<p>x1,x2,…,xn是已知的样本点的横坐标 y是已知的样本点的纵坐标坐标<br>new_x1,new_x2,…,new_xn是要插入点的横坐标<br> method是要插值的方法<br> ‘linear’：线性插值（默认算法）； ‘cubic’：三次插值；<br>‘ spline’ ：三次样条插值法； ( 最为精准 )<br>‘nearest’：最邻近插值算法。 </p>
+<pre class=" language-matlab"><code class="language-matlab">x <span class="token operator">=</span> ‐<span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+new_x<span class="token operator">=</span> ‐<span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">%等价于</span>
+p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> ’spline’<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r‐'</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Matlab代码实现"><a href="#Matlab代码实现" class="headerlink" title="Matlab代码实现"></a>Matlab代码实现</h3><pre class=" language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 分段三次埃尔米特插值</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">% 在同一个脚本文件里面，要想画多个图，需要给每个图编号，否则只会显示最后一个图哦~</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">% plot函数用法:</span>
+<span class="token comment" spellcheck="true">% plot(x1,y1,x2,y2) </span>
+<span class="token comment" spellcheck="true">% 线方式： - 实线 :点线 -. 虚点线 - - 波折线 </span>
+<span class="token comment" spellcheck="true">% 点方式： . 圆点  +加号  * 星号  x x形  o 小圆</span>
+<span class="token comment" spellcheck="true">% 颜色： y黄； r红； g绿； b蓝； w白； k黑； m紫； c青</span>
+
+
+<span class="token comment" spellcheck="true">% 三次样条插值和分段三次埃尔米特插值的对比</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> 
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p1 <span class="token operator">=</span> <span class="token function">pchip</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">%分段三次埃尔米特插值</span>
+p2 <span class="token operator">=</span> <span class="token function">spline</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>new_x<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">%三次样条插值</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'o'</span><span class="token punctuation">,</span>new_x<span class="token punctuation">,</span>p1<span class="token punctuation">,</span><span class="token string">'r-'</span><span class="token punctuation">,</span>new_x<span class="token punctuation">,</span>p2<span class="token punctuation">,</span><span class="token string">'b-'</span><span class="token punctuation">)</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'样本点'</span><span class="token punctuation">,</span><span class="token string">'三次埃尔米特插值'</span><span class="token punctuation">,</span><span class="token string">'三次样条插值'</span><span class="token punctuation">,</span><span class="token string">'Location'</span><span class="token punctuation">,</span><span class="token string">'SouthEast'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">%标注显示在东南方向</span>
+<span class="token comment" spellcheck="true">% 说明：</span>
+<span class="token comment" spellcheck="true">% LEGEND(string1,string2,string3, …)</span>
+<span class="token comment" spellcheck="true">% 分别将字符串1、字符串2、字符串3……标注到图中，每个字符串对应的图标为画图时的图标。</span>
+<span class="token comment" spellcheck="true">% ‘Location’用来指定标注显示的位置</span>
+
+
+<span class="token comment" spellcheck="true">% n维数据的插值</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span> y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+new_x <span class="token operator">=</span> <span class="token operator">-</span><span class="token keyword">pi</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> inter<span class="token operator">/</span><span class="token function">imagepn</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> <span class="token string">'spline'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">% 等价于 p = spline(x, y, new_x);</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> new_x<span class="token punctuation">,</span> p<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">)</span>
+</code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/math-study/" rel="tag"># math study</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/03/2020-07-03-topsis/" rel="next" title="“数学建模-TOPSIS-(优劣解距离法)-学习笔记”">
+                <i class="fa fa-chevron-left"></i> “数学建模-TOPSIS-(优劣解距离法)-学习笔记”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/05/2020-07-05-curvefitting/" rel="prev" title="“数学建模-CurveFitting-(曲线拟合)-学习笔记”">
+                “数学建模-CurveFitting-(曲线拟合)-学习笔记” <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">华中师范大学光学在线教学资源团队</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值算法"><span class="nav-number">1.</span> <span class="nav-text">插值算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一维插值问题"><span class="nav-number">1.1.1.</span> <span class="nav-text">一维插值问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值法定义"><span class="nav-number">1.1.2.</span> <span class="nav-text">插值法定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插值法的分类"><span class="nav-number">1.2.</span> <span class="nav-text">插值法的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多项式插值"><span class="nav-number">1.2.1.</span> <span class="nav-text">多项式插值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一般插值多项式原理"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">一般插值多项式原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拉格朗日插值法"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">拉格朗日插值法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#两个点"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">两个点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#三个点"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">三个点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#四个点"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">四个点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#拉格朗日插值多项式"><span class="nav-number">1.2.1.2.4.</span> <span class="nav-text">拉格朗日插值多项式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#龙格现象"><span class="nav-number">1.2.1.2.5.</span> <span class="nav-text">龙格现象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分段插值"><span class="nav-number">1.2.2.</span> <span class="nav-text">分段插值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分段二次插值"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">分段二次插值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#牛顿插值法"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">牛顿插值法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#比较"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#埃尔米特插值"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">埃尔米特插值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分段三次埃尔米特插值"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">分段三次埃尔米特插值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三次样条插值"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">三次样条插值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#n维数据的插值"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">n维数据的插值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matlab代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">Matlab代码实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">华中师范大学光学在线教学资源团队</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

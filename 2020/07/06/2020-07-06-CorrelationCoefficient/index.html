@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Delin Zhang' Page</title><meta name="author" content="Delin Zhang"><link rel="shortcut icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">Delin Zhang' Page</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/#Publications"> Publications</a></li><li class="menus_item"><a class="site-page" href="/"> About</a></li><li class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/profile.jpg'" alt="avatar"></div><div class="author-discrip"><h3>Delin Zhang</h3><p class="author-bio">Your biography can be writed down here.</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-icons"><li><a class="social-icon" href="https://github.com/dkyz" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li><li><a class="social-icon" href="dkyz.cuhksz@gmail.com" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i></a></li></ul><ul class="social-links"><li><a class="e-social-link" href="/" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="/" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li></ul></div><a class="cv-links" href="/attaches/CV.pdf" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"><span>My Detail CV.</span></i></a></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">“数学建模-CorrelationCoefficient-(相关系数)-学习笔记”</h2><article><h1 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h1><p>两种最为常用的相关系数：皮尔逊pearson相关系数和斯皮尔曼spearman等级相关系数。它们可用来衡量两个变量之间的相关性的大小，根据数据满足的不同条件，我们要选择不同的相关系数进行计算和分析（建模论文中最容易用错的方法）。</p>
+<h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><h3 id="总体和样本"><a href="#总体和样本" class="headerlink" title="总体和样本"></a>总体和样本</h3><p>总体——所要考察对象的全部个体叫做总体.我们总是希望得到总体数据的一些特征（例如均值方差等）<br>样本——从总体中所抽取的一部分个体叫做总体的一个样本.<br><strong>计算这些抽取的样本的统计量来估计总体的统计量</strong>  例如使用样本均值、样本标准差来估计总体的均值（平均水平）和总体的标准差（偏离程度）<br>例子：我国10年进行一次的人口普查得到的数据就是总体数据。大家自己在QQ群发问卷叫同学帮忙填写得到的数据就是样本数据。</p>
+<h3 id="总体皮尔逊相关系数"><a href="#总体皮尔逊相关系数" class="headerlink" title="总体皮尔逊相关系数"></a>总体皮尔逊相关系数</h3><p>如果两组数据X:{X1,X2,. ,Xn }和Y:{Y1,Y2,.,Yn}是总体数据 .</p>
+<p>那么总体均值:<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706113135676.png" alt="image-20200706113135676">  </p>
+<p>总体协方差:<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706113200154.png" alt="image-20200706113200154"></p>
+<p>直观理解协方差：如果X、Y变化方向相同，即当X大于（小于）其均值时，Y也大于（小于）其均值，在这两种情况下，乘积为正。如果X、Y的变化方向一直保持相同，则协方差为正；同理，如果X、Y变化方向一直相反，则协方差为负；如果X、Y变化方向之间相互无规律，即分子中有的项为正，有的项为负，那么累加后正负抵消。<br> ( <strong>表示X,Y变化方向之间的规律</strong> )    </p>
+<p><strong>注意：协方差的大小和两个变量的量纲有关</strong>  ,<strong>总体皮尔逊相关系数就是协方差消去了量纲的影响</strong>  （即将X和Y标准化后的协方差）<br>总体皮尔逊相关系数：</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706113632762.png" alt="image-20200706113632762"></p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706113652596.png" alt="image-20200706113652596"><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706113756702.png" alt="image-20200706113756702"></p>
+<h3 id="样本皮尔逊相关系数"><a href="#样本皮尔逊相关系数" class="headerlink" title="样本皮尔逊相关系数"></a>样本皮尔逊相关系数</h3><p>大体和总体皮尔逊相关系数的算法一样，只是在计算样本的标准差时有区别</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706114038123.png" alt="image-20200706114038123"></p>
+<p>注：为什么样本方差分母是n‐1见附录拓展资料</p>
+<h3 id="相关性可视化"><a href="#相关性可视化" class="headerlink" title="相关性可视化"></a>相关性可视化</h3><p>通过绘制散点图可以很容易地判定两个数据对象x和y之间的相关性。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706114245477.png" alt="image-20200706114245477"></p>
+<p>图片来源：[美]作者Pang‐Ning Tan 《数据挖掘导论》</p>
+<h3 id="理解误区"><a href="#理解误区" class="headerlink" title="理解误区"></a>理解误区</h3><ul>
+<li><p>相关系数只是用来衡量两个变量线性相关程度的指标；也就是说，你<strong>必须先确认这两个变量是线性相关</strong>的，然后这个相关系数才能告诉你他俩相关程度如何。  </p>
+</li>
+<li><p>相关系数计算结果为0并不代表两个变量之间没有关系，（只能代表没有线性相关）</p>
+<p>例：冰激凌的销量和温度之间的关系（相关系数计算结果为0）：</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706114810305.png" alt="image-20200706114810305"></p>
+</li>
+<li><p>容易忽视的点</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706115031061.png" alt="image-20200706115031061"></p>
+</li>
+</ul>
+<ol>
+<li><p>非线性相关也会导致线性相关系数很大，例如图2。    </p>
+</li>
+<li><p>离群点对相关系数的影响很大，例如图3，去掉离群点后，相关系数为0.98。    </p>
+</li>
+<li><p>如果两个变量的相关系数很大也不能说明两者相关，例如图4，可能是受到了异常值的影响</p>
+</li>
+</ol>
+<h2 id="斯皮尔曼相关系数"><a href="#斯皮尔曼相关系数" class="headerlink" title="斯皮尔曼相关系数"></a>斯皮尔曼相关系数</h2><p>定义: X和Y为两组数据，其斯皮尔曼(等级)相关系数:</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706215506321.png" alt="image-20200706215506321"></p>
+<p>其中，di为Xi和Yi之间的等级差.<br>一个数的等级，就是将它所在的一列数按照从小到大排序后，这个数所在的位置 (注:如果有的数值相同，则将它们所在的位置取算术平均。)<br>rs位于-1和1之间。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706215724922.png" alt="image-20200706215724922"></p>
+<p><strong>另一种斯皮尔曼相关系数的定义</strong>  :等级之间的皮尔逊相关系数  </p>
+<h3 id="matlab计算"><a href="#matlab计算" class="headerlink" title="matlab计算"></a>matlab计算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">corr(X , Y , <span class="string">&#x27;type&#x27;</span> , <span class="string">&#x27;Spearman&#x27;</span>)</span><br><span class="line"><span class="comment">%这里的X和Y必须是列向量哦~</span></span><br><span class="line">corr(X, <span class="string">&#x27;type&#x27;</span> , <span class="string">&#x27;Spearman&#x27;</span>)</span><br><span class="line"><span class="comment">%这时计算X矩阵各列之间的斯皮尔曼相关系数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="两个相关系数的比较"><a href="#两个相关系数的比较" class="headerlink" title="两个相关系数的比较"></a>两个相关系数的比较</h2><p>斯皮尔曼相关系数和皮尔逊相关系数选择:  </p>
+<ul>
+<li>1.<strong>连续数据，正态分布，线性关系</strong>，用pearson相关系数是最恰当，当然用spearman相关系数也可以， 就是效率没有pearson相关系数高。</li>
+<li>2.<strong>上述任一条件不满足</strong>，就用spearman相关系数(只要数据满足单调关系（例如线性函数、指数函数、对数函数等）就能够使用)，不能用pearson相关系数。</li>
+<li>3.两个定序数据之间也用spearman相关系数，不能用pearson相关系数。</li>
+</ul>
+<p>定序数据是指仅仅反映观测对象等级、顺序关系的数据，是由定序尺度计量形成的，表现为类别，可以进行排序，属于品质数据。<br>例如：优、良、差；我们可以用1表示差、2表示良、3表示优，但请注意，用2除以1得出的2并不代表任何含义。定序数据最重要的意义代表了一组数据中的某种逻辑顺序。</p>
+<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>这里是搬运的CSDN上的文章：《如何用最通俗易懂的方式理解假设检验》  </p>
+<p>假设检验简单来说，就是下面4步的推理逻辑：</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn1.jpg" alt="img"></p>
+<p>为了你更容易理解，我还是从一个生活中的例子开始聊起。</p>
+<p>这个例子里举王宝强和马蓉的例子并没有恶意，只是想说明假设检验的背后逻辑，而这个例子更容易让你理解清楚。</p>
+<p>有一天，宝强怀疑妻子有可能出轨，但是自己逻辑能力太弱，于是就请了我这个侦探来帮他破案。</p>
+<p>于是，我就拿出了自己的杀手锏武器，也就是破案的套路：假设检验。</p>
+<p><strong>第1步，我需要明确问题是什么。</strong></p>
+<p>问题：宝强要检验马蓉是否出轨</p>
+<p>根据这个问题我提出来下面两个互为相反的假设。</p>
+<p>零假设：马蓉没有出轨</p>
+<p>备选假设：马蓉出轨了</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn2.jpg" alt="img"></p>
+<p>为什么要提出两个假设呢？</p>
+<p>因为从逻辑学来看，如果我们能够证明某个零假设不成立，那么其对立假设（也就是备选假设）肯定为真。</p>
+<p>零假设和对立假设在逻辑方面是互补的，也就是说，如果其中一个假设为真，则另一个假设为假；如果我们推翻了其中一个假设，那就必须承认另一个假设。</p>
+<p>对应这个例子里，如果我能找到足够强的证据来否定零假设（也就是马蓉没有出轨），那么我就能有效的说明零假设不成立，那么备选假设成立。</p>
+<p>好了，接下来的问题就是：如何找到证据了。下面图片我们看下第2步</p>
+<p><strong>第2步：证据是什么？</strong></p>
+<p>根据中心极限定理，我们知道，合理足够多的样本可以代表总体。所以我要找到马蓉合理的样本数据来做证据。</p>
+<p>接下来，我随机调查了马蓉这几年的样本数据，包括上网，开房，财务等。</p>
+<p>根据这些样本数据显示出来的证据，我利用自己的统计概率知识，计算出了，在零假设成立的前提下，马蓉没有出轨的概率。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn3.jpg" alt="img"></p>
+<p>不算不知道，一算吓一跳。在零假设成立的前提下，样本数据计算出马蓉没有出轨的概率是0.01%</p>
+<p>这个概率值在统计概率中有个专门的术语叫<strong>p值</strong>。也就是，在零假设成立的前提下，得到样本观察结果出现的概率。</p>
+<p>在这里p值就是在零假设成立的前提下（马蓉没有出轨），用样本证据计算出的马蓉没有出轨的概率，p&#x3D;0.01%</p>
+<p><strong>现在我们来看第3步：判断标准是什么</strong></p>
+<p>我不能说有了证据就立马说明人家马蓉出轨，错误的判断会造成宝强家庭的毁灭性破坏。</p>
+<p>所以，提前制定好一个定罪的标准，有助于我能做到：绝不能冤枉一个好人，但也不可放过一个坏人。</p>
+<p>因为我定的零假设是：马蓉没有出轨。所以这里定的标准是，如果马蓉没有出轨的概率&lt;&#x3D;5%，那么就直接否定了零假设，也就是马蓉没有出轨不成立。</p>
+<p>这里比较拗口，马蓉没有出轨的概率&lt;&#x3D;5%，反面就是马蓉出轨的概率大于95%，所以马蓉有很大概率出轨，因此把零假设：马蓉没有出轨否定了。</p>
+<p>这里用于做出决策的标准5%，在假设检验里叫做<strong>“显著水平”</strong>，用符号α：Significance Level (Alpha)表示，是一个概率值。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn4.jpg" alt="img"></p>
+<p><strong>第4步：做出结论</strong></p>
+<p>那么，马蓉到底有没有出轨呢？</p>
+<p>我们将样本证据计算出的p值与判断标准α比较下就可以了：</p>
+<p>如果p&lt; &#x3D;α，那么拒绝零假设，也就是备选假设成立。</p>
+<p>如果p&gt;α，那么零假设成立</p>
+<p>这代表什么意思呢？</p>
+<p>α是判断标准，也就是小于这个值就表示零假设不成立。</p>
+<p>p值在零假设成立前提下，用样本证据得出的概率，在这里表示有样本证据得出马蓉没有出轨的概率。</p>
+<p>通过比较这两个值，我们发现：p远远小于α。</p>
+<p>马蓉小姐姐，样本证据对你大大不利啊。本想零假设证明你没有出轨的，但是样本数据给出的证据，也就是你没有出轨的概率只有0.01%，这个概率远远小于判断标准5%</p>
+<p>所以，我可以大胆的拒绝零假设。</p>
+<p>回到我们一开始提出的假设：如果零假设不成立，那么预备假设成立。</p>
+<p>现在样本数据显示零假设不成立，所以预备假设成立，也就是马蓉出轨了。</p>
+<p>我将这个毫无破绽的推理过程告诉宝强后，宝强顺藤摸瓜发现名下财产也被马蓉卷跑。最后再考虑各种解决方法后，选择了求助于法律手段。并在微博上公布了这件事情，求助于舆论的压力。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn5.jpg" alt="img"></p>
+<p>福尔摩斯说：一旦排除所有的不可能，剩下的不管多么难以置信，一定就是真相。</p>
+<p>在唐人街探案中，刘昊然和王宝强破案时，也引用了这句话：</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn6.jpg" alt="img"></p>
+<p><strong>总结</strong></p>
+<p>最后，我们总结下假设检验的逻辑套路，你就更清楚了。</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/csdn7.jpg" alt="img"></p>
+<p>第1步：问题是什么？</p>
+<p>确定你要研究的问题是什么。</p>
+<p>根据这个问题我提出来下面两个互为相反的假设。</p>
+<p>零假设：马蓉没有出轨</p>
+<p>备选假设：马蓉出轨了</p>
+<p>第2步：证据是什么？</p>
+<p>在零假设成立的前提下，我们认为手头已有的数据是从零假设为真的总体中随机抽样得到的一个样本，但是这个可能性是多少？所以我们需要计算出这个概率，就是p值。</p>
+<p>在例子中就，我们得出的证据显示，马蓉没有出轨的概率p&#x3D;0.01%</p>
+<p>第3步：判断标准是什么？</p>
+<p>需要建立判断标准来检验证据是否有效。</p>
+<p>假设检验常用的判断标准是与0.1%，1%，5%，在假设检验里叫做<strong>“显著水平”</strong>，用符号<strong>α</strong>，</p>
+<p>它是一个概率值，用于表示不可能发生和可能发生的临界值。</p>
+<p>第4步： 做出结论</p>
+<p>根据你找到证据，和自己的标准，你做出了正确的结论。这是一种使用数据和概率来做决策的过程。</p>
+<p>我们将样本证据计算出的p值与判断标准α比较下就可以了：</p>
+<p>如果p&lt; &#x3D;α，那么零假设不成立，也就是预备假设成立。</p>
+<p>也就是如果得到样本平均值的概率p值小于显著水平（5%或者1%或者0.1%），那么通常被视为不太可能发生，拒绝零假设。</p>
+<p>在前面的例子中，p值是指在零假设成立前提下，用样本证据得出的概率，在这里表示有样本证据得出马蓉没有出轨的概率。</p>
+<p>如果p&gt;α，那么零假设成立</p>
+<p>通过比较这两个值，我们发现：p远远小于α。</p>
+<p>从而证明零假设不成立，备选假设成立，也就是马蓉出轨了。</p>
+<p>假设检验这个过程，虽然套上了统计概率的外衣，但是说白了，底层思想其实很简单，就是：一种逻辑推理的套路。</p>
+<p>这个逻辑推理，其实我们每天都在用。我们平常说某个人心思细腻，逻辑严谨。其实你也可以做到，那就是掌握今天的逻辑推理套路：假设检验。</p>
+<h3 id="皮尔逊假设检验"><a href="#皮尔逊假设检验" class="headerlink" title="皮尔逊假设检验"></a>皮尔逊假设检验</h3><ul>
+<li><p>第一步:提出原假设H0和备择假设H1(两个假设是截然相反的哦)<br>假设我们计算出了一个皮尔逊相关系数r，我们想检验它是否显著的异于0.<br>那么我们可以这样设定原假设和备择假设: H0:r &#x3D; 0 , H1:r≠0  </p>
+</li>
+<li><p>第二步:在原假设成立的条件下，利用我们要检验的量构造出一个符合某一分布的统计量。统计量相当于我们要检验的量的一个函数，里面不能有其他的随机变量。<br>这里的分布一般有四种：标准正太分布、t分布、<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706184133370.png" alt="image-20200706184133370">分布和F分布<br>对于皮尔逊相关系数r而言，在满足一定条件下，我们可以构造统计量:<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706184355549.png" alt="image-20200706184355549"></p>
+</li>
+</ul>
+<p>t是服从自由度为n - 2的t分布  </p>
+<ul>
+<li><p>第三步，将我们要检验的这个值带入这个统计量中，可以得到一一个特定的值(检验值)。r为相关系数，n为样本量   </p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">-4</span>:<span class="number">0.1</span>:<span class="number">4</span>;</span><br><span class="line">y = tpdf(x,<span class="number">28</span>);  <span class="comment">%构造出统计量函数（求t分布的概率密度值 28是自由度）</span></span><br><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">&#x27;-&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>第四步:由于我们知道统计量的分布情况，因此我们可以画出该分布的概率密度函数<em>pdf</em>，并给定一个置信水平，根据这个置信水平查表找到临界值，并画出检验统计量的接受域和拒绝域。  常见的置信水平有三个: 90%，95%和99%， 其中95%是三者中最为常用的。</p>
+</li>
+</ul>
+<p>如果我们选择95%的置信水平检验：根据r和n的值查阅<a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/d94dbd116bd97f192279e94a.html">t分布表</a>找出95%概率对应的临界值，然后根据临界值作出接受域和拒绝域（图中的临界值为2.048）</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706185505702.png" alt="image-20200706185505702"></p>
+<ul>
+<li>第五步:看我们计算出来的检验值是落在了拒绝域还是接受域，并下结论。<br>落在接受区域：在95%的置信水平上,我们接受原假设H0: r &#x3D; 0,因此r是显著的为0的。<br>落在拒绝区域：在95%的置信水平上,我们拒绝原假设H0: r &#x3D; 0,因此r是显著的不为0的。</li>
+</ul>
+<h4 id="p值判断法"><a href="#p值判断法" class="headerlink" title="p值判断法"></a>p值判断法</h4><p>更好用的方法：p值判断法<br>我们根据得到的那个检验值计算出其对应的概率：<br>检验值计算公式：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706184355549.png" alt="image-20200706184355549"><br>对应概率（P值）计算（matlab代码）：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">((<span class="number">1</span>-tcdf(t,(n-<span class="number">-2</span>)))*<span class="number">2</span>)  <span class="comment">%t为计算得到的检验值，n为样本量</span></span><br><span class="line">                        <span class="comment">%tcdf()：累计概率密度函数</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>p&lt;0.01，说明在99%的置信水平上拒绝原假设</th>
+<th>p值&gt;0.01，说明在99%的置信水平无法拒绝原假设</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>p&lt; 0.05，说明在95%的置信水平上拒绝原假设;</td>
+<td>p&gt; 0.05，说明在95 %的置信水平上无法拒绝原假设;</td>
+</tr>
+<tr>
+<td>p&lt;0.10，说明在90%的置信水平上拒绝原假设;</td>
+<td>p&gt; 0.10，说明在90%的置信水平上无法拒绝原假设;</td>
+</tr>
+</tbody></table>
+<ul>
+<li>计算各列之间的相关系数以及P值：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[R,P] = corrcoef(Test) </span><br><span class="line"><span class="comment">%R返回的是相关系数表，P返回的是对应于每个相关系数的p值</span></span><br><span class="line"><span class="comment">%Test是样本数据矩阵</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="皮尔逊相关系数假设检验的条件"><a href="#皮尔逊相关系数假设检验的条件" class="headerlink" title="皮尔逊相关系数假设检验的条件"></a>皮尔逊相关系数假设检验的条件</h4><p>第一，实验数据通常假设是成对的来自于正态分布的总体。因为我们在求皮尔逊相关性系数以后，通常还会用t检验之类的方法来进行皮尔逊相关性系数检验，而<strong>t检验是基于数据呈正态分布的假设的</strong>。<br>第二，实验数据之间的差距不能太大。皮尔逊相关性系数受异常值的影响比较大。<br>第三：每组样本之间是独立抽样的。构造t统计量时需要用到。</p>
+<h4 id="如何检验数据是否是正态分布"><a href="#如何检验数据是否是正态分布" class="headerlink" title="如何检验数据是否是正态分布"></a>如何检验数据是否是正态分布</h4><h5 id="正态分布JB检验"><a href="#正态分布JB检验" class="headerlink" title="正态分布JB检验"></a>正态分布JB检验</h5><p><strong>大样本n&gt;30</strong>:雅克‐贝拉检验(Jarque‐Bera test)<br>对于一个随机变量{Xi}，假设其偏度为S，峰度为K，那么我们可以构造JB统计量:</p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706193342047.png" alt="image-20200706193342047"></p>
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706193538888.png" alt="image-20200706193538888"></p>
+<p>那么进行假设检验的步骤如下:  </p>
+<ul>
+<li><p>H0:  该随机变量服从正态分布   H1:  该随机变量不服从正态分布</p>
+</li>
+<li><p>然后计算该变量的偏度和峰度，<strong>得到检验值JB*，并计算出其对应的p值</strong></p>
+</li>
+<li><p>将p值与0.05比较，如果小于0.05 则可拒绝原假设，否则我们不能拒绝原假设<br>MATLAB中进行JB检验的语法：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[h,p] = jbtest(x,alpha)</span><br><span class="line"><span class="comment">%当输出h等于1时，表示拒绝原假设；h等于0则代表不能拒绝原假设。</span></span><br><span class="line"><span class="comment">%alpha就是显著性水平，一般取0.05，此时置信水平为95%。</span></span><br><span class="line"><span class="comment">%x就是我们要检验的随机变量，注意这里的x只能是向量。（一次只能检验一列/行）</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%循环检验所有数据（一列一列的检验）</span></span><br><span class="line">n_c = <span class="built_in">size</span>(Test,<span class="number">2</span>);  <span class="comment">% number of column 数据的列数</span></span><br><span class="line">H = <span class="built_in">zeros</span>(<span class="number">1</span>,n_c);</span><br><span class="line">P = <span class="built_in">zeros</span>(<span class="number">1</span>,n_c);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n_c</span><br><span class="line">   [h,p] = jbtest(Test(:,<span class="built_in">i</span>),<span class="number">0.05</span>);</span><br><span class="line">   <span class="comment">%h判断假设是否成立（1：在95%的置信度下拒绝原假设（不成正态分布）2：在95%的置信度下接受原假设（成正态分布））</span></span><br><span class="line">   <span class="comment">%p为检验值JB*对应的p值</span></span><br><span class="line">   H(<span class="built_in">i</span>)=h;    </span><br><span class="line">   P(<span class="built_in">i</span>)=p;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">disp</span>(H)</span><br><span class="line"><span class="built_in">disp</span>(P)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="shapiro-wilk检验"><a href="#shapiro-wilk检验" class="headerlink" title="shapiro-wilk检验"></a>shapiro-wilk检验</h5><p><strong>小样本3≤n≤50</strong>：Shapiro‐wilk夏皮洛‐威尔克检验</p>
+<ul>
+<li>H0: 该随机变量服从正态分布 H1: 该随机变量不服从正态分布  </li>
+<li>计算出威尔克统计量后，得到相应的p值  </li>
+<li>将p值与0.05比较，如果小于0.05则可拒绝原假设，否则我们不能拒绝原假设。<br>利用Spass软件</li>
+</ul>
+<h5 id="Q-Q图法"><a href="#Q-Q图法" class="headerlink" title="Q-Q图法"></a>Q-Q图法</h5><p>在统计学中，Q‐Q图（Q代表分位数Quantile）是一种通过比较两个概率分布的分位数对这两个概率分布进行比较的概率图方法。<br>首先选定分位数的对应概率区间集合，在此概率区间上，点(x,y)对应于第一个分布的一个分位数x和第二个分布在和x相同概率区间上相同的分位数。这里，我们选择正态分布和要检验的随机变量，并对其做出QQ图，可想而知，如果要检验的随机变量是正态分布，那么QQ图就是一条直线。要利用Q‐Q图鉴别样本数据是否近似于正态分布,只需看Q‐Q图上的点是否近似地在一条直线附近。（<strong>要求数据量非常大</strong>）  </p>
+<p>matlab代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qqplot(Test(:,1))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706200706782.png" alt="image-20200706200706782"></p>
+<h3 id="斯皮尔曼相关系数的假设检验"><a href="#斯皮尔曼相关系数的假设检验" class="headerlink" title="斯皮尔曼相关系数的假设检验"></a>斯皮尔曼相关系数的假设检验</h3><h4 id="小样本"><a href="#小样本" class="headerlink" title="小样本"></a>小样本</h4><p>当n&lt;&#x3D;30时，直接查临界值表即可   <a href="">斯皮尔曼等级相关的临界值表</a></p>
+<h4 id="大样本"><a href="#大样本" class="headerlink" title="大样本"></a>大样本</h4><p>大样本情况下，构造统计量：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706220409690.png" alt="image-20200706220409690"></p>
+<p>计算检验值：<img src="https://dkyz.gitee.io/ccnu_zdl/img/CorrelationCoefficient/image-20200706220437634.png" alt="image-20200706220437634"></p>
+<p>并求出对应的p值与0.05相比即可（95%置信度的情况下:大于0.05无法拒绝原假设；小于0.05拒绝原假设）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1-normcdf(z))*2  %z：计算出的检验值</span><br><span class="line">                  %*2表示是双边检验</span><br><span class="line">                  %normcdf()正态分布概率密度函数</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Matlab相关代码"><a href="#Matlab相关代码" class="headerlink" title="Matlab相关代码"></a>Matlab相关代码</h2><h3 id="Matlab中基本统计量的函数："><a href="#Matlab中基本统计量的函数：" class="headerlink" title="Matlab中基本统计量的函数："></a>Matlab中基本统计量的函数：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">min      数组的最小元素</span><br><span class="line">mink     计算数组的k 个最小元素</span><br><span class="line">max      数组的最大元素</span><br><span class="line">maxk     计算数组的k 个最大元素</span><br><span class="line">bounds   最小元素和最大元素</span><br><span class="line">topkrows 按排序顺序的前若干行</span><br><span class="line">mean     数组的均值</span><br><span class="line">median   数组的中位数值</span><br><span class="line">mode     数组的众数</span><br><span class="line">skewness 数组的偏度</span><br><span class="line">kurtosis 数组的峰度</span><br><span class="line">std      标准差</span><br><span class="line">var      方差</span><br></pre></td></tr></table></figure>
+
+<p><strong>在计算皮尔逊相关系数之前,一定要做出散点图来看两组变量之间是否有线性关系</strong></p>
+<h3 id="皮尔逊相关系数的计算"><a href="#皮尔逊相关系数的计算" class="headerlink" title="皮尔逊相关系数的计算"></a>皮尔逊相关系数的计算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%corrcoef函数</span></span><br><span class="line">R = corrcoef(A)  </span><br><span class="line"><span class="comment">%返回A 的相关系数的矩阵，其中A 的列表示随机变量（指标），行表示观测值（样本）。</span></span><br><span class="line">R = corrcoef(A,B)</span><br><span class="line"><span class="comment">%返回两个随机变量A 和B （两个向量）之间的系数。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="斯皮尔曼相关系数的计算"><a href="#斯皮尔曼相关系数的计算" class="headerlink" title="斯皮尔曼相关系数的计算"></a>斯皮尔曼相关系数的计算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">corr(X , Y , <span class="string">&#x27;type&#x27;</span> , <span class="string">&#x27;Spearman&#x27;</span>)</span><br><span class="line"><span class="comment">%这里的X和Y必须是列向量哦~</span></span><br><span class="line">corr(X, <span class="string">&#x27;type&#x27;</span> , <span class="string">&#x27;Spearman&#x27;</span>)</span><br><span class="line"><span class="comment">%这时计算X矩阵各列之间的斯皮尔曼相关系数</span></span><br></pre></td></tr></table></figure>
+
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/#Publications"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2023 by Delin Zhang</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
